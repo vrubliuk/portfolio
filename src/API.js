@@ -69,3 +69,12 @@ export const deleteResume = () => {
     }, 1000);
   });
 };
+
+export const putProjects = projects => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+      console.log(projects);
+    }, 1000);
+  });
+};

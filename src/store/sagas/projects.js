@@ -1,7 +1,8 @@
 import { delay } from "redux-saga";
-import {  } from "redux-saga/effects";
-// import * as actions from "../actions";
-// import * as API from "../../API";
+import { select } from "redux-saga/effects";
+//import * as actions from "../actions";
+import * as API from "../../API";
+
 
 export function* getProjects(action) {
   yield delay(2000);
@@ -19,3 +20,14 @@ export function* getProjects(action) {
     // yield put(actionCreators.toggleError());
   }
 }
+
+export function* saveProjects() {
+  yield delay(2000)
+  const {projects} = yield select(store => store.projects)
+  try {
+    yield API.putProjects(projects);
+  } catch (err) {
+    alert(err);
+  }
+}
+
