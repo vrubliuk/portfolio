@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import auth from "./store/reducers/auth";
 import { watchAuth } from "./store/sagas";
