@@ -4,7 +4,7 @@ import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import Home from "./containers/Home/Home.jsx";
 import Auth from "./containers/Auth/Auth.jsx";
-import Profile from "./containers/Profile/Profile.jsx";
+import Admin from "./containers/Admin/Admin.jsx";
 
 const App = ({ token }) => {
   return (
@@ -17,9 +17,9 @@ const App = ({ token }) => {
           render={() => (!token ? <Auth /> : <Redirect to="/" />)}
         />
         <Route
-          path="/profile"
+          path="/admin"
           exact
-          render={() => (token ? <Profile /> : <Redirect to="/" />)}
+          render={() => (token ? <Admin /> : <Redirect to="/" />)}
         />
         <Redirect to="/" />
       </Switch>
