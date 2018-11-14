@@ -5,6 +5,10 @@ import { connect } from "react-redux";
 import Home from "./containers/Home/Home.jsx";
 import Auth from "./containers/Auth/Auth.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faMapMarkerAlt, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+library.add(faMapMarkerAlt, faPhone, faEnvelope, faGithub, faLinkedin);
 
 const App = ({ token }) => {
   return (
