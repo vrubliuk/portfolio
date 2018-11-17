@@ -1,0 +1,17 @@
+@import "../../../assets/styles/variables";
+
+.Skills {
+  .row {
+    .subtitle {
+      text-transform: uppercase;
+      color: white;
+    }
+    .skill {
+      display: flex;
+      color: $white-transparent;
+      div:first-child {
+        width: 30px;
+      }
+    }
+  }
+}

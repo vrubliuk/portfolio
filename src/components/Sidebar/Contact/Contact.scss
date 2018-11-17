@@ -1,0 +1,12 @@
+@import "../../../assets/styles/variables";
+
+.Contact {
+  .row {
+    color: white;
+    display: flex;
+    align-items: center;
+    .icon {
+      width: 30px;
+    }
+  }
+}

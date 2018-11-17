@@ -1,0 +1,12 @@
+@import "../../../assets/styles/variables";
+
+.Languages {
+  .row {
+    .language {
+      color: white;
+    }
+    .level {
+      color: $white-transparent;
+    }
+  }
+}

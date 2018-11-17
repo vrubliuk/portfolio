@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables";
+
+.Education {
+  .row {
+    .speciality {
+      color: white;
+    }
+    .institution {
+      color: $white-transparent;
+    }
+    .time {
+      color: $white-transparent;
+    }
+  }
+}

@@ -2,5 +2,24 @@
 
 .Sidebar {
   background-color: $cyan;
-  
+  .Profile,
+  .Contact,
+  .Skills,
+  .Experiences,
+  .Education,
+  .Languages {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    & > * {
+      margin: 5px;
+    }
+    .title {
+      text-transform: uppercase;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      font-family: "roboto-bold", sans-serif;
+    }
+  }
 }
