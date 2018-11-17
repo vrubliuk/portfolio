@@ -2,21 +2,24 @@
 
 .Profile {
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+
   .avatar {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border: 5px solid white;
     border-radius: 50%;
+    // filter: grayscale(100%);
   }
   .name {
     font-size: 32px;
     color: white;
-    font-family: "roboto-bold", sans-serif;
+    font-weight: 700;
+    text-align: center;
   }
   .profession {
     font-size: 18px;
-    color: $white-transparent;
+    color: $grey;
   }
 }

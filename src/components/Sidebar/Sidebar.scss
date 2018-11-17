@@ -1,7 +1,7 @@
 @import "../../assets/styles/variables.scss";
 
 .Sidebar {
-  background-color: $cyan;
+  background-color: $dark-grey;
   .Profile,
   .Contact,
   .Skills,
@@ -19,7 +19,7 @@
       color: white;
       font-size: 18px;
       text-align: center;
-      font-family: "roboto-bold", sans-serif;
+      font-weight: 700;
     }
   }
 }
