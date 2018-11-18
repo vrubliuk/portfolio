@@ -1,18 +1,18 @@
 import React from "react";
-import "./Languages.scss";
+
 
 const Languages = () => {
   return (
-    <div className="Languages">
+    <div className="section">
       <div className="title">Languages</div>
       <div>
-        <div className="row">
-          <span className="language">Ukrainian</span>{" "}
-          <span className="level">(native)</span>
+        <div className="subsection">
+          <span className="title">Ukrainian</span>{" "}
+          <span className="row">(native)</span>
         </div>
-        <div className="row">
-          <span className="language">English</span>{" "}
-          <span className="level">(professional)</span>
+        <div className="subsection">
+          <span className="title">English</span>{" "}
+          <span className="row">(professional)</span>
         </div>
       </div>
 

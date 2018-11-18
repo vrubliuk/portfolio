@@ -1,25 +1,32 @@
 @import "../../assets/styles/variables.scss";
 
 .Sidebar {
-  background-color: $dark-grey;
+  background-color: $background-light-grey;
+  color: $font-dark;
   .Profile,
   .Contact,
-  .Skills,
-  .Experiences,
-  .Education,
-  .Languages {
+  
+  & > *.section
+   {
     display: flex;
     flex-direction: column;
     padding: 20px;
     & > * {
       margin: 5px;
     }
-    .title {
+    & > *.title {
       text-transform: uppercase;
-      color: white;
       font-size: 18px;
       text-align: center;
-      font-weight: 700;
+      font-weight: 500;
+    }
+    .subsection {
+      & > *.title {
+        font-weight: 500;
+      }
+      & > *.row {
+        font-weight: 300;
+      }
     }
   }
 }

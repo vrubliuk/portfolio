@@ -1,16 +1,16 @@
 import React from "react";
-import "./Education.scss";
+
 
 const Education = () => {
     return (
-        <div className="Education">
+        <div className="section">
             <div className="title">Education</div>
-            <div className="row">
-                <div className="speciality">Management of foreign economic activity</div>
-                <div className="institution">
+            <div className="subsection">
+                <div className="title">Management of foreign economic activity</div>
+                <div className="row">
                     NTUU "Kyiv Polytechnic Institute"
                 </div>
-                <div className="time">
+                <div className="row">
                     <span>2008</span> - <span>2014</span>
                 </div>
             </div>

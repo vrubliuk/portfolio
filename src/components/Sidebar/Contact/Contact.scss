@@ -2,11 +2,12 @@
 
 .Contact {
   .row {
-    color: white;
+    color: $font-dark;
     display: flex;
     align-items: center;
     .icon {
-      width: 30px;
+      font-size: 12px;
+      width: 25px;
     }
   }
 }
