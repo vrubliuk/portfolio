@@ -4,5 +4,8 @@ export default {
   mail: "envelope",
   // checkMark: "check",
   github: ["fab", "github"],
-  linkedIn: ["fab", "linkedin"]
+  linkedIn: ["fab", "linkedin"],
+  up: "angle-up",
+  logIn: "sign-in-alt",
+  logOut: "sign-out-alt"
 };

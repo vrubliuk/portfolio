@@ -5,12 +5,13 @@ import { connect } from "react-redux";
 import Home from "./containers/Home/Home.jsx";
 import Auth from "./containers/Auth/Auth.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
+import Up from "./components/buttons/Up";
 import { library } from "@fortawesome/fontawesome-svg-core";
 // import { faMapMarkerAlt, faPhone, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faMapMarkerAlt, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faPhone, faEnvelope, faSignInAlt, faSignOutAlt, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // library.add(faMapMarkerAlt, faPhone, faEnvelope, faCheck, faGithub, faLinkedin);
-library.add(faMapMarkerAlt, faPhone, faEnvelope, faGithub, faLinkedin);
+library.add(faMapMarkerAlt, faPhone, faEnvelope, faGithub, faLinkedin, faSignInAlt, faSignOutAlt, faAngleUp);
 
 const App = ({ token }) => {
   return (
@@ -29,6 +30,7 @@ const App = ({ token }) => {
         />
         <Redirect to="/" />
       </Switch>
+      <Up/>
     </div>
   );
 };
