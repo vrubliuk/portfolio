@@ -2,7 +2,11 @@
 
 .Sidebar {
   background-color: $background-light-grey;
+  background-color: $font-dark;
+  background-color: black;
   color: $font-dark;
+  color: white;
+  box-shadow: 0 0 5px $font-dark;
   .Profile,
   .Contact,
   

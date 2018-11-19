@@ -1,0 +1,11 @@
+@import "../../assets/styles/variables.scss";
+
+.LogOut {
+  background-color: $background-light-grey;
+  color: $font-dark;
+  width: 40px;
+  height: 40px;
+  &:hover {
+    background-color: $grey;
+  }
+}

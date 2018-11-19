@@ -1,0 +1,13 @@
+@import "../../assets/styles/variables.scss";
+
+.LogIn {
+  background-color: $background-light-grey;
+  color: $font-dark;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 5px $background-light-grey;
+  &:hover {
+    background-color: $grey;
+    box-shadow: 0 0 5px $grey;
+  }
+}

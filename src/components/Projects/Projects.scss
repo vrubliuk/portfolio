@@ -1,8 +1,15 @@
 .Projects {
-  .button {
+  .LogIn {
     position: absolute;
     top: 25px;
     right: 25px;
+  }
+  .Resume {
+    position: sticky;
+    top: calc(100vh - 75px);
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
 }

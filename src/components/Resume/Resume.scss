@@ -1,0 +1,68 @@
+@import '../../assets/styles/variables.scss';
+
+.Resume {
+  display: flex;
+  width: 590px;
+  height: 60px;
+  background-color: $background-light-grey;
+  // background-color: $grey;
+
+  & > * {
+    height: 100%;
+  }
+
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: $grey;
+    
+    width: 100px;
+    color: $font-dark;
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 490px;
+    & > * {
+      margin: 0 5px;
+    }
+  
+  }
+
+ 
+
+
+  .button {
+    width: 150px;
+    height: 40px;
+    // background-color: white;
+    // color: $font-dark;
+    background-color:$font-dark;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 0 5px $font-dark;
+    width: 150px;
+    &:hover {
+      // background-color:$font-dark;
+      // color: white;
+      // background-color: white;
+      // color: $font-dark;
+      // box-shadow: 0 0 5px 2px $font-dark;
+      
+    }
+    // &.short {
+    //   width: 50px;
+    //   margin-left: 1px;
+    // }
+    // &.medium {
+    //   width: 100px;
+    // }
+    // &.long {
+    //   width: 150px;
+    // }
+
+  }
+
+}

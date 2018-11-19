@@ -1,13 +1,13 @@
 import React from "react";
-import "../../assets/styles/button.scss"
+import "./LogOut.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons";
 
 const LogOut = () => {
   return (
-    <div className="button">
+    <button type="button" className="LogOut">
       <FontAwesomeIcon icon={icons.logOut} />
-    </div>
+    </button>
   );
 };
 

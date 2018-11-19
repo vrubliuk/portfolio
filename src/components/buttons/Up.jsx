@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../assets/styles/button.scss";
+import "./Up.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons";
 import smoothscroll from "smoothscroll-polyfill";
@@ -30,9 +30,9 @@ class Up extends Component {
   }
   render() {
     const up = (
-      <div className="Up button" onClick={this.handleClick}>
+      <button type="button" className="Up" onClick={this.handleClick}>
         <FontAwesomeIcon icon={icons.up} />
-      </div>
+      </button>
     );
 
     return this.state.isShown ? up : null;
