@@ -2,7 +2,8 @@
 
 .Profile {
   align-items: center;
-  // background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.25);
+  
   // background-color: $grey;
   // background-color: $font-dark;
   color: white;
@@ -13,7 +14,7 @@
     object-fit: cover;
     border: 3px solid white;
     border-radius: 50%;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     transition: 0.2s;
     &:hover {
       filter: none;
@@ -21,11 +22,12 @@
   }
   .name {
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
 
   }
   .profession {
     font-size: 18px;
+    font-weight: 500;
   }
 }
