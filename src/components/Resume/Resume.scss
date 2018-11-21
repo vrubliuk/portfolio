@@ -2,9 +2,11 @@
 
 .Resume {
   display: flex;
-  width: 590px;
-  height: 60px;
-  background-color: $background-light-grey;
+  justify-content: center;
+  // width: 590px;
+  height: 80px;
+  background-color: white;
+  box-shadow: 0 0 10px white;
   // background-color: $grey;
 
   & > * {
@@ -39,10 +41,10 @@
     height: 40px;
     // background-color: white;
     // color: $font-dark;
-    background-color:$font-dark;
+    background-color:$blue;
     color: white;
     font-size: 14px;
-    box-shadow: 0 0 5px $font-dark;
+    box-shadow: 0 0 10px $blue;
     width: 150px;
     &:hover {
       // background-color:$font-dark;

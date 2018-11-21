@@ -1,15 +1,11 @@
 @import "../../assets/styles/variables.scss";
 
 .Sidebar {
-  background-color: $background-light-grey;
-  background-color: #567787;
-  background-color: #5682a3;
-  // background-color: $font-dark;
-  // background-color: black;
-  // background-color: #566F7C;
+  background-color: $blue;
   color: $font-dark;
   color: white;
-    box-shadow: 0 0 10px #5682a3;
+    box-shadow: 0 0 10px $blue;
+    z-index: 1;
   .Profile,
   .Contact,
   
