@@ -6,5 +6,10 @@
   box-shadow: 0 0 10px $blue;
   width: 40px;
   height: 40px;
+  &:hover {
+    background-color: $blue-darker;
+    box-shadow: 0 0 10px $blue-darker;
+  
+  }
  
 }

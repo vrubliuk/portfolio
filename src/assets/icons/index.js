@@ -7,5 +7,7 @@ export default {
   linkedIn: ["fab", "linkedin"],
   up: "angle-up",
   logIn: "sign-in-alt",
-  logOut: "sign-out-alt"
+  logOut: "sign-out-alt",
+  download: "download",
+  open: "external-link-alt"
 };

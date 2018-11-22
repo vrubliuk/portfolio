@@ -1,7 +1,8 @@
 @import "../../assets/styles/variables.scss";
 
 .LogIn {
-  background-color: $background-light-grey;
+
+ 
   background-color: $blue;
   color: $font-dark;
   color: white;
@@ -10,8 +11,8 @@
   height: 40px;
   box-shadow: 0 0 10px $blue;
   &:hover {
-    // background-color: $grey;
-    // box-shadow: 0 0 5px $grey;
-    // color: rgba(86,130,163, 2.5);
+    background-color: $blue-darker;
+    box-shadow: 0 0 10px $blue-darker;
+  
   }
 }

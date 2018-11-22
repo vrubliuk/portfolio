@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import "./Resume.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import icons from "../../assets/icons/index";
 
 class Resume extends Component {
-  state = {
-    extension: ".exe"
-  };
-
   render() {
     return (
       <div className="Resume">
-        <div className="left">Resume:</div>
+        {/* <div className="background">
+
+        </div> */}
+
         <div className="right">
-          <button className="button medium" type="button">
-            Download .pdf
+          <button className="button" type="button">
+            <span className="icon">
+              <FontAwesomeIcon icon={icons.download} />
+            </span>
+
+            <span className="text">Download Resume</span>
           </button>
-          <button className="button long" type="button">
-            Open in New Tab
-          </button>
-          <button className="button medium" type="button">
-            Download .doc
+          <button className="button" type="button">
+            <span className="icon">
+              <FontAwesomeIcon icon={icons.open} />
+            </span>
+            <span className="text">Open Resume</span>
           </button>
         </div>
       </div>
