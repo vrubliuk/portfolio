@@ -5,9 +5,11 @@
   display: flex;
   & > *:first-child {
     flex: 1;
+    z-index: 1;
     min-width: 300px;
   }
   & > *:last-child {
+    z-index: 0;
     flex: 4;
   }
 }

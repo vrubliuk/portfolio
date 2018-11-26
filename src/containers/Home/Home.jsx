@@ -1,15 +1,22 @@
 import React from "react";
 import "./Home.scss";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Projects from "../../components/Projects/Projects";
+import { connect } from "react-redux";
+import Sidebar from "../../hoc/Sidebar/Sidebar.jsx";
 
-const Home = () => {
+import Projects from "../../components/Projects/Projects";
+import Profile from "../../components/Profile/Profile";
+
+const mapStateToProps = ({ profile }) => ({ profile });
+
+const Home = ({ profile }) => {
   return (
     <div className="Home">
-      <Sidebar />
-      <Projects/>
+      <Sidebar>
+        <Profile profile={profile} />
+      </Sidebar>
+      <Projects />
     </div>
   );
 };
 
-export default Home;
+export default connect(mapStateToProps)(Home);

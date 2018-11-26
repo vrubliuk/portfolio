@@ -2,12 +2,14 @@ import * as actionTypes from "../actions/actionTypes";
 import updateState from "../utility/updateState";
 
 const initialState = {
-  name: "Valentyn",
-  surname: "Rubliuk",
-  qualification: "Full Stack Developer",
+  general: {
+    name: "Valentyn",
+    surname: "Rubliuk",
+    qualification: "Full Stack Developer",
+    avatar: "../../assets/images/avatar.jpg"
+  },
   contacts: {
-    city: "Lviv",
-    country: "UA",
+    location: "Lviv, UA",
     phone: "(063) 75 74 922",
     email: "",
     github: "https://github.com/vrubliuk",
