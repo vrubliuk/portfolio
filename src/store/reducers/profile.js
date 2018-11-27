@@ -11,9 +11,9 @@ const initialState = {
   contacts: {
     location: "Lviv, UA",
     phone: "(063) 75 74 922",
-    email: "",
-    github: "https://github.com/vrubliuk",
-    linkedIn: "https://github.com/vrubliuk"
+    email: "vrubliuk@gmail.com",
+    github: "github.com/vrubliuk",
+    linkedIn: "github.com/vrubliuk"
   },
   skills: [
     {
@@ -45,21 +45,21 @@ const initialState = {
       endDate: "2018"
     }
   ],
-  education: [
+  institutions: [
     {
       speciality: "Management of foreign economic activity",
-      institution: 'NTUU "Kyiv Polytechnic Institute"',
+      name: 'NTUU "Kyiv Polytechnic Institute"',
       startDate: "2008",
       endDate: "2014"
     }
   ],
   languages: [
     {
-      language: "Ukrainian",
+      name: "Ukrainian",
       level: "native"
     },
     {
-      language: "English",
+      name: "English",
       level: "professional"
     }
   ]

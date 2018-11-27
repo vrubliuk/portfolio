@@ -1,41 +1,7 @@
 @import "../../assets/styles/variables.scss";
 
 .Profile {
-
-  & > * {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  .general {
-    align-items: center;
-    background: rgba(0, 0, 0, 0.25);
-    .avatar {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border: 3px solid white;
-      border-radius: 50%;
-      transition: 0.2s;
-    }
-    .name {
-      font-size: 32px;
-      font-weight: 600;
-      text-align: center;
-    }
-    .qualification {
-      font-size: 18px;
-      font-weight: 500;
-    }
-  }
-
-
-  
-  .Profile,
-  .Contact,
-  
-  & > *.section
-   {
+  & > *.section {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -54,6 +20,41 @@
       }
       & > *.row {
         font-weight: 200;
+      }
+    }
+  }
+
+  .general {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    .avatar {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid white;
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+    .name {
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+      span {
+        margin: 0 2px;
+      }
+    }
+    .qualification {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .contact {
+    .row {
+      display: flex;
+      align-items: center;
+      .icon {
+        font-size: 12px;
+        width: 25px;
       }
     }
   }
