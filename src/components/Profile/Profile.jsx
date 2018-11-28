@@ -10,7 +10,6 @@ const Profile = ({ profile }) => {
 
   return (
     <div className="Profile">
-
       <div className="general section">
         <img className="avatar" src={avatar} alt="" />
         <div className="name">
@@ -69,11 +68,13 @@ const Profile = ({ profile }) => {
 
       <div className="section">
         <div className="title">Skills</div>
-        {skills.map(skill => (
-          <div className="subsection">
+        {skills.map((skill, i) => (
+          <div className="subsection" key={i}>
             <div className="title">{skill.category}</div>
-            {skill.technologies.map(technology => (
-              <div className="row">{technology}</div>
+            {skill.technologies.map((technology, i) => (
+              <div className="row" key={i}>
+                {technology}
+              </div>
             ))}
           </div>
         ))}
@@ -81,8 +82,8 @@ const Profile = ({ profile }) => {
 
       <div className="section">
         <div className="title">Experiences</div>
-        {experiences.map(experience => (
-          <div className="subsection">
+        {experiences.map((experience, i) => (
+          <div className="subsection" key={i}>
             <div className="title">{experience.position}</div>
             <div className="row">
               <span>{experience.company}</span>, <span>{experience.city}</span>
@@ -96,8 +97,8 @@ const Profile = ({ profile }) => {
 
       <div className="section">
         <div className="title">Education</div>
-        {institutions.map(institution => (
-          <div className="subsection">
+        {institutions.map((institution, i) => (
+          <div className="subsection" key={i}>
             <div className="title">{institution.speciality}</div>
             <div className="row">{institution.name}</div>
             <div className="row">
@@ -110,14 +111,13 @@ const Profile = ({ profile }) => {
       <div className="section">
         <div className="title">Languages</div>
         <div>
-          {languages.map(language => (
-            <div className="subsection">
+          {languages.map((language, i) => (
+            <div className="subsection" key={i}>
               <span className="title">{language.name}</span> <span className="row">({language.level})</span>
             </div>
           ))}
         </div>
       </div>
-      
     </div>
   );
 };

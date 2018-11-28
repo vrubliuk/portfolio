@@ -12,6 +12,20 @@
     z-index: 0;
     flex: 4;
   }
+
+  .LogIn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .Resume {
+    position: sticky;
+    top: calc(100vh - 80px);
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
 }
 
 @media (max-width: 600px) {
