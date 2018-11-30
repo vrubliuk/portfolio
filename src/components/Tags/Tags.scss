@@ -1,7 +1,28 @@
-.Tags {
+@import "../../assets/styles/variables.scss";
 
-  button {
+.Tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .tag {
     height: 40px;
     padding: 0 15px;
+    font-size: 16px;
+    background-color: transparent;
+    color: rgb(140, 140, 140);
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: $blue;
+    }
+    
+  }
+
+  .tag-active {
+    border-bottom: 2px solid $blue;
+
+    &:hover {
+      color: rgb(140, 140, 140);
+    }
   }
 }
