@@ -1,16 +1,118 @@
+@import "../../assets/styles/variables.scss";
+
 .Projects {
-  z-index: 0;
-  .LogIn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .Resume {
-    position: sticky;
-    top: calc(100vh - 80px);
-    left: 0;
-    right: 0;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & > * {
+    margin: 20px;
   }
 
+  .project {
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
+    
+
+    & > *:first-child {
+      width: 352px;
+      height: 198px;
+      position: relative;
+      overflow: hidden;
+     
+
+
+      img {
+        object-fit: cover;
+        filter: opacity(75%);
+
+      }
+      .cover {
+        position: absolute;
+
+        top: 198px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        background-color:  rgba(86,130,163, 0.9);
+        // background-color:  rgba(140,140,140,0.75);
+        // background-color: rgba(64, 97, 122, 0.75);
+        transition: 0.3s ease-in-out;
+        color: white;
+        padding: 8px;
+
+        .summary {
+          padding: 8px;
+          height: 122px;
+          width: 100%;
+          overflow: hidden;
+          font-size: 14px;
+          text-align: justify;
+        }
+        .buttons {
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+
+
+
+
+          & > a {
+            text-decoration: none;
+            margin: 0 8px;
+          }
+          
+        }
+
+
+
+
+
+
+      }
+
+      &:hover .cover {
+        top: 0;
+      }
+     
+
+
+
+    }
+    & > *:last-child {
+      padding: 16px;
+      background-color: white;
+
+      .name {
+        font-size: 24px;
+        color: rgb(140, 140, 140);
+        color: $blue;
+        // color: black;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      .tags {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: rgb(140, 140, 140);
+        margin: 0 -2px;
+
+        & > * {
+          margin: 0 2px;
+        }
+
+        .icon {
+          font-size: 12px;
+        }
+        .tag:not(:last-child)::after {
+          content: "|";
+          margin-left: 4px;
+        }
+      }
+    }
+  }
 }

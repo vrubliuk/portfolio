@@ -1,12 +1,5 @@
-//@font-face {
-//  font-family: "roboto-regular";
-//  src: url("./assets/fonts/RobotoCondensed-Regular.ttf");
-//}
-//
-//@font-face {
-//  font-family: "roboto-bold";
-//  src: url("./assets/fonts/RobotoCondensed-Bold.ttf");
-//}
+@import "./assets/styles/variables.scss";
+
 
 * {
   box-sizing: border-box;
@@ -17,6 +10,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+::selection {
+  color: white;
+  background: $blue;
 }
 
 input::-ms-clear {

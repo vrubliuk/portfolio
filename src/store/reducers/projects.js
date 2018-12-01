@@ -9,7 +9,8 @@ const initialState = {
       summary: "Some text",
       tags: ["jQuery"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",
-      codeURL: "https://github.com/vrubliuk/painting-cart/",
+      repositoryURL: "https://github.com/vrubliuk/painting-cart/",
+      priority: 1,
     },
     {
       name: "Calendar",
@@ -17,7 +18,8 @@ const initialState = {
       summary: "Some text",
       tags: ["React", "jQuery", "Vue", "Vue", "Vue"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",
-      codeURL: "https://github.com/vrubliuk/painting-cart/",
+      repositoryURL: "https://github.com/vrubliuk/painting-cart/",
+      priority: 2,
     },
     {
       name: "Calendar",
@@ -25,7 +27,8 @@ const initialState = {
       summary: "Some text",
       tags: ["React", "jQuery", "Vue"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",
-      codeURL: "https://github.com/vrubliuk/painting-cart/",
+      repositoryURL: "https://github.com/vrubliuk/painting-cart/",
+      priority: 0
     }
   ]
 };

@@ -1,54 +1,60 @@
 import React from "react";
 import "./Projects.scss";
-import LogIn from "../buttons/LogIn";
-import Resume from "../Resume/Resume";
-import {connect} from "react-redux"
-import * as actions from "../../store/actions/index";
+import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import icons from "../../assets/icons/index";
 
+import screenshot from "../../assets/images/calendar.jpg";
+import Button from "../Button/Button";
 
-const mapStateToProps = (state) => {
-  return {
-    projects: state.projects.projects
-  }
-}
-const mapDispatchToProps = dispatch => {
-  return {
-    getProjects: () => dispatch(actions.getProjects())
-  };
-};
+const Projects = ({ projects, activeTag }) => {
+  const filteredProjects = activeTag !== "All" ? projects.filter(project => project.tags.includes(activeTag)) : projects;
+  console.log(filteredProjects);
 
-
-const Projects = ({projects, getProjects}) => {
   return (
     <div className="Projects">
-      <LogIn/>
-      <Resume/>
-      <button onClick={getProjects.bind(this)}>Ololo</button>
-
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-      <div>
-        asdasd dddddddddddfsd sdfsdfsdfsfsd  sdfsdfsdfsd sdfsdf sdfsdfsd ddsdfsdfsdfsdf sdfsdfsdfsdfsdfsdf     sdfsdfsdf      dfdddf
-      </div>
-
+      {filteredProjects.map((project, i) => (
+        <div className="project" key={i}>
+          <div>
+            <img src={screenshot} alt="" />
+            <div className="cover">
+              <div className="summary">Some shit</div>
+              <div className="buttons">
+                <a href={project.websiteURL} target="_blank" rel="noreferrer noopener">
+                  <Button icon="open" text="Open Website" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
+                </a>
+                <a href={project.repositoryURL} target="_blank" rel="noreferrer noopener">
+                  <Button icon="github" text="Explore Repo" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="name">
+              <a href={project.websiteURL} target="_blank" rel="noreferrer noopener">
+                {project.name}
+              </a>
+            </div>
+            <div className="tags">
+              <span className="icon">
+                <FontAwesomeIcon icon={icons.tag} />
+              </span>
+              {project.tags.map((tag, i) => (
+                <span className="tag" key={i}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Projects);
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+  activeTag: PropTypes.string.isRequired
+};
+
+export default Projects;

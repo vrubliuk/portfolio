@@ -9,5 +9,6 @@ export default {
   logIn: "sign-in-alt",
   logOut: "sign-out-alt",
   download: "download",
-  open: "external-link-alt"
+  open: "external-link-alt",
+  tag: "tag"
 };

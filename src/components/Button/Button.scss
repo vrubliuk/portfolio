@@ -1,0 +1,37 @@
+@import "../../assets/styles/variables.scss";
+
+.Button {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .icon {
+    font-size: 11px;
+    margin-right: 4px;
+  }
+  
+
+  &.blue {
+    background-color: $blue;
+    box-shadow: 0 0 10px $blue;
+    color: white;
+    &:hover {
+      background-color: $blue-darker;
+      box-shadow: 0 0 10px $blue-darker;
+    }
+
+  }
+
+  &.transparent {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+  
+  }
+
+
+
+
+
+}
