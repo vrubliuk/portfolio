@@ -1,10 +1,12 @@
 @import "../../assets/styles/variables.scss";
 
 .Projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  // padding: 20px;
+  
+  margin: 0 auto;
   & > * {
     margin: 20px;
   }

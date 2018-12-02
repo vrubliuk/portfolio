@@ -10,8 +10,11 @@
     font-size: 16px;
     background-color: transparent;
     color: rgb(140, 140, 140);
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
+    // border-top: 2px solid transparent;
+    // border-bottom: 2px solid transparent;
+
+    border: 1px solid transparent;
+
     &:hover {
       color: $blue;
     }
@@ -19,8 +22,9 @@
   }
 
   .tag-active {
-    border-bottom: 2px solid $blue;
-
+    // border-top: 2px solid $blue;
+    border: 1px solid $blue;
+    color: $blue;
     &:hover {
       color: rgb(140, 140, 140);
     }

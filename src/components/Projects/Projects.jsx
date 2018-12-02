@@ -8,13 +8,14 @@ import screenshot from "../../assets/images/calendar.jpg";
 import Button from "../Button/Button";
 
 const Projects = ({ projects, activeTag }) => {
-  const filteredProjects = activeTag !== "All" ? projects.filter(project => project.tags.includes(activeTag)) : projects;
-  console.log(filteredProjects);
+  // const filteredProjects = activeTag !== "All" ? projects.filter(project => project.tags.includes(activeTag)) : projects;
+  const filteredProjects = projects;
+  // console.log(filteredProjects);
 
   return (
     <div className="Projects">
       {filteredProjects.map((project, i) => (
-        <div className="project" key={i}>
+        <div className={`project ${project.tags.join(" ")}`} key={i}>
           <div>
             <img src={screenshot} alt="" />
             <div className="cover">
