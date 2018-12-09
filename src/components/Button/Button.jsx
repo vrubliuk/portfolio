@@ -5,18 +5,21 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons";
 
-const Button = ({ icon, text, additionalClassName, style, onClick }) => {
+const Button = ({ type, icon, text, additionalClassName, style, onClick }) => {
   return (
-    <button type="button" className={`Button ${additionalClassName}`} style={style} onClick={onClick}>
-      <span className="icon">
-        <FontAwesomeIcon icon={icons[icon]} />
-      </span>
-      <span className="text">{text}</span>
+    <button type={type ? type : "button"} className={`Button ${additionalClassName}`} style={style} onClick={onClick}>
+      {icon && (
+        <span className={icon && text && "icon-small"}>
+          <FontAwesomeIcon icon={icons[icon]} />
+        </span>
+      )}
+      {text && <span className="text">{text}</span>}
     </button>
   );
 };
 
 Button.propTypes = {
+  type: PropTypes.string,
   icon: PropTypes.string,
   text: PropTypes.string,
   additionalClassName: PropTypes.string,

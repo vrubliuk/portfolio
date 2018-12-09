@@ -8,10 +8,10 @@ import Admin from "./containers/Admin/Admin.jsx";
 import Up from "./components/buttons/Up";
 import { library } from "@fortawesome/fontawesome-svg-core";
 // import { faMapMarkerAlt, faPhone, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faMapMarkerAlt, faPhone, faEnvelope, faSignInAlt, faSignOutAlt, faAngleUp, faDownload, faExternalLinkAlt, faTag } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faPhone, faEnvelope, faSignInAlt, faSignOutAlt, faAngleUp, faAngleLeft, faDownload, faExternalLinkAlt, faTag } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // library.add(faMapMarkerAlt, faPhone, faEnvelope, faCheck, faGithub, faLinkedin);
-library.add(faMapMarkerAlt, faPhone, faEnvelope, faGithub, faLinkedin, faSignInAlt, faSignOutAlt, faAngleUp, faDownload, faExternalLinkAlt, faTag);
+library.add(faMapMarkerAlt, faPhone, faEnvelope, faGithub, faLinkedin, faSignInAlt, faSignOutAlt, faAngleUp, faAngleLeft, faDownload, faExternalLinkAlt, faTag);
 
 const App = ({ token }) => {
   return (
@@ -26,7 +26,7 @@ const App = ({ token }) => {
         <Route
           path="/admin"
           exact
-          render={() => (token ? <Admin /> : <Redirect to="/" />)}
+          render={() => (token ? <Admin /> : <Redirect to="/auth" />)}
         />
         <Redirect to="/" />
       </Switch>

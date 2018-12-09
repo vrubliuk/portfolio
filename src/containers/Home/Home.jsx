@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./Home.scss";
 import { connect } from "react-redux";
+import {withRouter } from "react-router-dom"
 import Sidebar from "../../hoc/Sidebar/Sidebar.jsx";
 
 import Profile from "../../components/Profile/Profile";
 import LogIn from "../../components/buttons/LogIn";
+
+import Button from "../../components/Button/Button.jsx"
 import Resume from "../../components/Resume/Resume";
 import Tags from "../../components/Tags/Tags";
 import Projects from "../../components/Projects/Projects";
@@ -44,13 +47,17 @@ class Home extends Component {
   }
 
   render() {
+    const {history} = this.props;
+
     return (
       <div className="Home">
         <Sidebar>
           <Profile profile={this.props.profile} />
         </Sidebar>
         <div>
-          <LogIn />
+          
+          <Button icon="logIn" additionalClassName="blue" style={{ width: "40px", height: "40px", position: 'absolute', top: '20px', right: '20px'}} onClick={() => history.push('/admin')}/>
+
           <Tags projects={this.props.projects} activeTag={this.state.activeTag} setActiveTag={this.setActiveTag} />
           <Projects projects={this.props.projects} activeTag={this.state.activeTag} />
           <Resume />
@@ -60,4 +67,4 @@ class Home extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Home);
+export default withRouter(connect(mapStateToProps)(Home));

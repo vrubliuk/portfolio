@@ -6,6 +6,7 @@ export default {
   github: ["fab", "github"],
   linkedIn: ["fab", "linkedin"],
   up: "angle-up",
+  left: "angle-left",
   logIn: "sign-in-alt",
   logOut: "sign-out-alt",
   download: "download",
