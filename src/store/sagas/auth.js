@@ -1,7 +1,7 @@
 ﻿import { delay } from "redux-saga";
 import { put } from "redux-saga/effects";
-import * as actions from "../actions";
-import * as API from "../utility/API";
+import {setToken} from "../actions";
+import * as API from "../../API";
 
 export function* logIn(action) {
   // yield put(actionCreators.setLoader(true));
@@ -17,5 +17,10 @@ export function* logIn(action) {
     // yield delay(2000);
     // yield put(actionCreators.toggleError());
   }
+}
+
+export function* logOut() {
+  yield put(setToken(null));
+  
 }
 

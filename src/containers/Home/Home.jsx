@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Home.scss";
 import { connect } from "react-redux";
 import {withRouter } from "react-router-dom"
-import Sidebar from "../../hoc/Sidebar/Sidebar.jsx";
+import Sidebar from "../../HOCs/Sidebar/Sidebar.jsx";
 
 import Profile from "../../components/Profile/Profile";
 import LogIn from "../../components/buttons/LogIn";

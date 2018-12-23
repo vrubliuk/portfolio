@@ -1,11 +1,13 @@
 import { takeEvery, takeLatest, all } from "redux-saga/effects";
 import * as actionTypes from "../actions/actionTypes";
-import { logIn } from "./auth";
+import { logIn, logOut } from "./auth";
 import {getProjects} from "./projects"
 
 
 export function* watchAuth() {
-  yield takeLatest(actionTypes.LOG_IN, logIn);
+ 
+  
+  yield all([takeLatest(actionTypes.LOG_IN, logIn), takeLatest(actionTypes.LOG_OUT, logOut)])
 }
 
 export function* watchProjects() {

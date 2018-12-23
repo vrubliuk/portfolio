@@ -1,5 +1,5 @@
 // import * as actionTypes from "../actions/actionTypes";
-// import updateState from "../utility/updateState";
+// import updateState from "../../helpers/updateState"
 
 const initialState = {
   projects: [

@@ -1,2 +1,2 @@
-﻿export { setToken, logIn } from "./auth";
+﻿export { setToken, logIn, logOut } from "./auth";
 export {getProjects} from "./projects"

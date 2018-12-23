@@ -25,7 +25,7 @@ const App = ({ token }) => {
         />
         <Route
           path="/admin"
-          exact
+         
           render={() => (token ? <Admin /> : <Redirect to="/auth" />)}
         />
         <Redirect to="/" />
