@@ -12,11 +12,18 @@
     .links {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      margin: -10px 0;
+    
       a {
         text-transform: uppercase;
-        
-        a.active {
-          
+        margin: 10px 0;
+        font-weight: 200;
+    
+  
+        &.active {
+          font-weight: 500;
         }
       }
     }
