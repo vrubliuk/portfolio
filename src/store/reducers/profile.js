@@ -1,12 +1,13 @@
 import * as actionTypes from "../actions/actionTypes";
 import updateState from "../../helpers/updateState"
+import avatar from "../../assets/images/avatar.jpg"
 
 const initialState = {
   general: {
     name: "Valentyn",
     surname: "Rubliuk",
     qualification: "Full Stack Developer",
-    avatar: "../../assets/images/avatar.jpg"
+    avatar: avatar
   },
   contacts: {
     location: "Lviv, UA",

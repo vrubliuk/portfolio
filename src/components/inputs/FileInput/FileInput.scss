@@ -1,0 +1,64 @@
+.FileInput {
+  
+  padding: 20px;
+  .label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #8c8c8c;
+  }
+  .preview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    .remove {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      color: #cb3837;
+      // border: 1px solid #cb3837;
+      font-size: 20px;
+      &:hover {
+        // color: transparent;
+        // background-color: #cb3837;
+        border: 1px solid #cb3837;
+        border-radius: 10px;
+      }
+    }
+    
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      font-size: 100px;
+      color: lightgrey;
+      
+      border: 1px dashed lightgrey;
+      border-radius: 10px;
+    }
+  }
+  
+  
+  input {
+    width: 250px;
+  }
+}
+

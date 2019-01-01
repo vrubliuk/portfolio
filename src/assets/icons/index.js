@@ -11,5 +11,7 @@ export default {
   logOut: "sign-out-alt",
   download: "download",
   open: "external-link-alt",
-  tag: "tag"
+  tag: "tag",
+  userLogo: "user-circle",
+  trash: "trash-alt"
 };

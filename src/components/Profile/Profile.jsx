@@ -1,7 +1,6 @@
 import React from "react";
 import "./Profile.scss";
 import PropTypes from "prop-types";
-import avatar from "../../assets/images/avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
 
@@ -11,7 +10,7 @@ const Profile = ({ profile }) => {
   return (
     <div className="Profile">
       <div className="general section">
-        <img className="avatar" src={avatar} alt="" />
+        <img className="avatar" src={general.avatar} alt="" />
         <div className="name">
           <span>{general.name}</span>
           <span>{general.surname}</span>
