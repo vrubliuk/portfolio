@@ -66,8 +66,18 @@ const initialState = {
   ]
 };
 
+const setGeneral = (state, action) => {
+  return updateState(state, {
+    general: {...state.general, ...action.payload}
+  });
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.SET_GENERAL: 
+    return setGeneral(state, action);
+    
+    
     default:
       return state;
   }

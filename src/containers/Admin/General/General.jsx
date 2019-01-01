@@ -1,22 +1,37 @@
 import React from "react";
 import "./General.scss";
 import PageTitle from "../../../components/PageTitle/PageTitle";
-import {connect} from "react-redux"
+import { connect } from "react-redux";
+import * as actions from "../../../store/actions/index";
 
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import FileInput from "../../../components/inputs/FileInput/FileInput";
 
-const General = ({general}) => {
-  return <div className="General">
-    <PageTitle title="General"/>
-    <TextInput value={general.name} label="Name"/>
-    <TextInput value={general.surname} label="Surname"/>
-    <TextInput value={general.qualification} label="Qualification"/>
-    <FileInput value={general.avatar} label="Avatar"/>
-  
-  </div>;
+const General = ({ general, setGeneral }) => {
+  return (
+    <div className="General">
+      <PageTitle title="General" />
+      <TextInput value={general.name} changeHandler={value => setGeneral({ name: value })} label="Name" />
+      <TextInput value={general.surname} changeHandler={value => setGeneral({ surname: value })} label="Surname" />
+      <TextInput value={general.qualification} changeHandler={value => setGeneral({ qualification: value })} label="Qualification" />
+      <FileInput
+        value={general.avatar}
+        label="Avatar"
+        changeHandler={value => setGeneral({ avatar: value })}
+        removeHandler={() => setGeneral({ avatar: null })}
+      />
+    </div>
+  );
 };
 
-const mapStateToProps = ({profile}) => ({general: profile.general})
+const mapStateToProps = ({ profile }) => ({ general: profile.general });
+const mapDispatchToProps = dispatch => {
+  return {
+    setGeneral: payload => dispatch(actions.setGeneral(payload))
+  };
+};
 
-export default connect(mapStateToProps)(General);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(General);
