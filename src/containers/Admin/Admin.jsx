@@ -4,17 +4,18 @@ import { connect } from "react-redux";
 
 import { withRouter, Switch, Route, Redirect, NavLink } from "react-router-dom";
 import Sidebar from "../../HOCs/Sidebar/Sidebar";
-import AdminGeneral from "../AdminGeneral/AdminGeneral.jsx";
-import AdminSkills from "../AdminSkills/AdminSkills.jsx";
-import AdminExperiences from "../AdminExperiences/AdminExperiences.jsx";
-import AdminEducation from "../AdminEducation/AdminEducation.jsx";
-import AdminLanguages from "../AdminLanguages/AdminLanguages.jsx";
-import AdminProjects from "../AdminProjects/AdminProjects.jsx";
+import General from "./General/General.jsx";
+import Contacts from "./Contacts/Contacts.jsx";
+import Skills from "./Skills/Skills.jsx";
+import Experiences from "./Experiences/Experiences.jsx";
+import Education from "./Education/Education.jsx";
+import Languages from "./Languages/Languages.jsx";
+import Projects from "./Projects/Projects.jsx";
 import Button from "../../components/Button/Button";
 import * as actions from "../../store/actions/index";
 
 const Admin = ({ logOut, history }) => {
-  const links = ["general", "skills", "experiences", "education", "languages", "projects"];
+  const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects"];
 
   const handleLogOutButtonClick = () => {
     history.replace("/");
@@ -35,12 +36,13 @@ const Admin = ({ logOut, history }) => {
 
       <Switch>
         <Redirect exact from="/admin" to="/admin/general" />
-        <Route exact path="/admin/general" component={AdminGeneral} />
-        <Route exact path="/admin/skills" component={AdminSkills} />
-        <Route exact path="/admin/experiences" component={AdminExperiences} />
-        <Route exact path="/admin/education" component={AdminEducation} />
-        <Route exact path="/admin/languages" component={AdminLanguages} />
-        <Route exact path="/admin/projects" component={AdminProjects} />
+        <Route exact path="/admin/general" component={General} />
+        <Route exact path="/admin/contacts" component={Contacts} />
+        <Route exact path="/admin/skills" component={Skills} />
+        <Route exact path="/admin/experiences" component={Experiences} />
+        <Route exact path="/admin/education" component={Education} />
+        <Route exact path="/admin/languages" component={Languages} />
+        <Route exact path="/admin/projects" component={Projects} />
       </Switch>
       <Button
         icon="logOut"
