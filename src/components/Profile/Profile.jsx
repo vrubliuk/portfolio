@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
 
 const Profile = ({ profile }) => {
-  const { general, contacts, skills, experiences, institutions, languages } = profile;
+  const { general, contacts, skills, experiences, education, languages } = profile;
 
   return (
     <div className="Profile">
@@ -96,15 +96,16 @@ const Profile = ({ profile }) => {
 
       <div className="section">
         <div className="title">Education</div>
-        {institutions.map((institution, i) => (
-          <div className="subsection" key={i}>
-            <div className="title">{institution.speciality}</div>
-            <div className="row">{institution.name}</div>
+
+        <div className="subsection" >
+            <div className="title">{education.speciality}</div>
+            <div className="row">{education.institution}</div>
             <div className="row">
-              <span>{institution.startDate}</span> - <span>{institution.endDate}</span>
+              <span>{education.startDate}</span> - <span>{education.endDate}</span>
             </div>
           </div>
-        ))}
+
+
       </div>
 
       <div className="section">

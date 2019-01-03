@@ -32,13 +32,15 @@ const initialState = {
   ],
   experiences: [
     {
-      position: "Team Leader of Billing department",
-      company: "PLS Logistics Services",
+      order: 1,
+      position: "Front-end Developer",
+      company: "Redentu",
       city: "Lviv",
-      startDate: "2014",
-      endDate: "2018"
+      startDate: "2018",
+      endDate: "2019"
     },
     {
+      order: 2,
       position: "Team Leader of Billing department",
       company: "PLS Logistics Services",
       city: "Lviv",
@@ -46,14 +48,14 @@ const initialState = {
       endDate: "2018"
     }
   ],
-  institutions: [
+  education: 
     {
       speciality: "Management of foreign economic activity",
-      name: 'NTUU "Kyiv Polytechnic Institute"',
+      institution: 'NTUU "Kyiv Polytechnic Institute"',
       startDate: "2008",
       endDate: "2014"
     }
-  ],
+  ,
   languages: [
     {
       name: "Ukrainian",
@@ -79,6 +81,12 @@ const setContacts = (state, action) => {
   });
 };
 
+const setEducation = (state, action) => {
+  return updateState(state, {
+    education: {...state.education, ...action.payload}
+  });
+};
+
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -86,6 +94,8 @@ const reducer = (state = initialState, action) => {
     return setGeneral(state, action);
     case actionTypes.SET_CONTACTS: 
     return setContacts(state, action);
+    case actionTypes.SET_EDUCATION: 
+    return setEducation(state, action);
     
     default:
       return state;

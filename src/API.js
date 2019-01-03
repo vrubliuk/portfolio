@@ -16,3 +16,12 @@ export const putContacts = (location, phone, email, github, linkedIn) => {
     }, 1000)
   })
 }
+
+export const putEducation = (speciality, institution, startDate, endDate) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+      console.log(speciality, institution, startDate, endDate);
+    }, 1000)
+  })
+}
