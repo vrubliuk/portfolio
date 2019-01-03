@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   
-  & > *:first-child {
+  & > .Sidebar {
     z-index: 1;
     min-width: 300px;
     width: 20%;
@@ -32,10 +32,9 @@
       }
     }
   }
-  & > *:nth-child(2) {
+  & > main {
     z-index: 0;
     width: 80%;
-    padding-bottom: 80px;
   }
 }
 

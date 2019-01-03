@@ -1,9 +1,9 @@
 import React from "react";
 import "./Admin.scss";
 import { connect } from "react-redux";
-
 import { withRouter, Switch, Route, Redirect, NavLink } from "react-router-dom";
 import Sidebar from "../../HOCs/Sidebar/Sidebar";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import General from "./General/General.jsx";
 import Contacts from "./Contacts/Contacts.jsx";
 import Skills from "./Skills/Skills.jsx";
@@ -14,14 +14,15 @@ import Projects from "./Projects/Projects.jsx";
 import Button from "../../components/Button/Button";
 import * as actions from "../../store/actions/index";
 
-const Admin = ({ logOut, history }) => {
+const Admin = ({ logOut, history, location }) => {
   const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects"];
 
-  const handleLogOutButtonClick = () => {
-    history.replace("/");
-    logOut();
-  };
-
+  // const handleLogOutButtonClick = () => {
+  //   history.replace("/");
+  //   logOut();
+  // };
+  
+ 
   return (
     <div className="Admin">
       <Sidebar>
@@ -34,6 +35,8 @@ const Admin = ({ logOut, history }) => {
         </div>
       </Sidebar>
 
+      <main>
+      <PageTitle title={location.pathname.split('/').pop()} />
       <Switch>
         <Redirect exact from="/admin" to="/admin/general" />
         <Route exact path="/admin/general" component={General} />
@@ -44,11 +47,15 @@ const Admin = ({ logOut, history }) => {
         <Route exact path="/admin/languages" component={Languages} />
         <Route exact path="/admin/projects" component={Projects} />
       </Switch>
+
+      </main>
+
+   
       <Button
         icon="logOut"
         additionalClassName="blue"
         style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px" }}
-        onClick={() => handleLogOutButtonClick()}
+        onClick={() =>  history.replace("/")}
       />
     </div>
   );

@@ -72,11 +72,20 @@ const setGeneral = (state, action) => {
   });
 };
 
+
+const setContacts = (state, action) => {
+  return updateState(state, {
+    contacts: {...state.contacts, ...action.payload}
+  });
+};
+
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_GENERAL: 
     return setGeneral(state, action);
-    
+    case actionTypes.SET_CONTACTS: 
+    return setContacts(state, action);
     
     default:
       return state;

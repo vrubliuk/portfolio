@@ -1,6 +1,6 @@
 import React from "react";
 import "./General.scss";
-import PageTitle from "../../../components/PageTitle/PageTitle";
+
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 
@@ -10,7 +10,7 @@ import FileInput from "../../../components/inputs/FileInput/FileInput";
 const General = ({ general, setGeneral }) => {
   return (
     <div className="General">
-      <PageTitle title="General" />
+    
       <TextInput value={general.name} changeHandler={value => setGeneral({ name: value })} label="Name" />
       <TextInput value={general.surname} changeHandler={value => setGeneral({ surname: value })} label="Surname" />
       <TextInput value={general.qualification} changeHandler={value => setGeneral({ qualification: value })} label="Qualification" />
