@@ -1,0 +1,33 @@
+.Footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  .placeholder {
+    width: 20%;
+    min-width: 300px;
+  }
+  .content {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 750px) {
+  .Footer {
+    .placeholder {
+      width: 0;
+      min-width: 0;
+    }
+    .content {
+      width: 100%;
+    } 
+  }
+}

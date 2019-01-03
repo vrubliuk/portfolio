@@ -32,7 +32,7 @@ const initialState = {
   ],
   experiences: [
     {
-      order: 1,
+      
       position: "Front-end Developer",
       company: "Redentu",
       city: "Lviv",
@@ -40,7 +40,7 @@ const initialState = {
       endDate: "2019"
     },
     {
-      order: 2,
+      
       position: "Team Leader of Billing department",
       company: "PLS Logistics Services",
       city: "Lviv",
@@ -58,10 +58,12 @@ const initialState = {
   ,
   languages: [
     {
+     
       name: "Ukrainian",
       level: "native"
     },
     {
+     
       name: "English",
       level: "professional"
     }
