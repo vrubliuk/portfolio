@@ -55,19 +55,6 @@ const initialState = {
       startDate: "2008",
       endDate: "2014"
     }
-  ,
-  languages: [
-    {
-     
-      name: "Ukrainian",
-      level: "native"
-    },
-    {
-     
-      name: "English",
-      level: "professional"
-    }
-  ]
 };
 
 const setGeneral = (state, action) => {
@@ -90,6 +77,7 @@ const setEducation = (state, action) => {
 };
 
 
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_GENERAL: 
@@ -98,6 +86,10 @@ const reducer = (state = initialState, action) => {
     return setContacts(state, action);
     case actionTypes.SET_EDUCATION: 
     return setEducation(state, action);
+
+   
+   
+   
     
     default:
       return state;

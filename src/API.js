@@ -25,3 +25,12 @@ export const putEducation = (speciality, institution, startDate, endDate) => {
     }, 1000)
   })
 }
+
+export const putLanguages = (languages) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+      console.log(languages);
+    }, 1000)
+  })
+}

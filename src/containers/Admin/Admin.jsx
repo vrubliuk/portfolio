@@ -11,11 +11,12 @@ import Experiences from "./Experiences/Experiences.jsx";
 import Education from "./Education/Education.jsx";
 import Languages from "./Languages/Languages.jsx";
 import Projects from "./Projects/Projects.jsx";
+import Resume from "./Resume/Resume"
 import Button from "../../components/Button/Button";
 import * as actions from "../../store/actions/index";
 
 const Admin = ({ logOut, history, location }) => {
-  const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects"];
+  const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects", "resume"];
 
   // const handleLogOutButtonClick = () => {
   //   history.replace("/");
@@ -46,6 +47,7 @@ const Admin = ({ logOut, history, location }) => {
         <Route exact path="/admin/education" component={Education} />
         <Route exact path="/admin/languages" component={Languages} />
         <Route exact path="/admin/projects" component={Projects} />
+        <Route exact path="/admin/resume" component={Resume} />
       </Switch>
 
       </main>

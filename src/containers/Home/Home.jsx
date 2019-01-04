@@ -13,7 +13,7 @@ import Tags from "../../components/Tags/Tags";
 import Projects from "../../components/Projects/Projects";
 import Isotope from "isotope-layout";
 
-const mapStateToProps = ({ profile, projects }) => ({ profile, projects: projects.projects.sort((a, b) => b.priority - a.priority) });
+
 
 class Home extends Component {
   state = {
@@ -47,12 +47,12 @@ class Home extends Component {
   }
 
   render() {
-    const {history} = this.props;
+    const {profile, languages, history} = this.props;
 
     return (
       <div className="Home">
         <Sidebar>
-          <Profile profile={this.props.profile} />
+          <Profile profile={profile} languages={languages}  />
         </Sidebar>
         <div>
           
@@ -66,5 +66,7 @@ class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ profile, languages, projects }) => ({ profile, languages: languages.languages, projects: projects.projects.sort((a, b) => b.priority - a.priority) });
 
 export default withRouter(connect(mapStateToProps)(Home));
