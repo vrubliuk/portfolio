@@ -45,6 +45,23 @@ export const updateSkillsCategoryTechnology = (categoryIndex, technologyIndex, v
   };
 };
 
+export const moveSkillsCategoryTechnology = (categoryIndex, technologyIndex, direction) => {
+  return {
+    type: actionTypes.MOVE_SKILLS_CATEGORY_TECHNOLOGY,
+    categoryIndex,
+    technologyIndex,
+    direction
+  };
+};
+
+export const deleteSkillsCategoryTechnology = (categoryIndex, technologyIndex) => {
+  return {
+    type: actionTypes.DELETE_SKILLS_CATEGORY_TECHNOLOGY,
+    categoryIndex,
+    technologyIndex
+  };
+};
+
 export const saveSkills = () => {
   return {
     type: actionTypes.SAVE_SKILLS,

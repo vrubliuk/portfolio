@@ -69,33 +69,24 @@ const updateSkillsCategoryTechnology = (state, {categoryIndex, technologyIndex, 
   });
 }
 
-// const addLanguage = (state) => {
-//   const languages = [...state.languages];
-//   languages.push({
-//     name: "",
-//     level: ""
-//   })
-//   return updateState(state, {
-//     languages
-//   });
-// };
+const moveSkillsCategoryTechnology = (state, {categoryIndex, technologyIndex, direction}) => {
+  const categories = JSON.parse(JSON.stringify(state.categories));
+  const technologies = categories[categoryIndex].technologies;
+  const technology = technologies.splice(technologyIndex, 1)[0];
+  const indexDifference = direction === "up" ? -1 : direction === "down" ? 1 : 0;
+  technologies.splice(technologyIndex + indexDifference, 0, technology);
+  return updateState(state, {
+    categories
+  });
+};
 
-// const moveLanguage = (state, {index, indexDifference}) => {
-//   const languages = [...state.languages];
-//   const language = languages.splice(index, 1)[0];
-//   languages.splice(index + indexDifference, 0, language);
-//   return updateState(state, {
-//     languages
-//   });
-// };
-
-// const deleteLanguage = (state, {index}) => {
-//   return updateState(state, {
-//     languages: [...state.languages].filter( (language, i) => i !== index)
-//   });
-// };
-
-
+const deleteSkillsCategoryTechnology = (state, {categoryIndex, technologyIndex}) => {
+  const categories = JSON.parse(JSON.stringify(state.categories));
+  categories[categoryIndex].technologies = categories[categoryIndex].technologies.filter((technology, i) => i !== technologyIndex)
+  return updateState(state, {
+    categories
+  });
+};
 
 
 const reducer = (state = initialState, action) => {
@@ -104,23 +95,23 @@ const reducer = (state = initialState, action) => {
      return addSkillsCategory(state);
      case actionTypes.UPDATE_SKILLS_CATEGORY_NAME: 
       return updateSkillsCategoryName(state, action);
-
       case actionTypes.MOVE_SKILLS_CATEGORY: 
       return moveSkillsCategory(state, action);
-
       case actionTypes.DELETE_SKILLS_CATEGORY: 
       return deleteSkillsCategory(state, action);
-
-
 
     case actionTypes.ADD_SKILLS_CATEGORY_TECHNOLOGY: 
       return addSkillsCategoryTechnology(state, action);
       case actionTypes.UPDATE_SKILLS_CATEGORY_TECHNOLOGY: 
       return updateSkillsCategoryTechnology(state, action);
-    // case actionTypes.MOVE_LANGUAGE: 
-    // return moveLanguage(state, action);
-    // case actionTypes.DELETE_LANGUAGE: 
-    // return deleteLanguage(state, action);
+
+
+
+
+    case actionTypes.MOVE_SKILLS_CATEGORY_TECHNOLOGY: 
+     return moveSkillsCategoryTechnology(state, action);
+    case actionTypes.DELETE_SKILLS_CATEGORY_TECHNOLOGY: 
+    return deleteSkillsCategoryTechnology(state, action);
 
    
    

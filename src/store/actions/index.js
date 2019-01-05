@@ -20,7 +20,10 @@ export {
   moveSkillsCategory,
   deleteSkillsCategory,
   addSkillsCategoryTechnology,
-  updateSkillsCategoryTechnology
+  updateSkillsCategoryTechnology,
+  moveSkillsCategoryTechnology,
+  deleteSkillsCategoryTechnology,
+  saveSkills
 }
 from "./skills"
 

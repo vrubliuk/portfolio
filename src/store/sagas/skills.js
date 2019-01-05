@@ -5,10 +5,10 @@ import * as API from "../../API";
 
 export function* saveSkills() {
   yield delay(2000)
-  // const {languages} = yield select(store => store.languages)
-  // try {
-  //   yield API.putLanguages(languages);
-  // } catch (err) {
-  //   alert(err);
-  // }
+  const {categories} = yield select(store => store.skills)
+  try {
+    yield API.putSkills(categories);
+  } catch (err) {
+    alert(err);
+  }
 }
