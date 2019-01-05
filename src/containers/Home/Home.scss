@@ -3,17 +3,23 @@
 .Home {
   min-height: 100vh;
   display: flex;
-  & > *:first-child {
+  & > .Sidebar {
     z-index: 1;
     min-width: 300px;
     width: 20%;
   }
-  & > *:last-child {
+  & > main {
     z-index: 0;
   
     width: 80%;
     padding-bottom: 80px;
   }
+
+  & > .Footer {
+    & button {
+      margin: 10px;
+    }
+  } 
 
   // .Button {
   //   position: absolute;
@@ -35,36 +41,21 @@
 
   // }
 
-  // .Resume {
-  //   position: sticky;
-  //   top: calc(100vh - 80px);
-  //   left: 0;
-  //   right: 0;
-  //   margin: auto;
-  // }
 
 
 
-  .Resume {
-    position: fixed;
-    // top: calc(100vh - 80px);
-    bottom: 0;
-    // left: 0;
-    // right: 0;
-    // margin: auto;
-    width:inherit;
-  }
+ 
 
 }
 
 @media (max-width: 750px) {
   .Home {
     display: block;
-    & > *:first-child {
+    & > .Sidebar {
      
       width: 100%;
     }
-    & > *:last-child {
+    & > main {
       
     
       width: 100%;

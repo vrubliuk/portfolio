@@ -8,9 +8,9 @@ import Profile from "../../components/Profile/Profile";
 import LogIn from "../../components/buttons/LogIn";
 
 import Button from "../../components/Button/Button.jsx"
-import Resume from "../../components/Resume/Resume";
 import Tags from "../../components/Tags/Tags";
 import Projects from "../../components/Projects/Projects";
+import Footer from "../../HOCs/Footer/Footer.jsx"
 import Isotope from "isotope-layout";
 
 
@@ -54,14 +54,19 @@ class Home extends Component {
         <Sidebar>
           <Profile profile={profile} categories={categories} languages={languages}  />
         </Sidebar>
-        <div>
+        <main>
           
           <Button icon="logIn" additionalClassName="blue" style={{ width: "40px", height: "40px", position: 'absolute', top: '20px', right: '20px'}} onClick={() => history.push('/admin')}/>
 
           <Tags projects={this.props.projects} activeTag={this.state.activeTag} setActiveTag={this.setActiveTag} />
           <Projects projects={this.props.projects} activeTag={this.state.activeTag} />
-          <Resume />
-        </div>
+          {/* <Resume /> */}
+        </main>
+        <Footer>
+          <Button icon="download" text="Download Resume" additionalClassName="blue" style={{ width: "200px", height: "40px"}} />
+          <Button icon="open" text="Open Resume" additionalClassName="blue" style={{ width: "200px", height: "40px"}} />
+        </Footer>
+
       </div>
     );
   }
