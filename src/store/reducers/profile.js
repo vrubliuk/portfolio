@@ -35,13 +35,8 @@ const initialState = {
       endDate: "2018"
     }
   ],
-  education: 
-    {
-      speciality: "Management of foreign economic activity",
-      institution: 'NTUU "Kyiv Polytechnic Institute"',
-      startDate: "2008",
-      endDate: "2014"
-    }
+
+
 };
 
 const setGeneral = (state, action) => {
@@ -57,11 +52,6 @@ const setContacts = (state, action) => {
   });
 };
 
-const setEducation = (state, action) => {
-  return updateState(state, {
-    education: {...state.education, ...action.payload}
-  });
-};
 
 
 
@@ -71,8 +61,7 @@ const reducer = (state = initialState, action) => {
     return setGeneral(state, action);
     case actionTypes.SET_CONTACTS: 
     return setContacts(state, action);
-    case actionTypes.SET_EDUCATION: 
-    return setEducation(state, action);
+  
 
    
    

@@ -9,8 +9,7 @@ export {
   setGeneral,
   setContacts,
   saveContacts,
-  setEducation,
-  saveEducation,
+
 }
 from "./profile"
 
@@ -26,6 +25,14 @@ export {
   saveSkills
 }
 from "./skills"
+
+
+export {
+  setEducation,
+  saveEducation,
+}
+from "./education"
+
 
 export {
   setLanguage,

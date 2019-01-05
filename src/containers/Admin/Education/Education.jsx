@@ -20,7 +20,7 @@ const Education = ({education, setEducation, saveEducation}) => {
 };
 
 
-const mapStateToProps = ({ profile }) => ({ education: profile.education });
+const mapStateToProps = ({ education }) => ({ education: education.education });
 const mapDispatchToProps = dispatch => {
   return {
     setEducation: payload => dispatch(actions.setEducation(payload)),
