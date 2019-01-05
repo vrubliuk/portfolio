@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
-import Footer from "../../../HOCs/Footer/Footer";
 import Button from "../../../components/Button/Button.jsx"
 
 
@@ -32,8 +31,8 @@ const Languages = ({languages, addLanguage, setLanguage, moveLanguage, deleteLan
     <TextInput value={language.name} changeHandler={value => handleChange(i, { name: value })} label="Name" />
     <TextInput value={language.level} changeHandler={value => handleChange(i, { level: value })} label="Level" />
     <DownUpDeleteButtonsBlock 
-    clickDownButtonHandler={() => handleMove(i, 1)}
-    clickUpButtonHandler={()=> handleMove(i, -1)}
+    clickDownButtonHandler={i !== languages.length - 1 ? () => handleMove(i, 1) : null}
+    clickUpButtonHandler={i !== 0 ? ()=> handleMove(i, -1) : null}
     clickDeleteButtonHandler={()=> handleDelete(i)}
     />
   
@@ -42,9 +41,9 @@ const Languages = ({languages, addLanguage, setLanguage, moveLanguage, deleteLan
 
 
   
-  <Footer>
+  
     <Button text="Add Language" additionalClassName="blue" style={{ width: "200px", height: "40px"}} onClick={() => addLanguage()}/>
-  </Footer>
+ 
   </div>;
 };
 

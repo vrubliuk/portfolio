@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
 
-const Profile = ({ profile, languages }) => {
-  const { general, contacts, skills, experiences, education } = profile;
+const Profile = ({ profile, categories, languages }) => {
+  const { general, contacts, experiences, education } = profile;
 
   return (
     <div className="Profile">
@@ -67,10 +67,10 @@ const Profile = ({ profile, languages }) => {
 
       <div className="section">
         <div className="title">Skills</div>
-        {skills.map((skill, i) => (
+        {categories.map((category, i) => (
           <div className="subsection" key={i}>
-            <div className="title">{skill.category}</div>
-            {skill.technologies.map((technology, i) => (
+            <div className="title">{category.name}</div>
+            {category.technologies.map((technology, i) => (
               <div className="row" key={i}>
                 {technology}
               </div>
@@ -124,6 +124,10 @@ const Profile = ({ profile, languages }) => {
 
 Profile.propTypes = {
   profile: PropTypes.object,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    technologies: PropTypes.arrayOf(PropTypes.string)
+  })) ,
   languages: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     level: PropTypes.string,

@@ -10,6 +10,10 @@ const initialState = {
     {
       name: "English",
       level: "professional"
+    },
+    {
+      name: "JavaScript",
+      level: "fluent"
     }
   ]
 };

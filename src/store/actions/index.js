@@ -4,6 +4,7 @@
   logOut
 }
 from "./auth";
+
 export {
   setGeneral,
   setContacts,
@@ -12,6 +13,16 @@ export {
   saveEducation,
 }
 from "./profile"
+
+export {
+  addSkillsCategory,
+  updateSkillsCategoryName,
+  moveSkillsCategory,
+  deleteSkillsCategory,
+  addSkillsCategoryTechnology,
+  updateSkillsCategoryTechnology
+}
+from "./skills"
 
 export {
   setLanguage,

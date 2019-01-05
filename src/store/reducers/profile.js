@@ -16,20 +16,7 @@ const initialState = {
     github: "github.com/vrubliuk",
     linkedIn: "github.com/vrubliuk"
   },
-  skills: [
-    {
-      category: "Front-end",
-      technologies: ["React, Redux", "Vue, Vuex"]
-    },
-    {
-      category: "Back-end",
-      technologies: ["Node", "MongoDB"]
-    },
-    {
-      category: "Others",
-      technologies: ["Photoshop", "Gimp"]
-    }
-  ],
+  
   experiences: [
     {
       

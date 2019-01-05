@@ -2,6 +2,7 @@ import { takeEvery, takeLatest, all } from "redux-saga/effects";
 import * as actionTypes from "../actions/actionTypes";
 import { logIn, logOut } from "./auth";
 import { saveContacts, saveEducation } from "./profile"
+import {saveSkills} from "./skills"
 import { saveLanguages } from "./languages"
 import {getProjects} from "./projects"
 
@@ -19,6 +20,10 @@ export function* watchProfile() {
     
   ])
 }
+
+export function* watchSkills() {
+  yield takeLatest(actionTypes.SAVE_SKILLS, saveSkills)
+ }
 
 export function* watchLanguages() {
  yield takeLatest(actionTypes.SAVE_LANGUAGES, saveLanguages)

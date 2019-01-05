@@ -47,12 +47,12 @@ class Home extends Component {
   }
 
   render() {
-    const {profile, languages, history} = this.props;
+    const {profile, categories, languages, history} = this.props;
 
     return (
       <div className="Home">
         <Sidebar>
-          <Profile profile={profile} languages={languages}  />
+          <Profile profile={profile} categories={categories} languages={languages}  />
         </Sidebar>
         <div>
           
@@ -67,6 +67,6 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ profile, languages, projects }) => ({ profile, languages: languages.languages, projects: projects.projects.sort((a, b) => b.priority - a.priority) });
+const mapStateToProps = ({ profile, skills, languages, projects }) => ({ profile, categories: skills.categories, languages: languages.languages, projects: projects.projects.sort((a, b) => b.priority - a.priority) });
 
 export default withRouter(connect(mapStateToProps)(Home));
