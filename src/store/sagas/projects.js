@@ -1,7 +1,7 @@
 import { delay } from "redux-saga";
-import { put } from "redux-saga/effects";
-import * as actions from "../actions";
-import * as API from "../../API";
+import {  } from "redux-saga/effects";
+// import * as actions from "../actions";
+// import * as API from "../../API";
 
 export function* getProjects(action) {
   yield delay(2000);

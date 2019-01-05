@@ -1,22 +1,8 @@
 import * as actionTypes from "../actions/actionTypes";
 import updateState from "../../helpers/updateState"
-import avatar from "../../assets/images/avatar.jpg"
+
 
 const initialState = {
-  general: {
-    name: "Valentyn",
-    surname: "Rubliuk",
-    qualification: "Full Stack Developer",
-    avatar: avatar
-  },
-  contacts: {
-    location: "Lviv, UA",
-    phone: "(063) 75 74 922",
-    email: "vrubliuk@gmail.com",
-    github: "github.com/vrubliuk",
-    linkedIn: "github.com/vrubliuk"
-  },
-  
   experiences: [
     {
       
@@ -36,21 +22,16 @@ const initialState = {
     }
   ],
 
-
 };
 
-const setGeneral = (state, action) => {
+const updateExperiences = (state, action) => {
   return updateState(state, {
     general: {...state.general, ...action.payload}
   });
 };
 
 
-const setContacts = (state, action) => {
-  return updateState(state, {
-    contacts: {...state.contacts, ...action.payload}
-  });
-};
+
 
 
 
@@ -58,15 +39,13 @@ const setContacts = (state, action) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_GENERAL: 
-    return setGeneral(state, action);
-    case actionTypes.SET_CONTACTS: 
-    return setContacts(state, action);
+    return updateExperiences(state, action);
+   
   
 
    
    
    
-    
     default:
       return state;
   }

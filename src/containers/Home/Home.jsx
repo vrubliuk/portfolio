@@ -5,7 +5,6 @@ import {withRouter } from "react-router-dom"
 import Sidebar from "../../HOCs/Sidebar/Sidebar.jsx";
 
 import Profile from "../../components/Profile/Profile";
-import LogIn from "../../components/buttons/LogIn";
 
 import Button from "../../components/Button/Button.jsx"
 import Tags from "../../components/Tags/Tags";
@@ -47,12 +46,12 @@ class Home extends Component {
   }
 
   render() {
-    const {profile, categories, education, languages, history} = this.props;
+    const {profile, history} = this.props;
 
     return (
       <div className="Home">
         <Sidebar>
-          <Profile profile={profile} categories={categories} education={education} languages={languages}  />
+          <Profile profile={profile}   />
         </Sidebar>
         <main>
           
@@ -72,6 +71,8 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ profile, skills, education, languages, projects }) => ({ profile, categories: skills.categories, education: education.education, languages: languages.languages, projects: projects.projects.sort((a, b) => b.priority - a.priority) });
-
+const mapStateToProps = ({ general, contacts, skills, experiences, education, languages, projects }) => ({
+  profile: {...general, ...contacts, ...skills, ...experiences, ...education, ...languages },
+  projects: projects.projects.sort((a, b) => b.priority - a.priority) });
+  
 export default withRouter(connect(mapStateToProps)(Home));

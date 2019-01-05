@@ -34,7 +34,7 @@ class AuthForm extends Component {
           <input className="input" type="password" required value={this.state.password} onChange={e => this.handleInput(e, "password")} />
           <div className="footer">
             <Button text="Log in" type="submit" additionalClassName="transparent" style={{ height: "40px", padding: "0 16px" }} />
-            {this.props.errorWasReceived && <div className="error">Incorrect email address or password</div>}
+            {errorWasReceived && <div className="error">Incorrect email address or password</div>}
           </div>
         </form>
       </div>

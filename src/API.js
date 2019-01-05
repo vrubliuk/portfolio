@@ -17,6 +17,15 @@ export const putContacts = (location, phone, email, github, linkedIn) => {
   })
 }
 
+export const putExperiences = (experiences) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+      console.log(experiences);
+    }, 1000)
+  })
+}
+
 export const putSkills = (skills) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

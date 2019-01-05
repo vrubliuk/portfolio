@@ -1,6 +1,6 @@
 import { delay } from "redux-saga";
-import { put, select } from "redux-saga/effects";
-import * as actions from "../actions/index"
+import { select } from "redux-saga/effects";
+// import * as actions from "../actions/index"
 import * as API from "../../API";
 
 export function* saveSkills() {

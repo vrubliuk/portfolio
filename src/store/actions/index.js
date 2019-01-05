@@ -7,11 +7,18 @@ from "./auth";
 
 export {
   setGeneral,
+  saveGeneral
+
+}
+from "./general"
+
+export {
+  
   setContacts,
   saveContacts,
 
 }
-from "./profile"
+from "./contacts"
 
 export {
   addSkillsCategory,
@@ -26,6 +33,11 @@ export {
 }
 from "./skills"
 
+export {
+  updateExperiences,
+  saveExperiences,
+}
+from "./experiences"
 
 export {
   setEducation,

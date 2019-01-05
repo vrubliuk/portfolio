@@ -3,15 +3,14 @@ import {  select } from "redux-saga/effects";
 // import * as actions from "../actions/index"
 import * as API from "../../API";
 
-export function* saveLanguages() {
+export function* saveExperiences() {
   yield delay(2000)
-  const {languages} = yield select(store => store.languages)
+  const {experiences} = yield select(store => store.experiences)
   try {
-    yield API.putLanguages(languages);
+    yield API.putExperiences(experiences);
   } catch (err) {
     alert(err);
   }
 }
-
 
 

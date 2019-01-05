@@ -21,7 +21,7 @@ const Contacts = ({contacts, setContacts, saveContacts}) => {
   </div>;
 };
 
-const mapStateToProps = ({ profile }) => ({ contacts: profile.contacts });
+const mapStateToProps = ({ contacts}) => ({ contacts: contacts.contacts });
 const mapDispatchToProps = dispatch => {
   return {
     setContacts: payload => dispatch(actions.setContacts(payload)),

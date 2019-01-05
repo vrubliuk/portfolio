@@ -1,10 +1,10 @@
-﻿import { delay } from "redux-saga";
+﻿// import { delay } from "redux-saga";
 import { put } from "redux-saga/effects";
 import {setToken} from "../actions";
-import * as API from "../../API";
+// import * as API from "../../API";
 
 export function* logIn(action) {
-  // yield put(actionCreators.setLoader(true));
+  yield console.log("log in")
   try {
     // const res = yield API.postEmailPassword(action.email, action.password);
     // yield (localStorage.refreshTokenRequirements = res.data.refreshToken);
@@ -21,6 +21,5 @@ export function* logIn(action) {
 
 export function* logOut() {
   yield put(setToken(null));
-  
 }
 
