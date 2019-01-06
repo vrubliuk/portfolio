@@ -77,7 +77,7 @@ class Home extends Component {
 
 const mapStateToProps = ({ general, contacts, skills, experiences, education, languages, projects, resume }) => ({
   profile: { ...general, ...contacts, ...skills, ...experiences, ...education, ...languages },
-  projects: projects.projects.sort((a, b) => b.priority - a.priority),
+  projects: projects.projects,
   resume: resume.resume
 });
 
