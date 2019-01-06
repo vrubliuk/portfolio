@@ -1,7 +1,7 @@
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { watchAuth, watchGeneral, watchContacts, watchSkills, watchExperiences, watchEducation, watchLanguages, watchProjects } from "./sagas";
+import { watchAuth, watchGeneral, watchContacts, watchSkills, watchExperiences, watchEducation, watchLanguages, watchProjects, watchResume } from "./sagas";
 import reducers from "./reducers"
 
 const sagaMiddleware = createSagaMiddleware();
@@ -15,5 +15,7 @@ sagaMiddleware.run(watchExperiences);
 sagaMiddleware.run(watchEducation);
 sagaMiddleware.run(watchLanguages);
 sagaMiddleware.run(watchProjects);
+sagaMiddleware.run(watchResume);
+
 
 export default store;
