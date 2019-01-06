@@ -1,24 +1,8 @@
-﻿export {
-  setToken,
-  logIn,
-  logOut
-}
-from "./auth";
+﻿export { setToken, logIn, logOut } from "./auth";
 
-export {
-  setGeneral,
-  saveGeneral
+export { setGeneral, saveGeneral } from "./general";
 
-}
-from "./general"
-
-export {
-  
-  setContacts,
-  saveContacts,
-
-}
-from "./contacts"
+export { setContacts, saveContacts } from "./contacts";
 
 export {
   addSkillsCategory,
@@ -30,35 +14,12 @@ export {
   moveSkillsCategoryTechnology,
   deleteSkillsCategoryTechnology,
   saveSkills
-}
-from "./skills"
+} from "./skills";
 
-export {
-  updateExperiences,
-  saveExperiences,
-}
-from "./experiences"
+export { addExperience, updateExperience, moveExperience, deleteExperience, saveExperiences } from "./experiences";
 
-export {
-  setEducation,
-  saveEducation,
-}
-from "./education"
+export { setEducation, saveEducation } from "./education";
 
+export { setLanguage, addLanguage, moveLanguage, deleteLanguage, saveLanguages } from "./languages";
 
-export {
-  setLanguage,
-  addLanguage,
-  moveLanguage,
-  deleteLanguage,
-  saveLanguages
-}
-from "./languages"
-
-
-
-
-export {
-  getProjects
-}
-from "./projects"
+export { getProjects } from "./projects";
