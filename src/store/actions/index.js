@@ -23,3 +23,5 @@ export { setEducation, saveEducation } from "./education";
 export { setLanguage, addLanguage, moveLanguage, deleteLanguage, saveLanguages } from "./languages";
 
 export { getProjects } from "./projects";
+
+export { updateResume, saveResume, deleteResume } from "./resume";

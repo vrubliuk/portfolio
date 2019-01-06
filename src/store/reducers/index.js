@@ -7,6 +7,7 @@ import experiences from "./experiences"
 import education from "./education"
 import languages from "./languages"
 import projects from "./projects"
+import resume from "./resume"
 
 
 export default combineReducers({
@@ -18,4 +19,5 @@ export default combineReducers({
   education,
   languages,
   projects,
+  resume
 })

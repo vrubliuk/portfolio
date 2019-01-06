@@ -42,3 +42,8 @@ export const SAVE_LANGUAGES = "SAVE_LANGUAGES";
 
 // PROJECTS
 export const GET_PROJECTS = "GET_PROJECTS";
+
+// RESUME
+export const UPDATE_RESUME = "UPDATE_RESUME";
+export const SAVE_RESUME = "SAVE_RESUME";
+export const DELETE_RESUME = "DELETE_RESUME";
