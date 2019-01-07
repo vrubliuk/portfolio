@@ -3,8 +3,6 @@ import "./Projects.scss";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
-
-import screenshot from "../../assets/images/calendar.jpg";
 import Button from "../Button/Button";
 
 const Projects = ({ projects, activeTag }) => {
@@ -17,9 +15,9 @@ const Projects = ({ projects, activeTag }) => {
       {filteredProjects.map((project, i) => (
         <div className={`isotope-project ${project.tags.join(" ")}`} key={i}>
           <div>
-            <img src={screenshot} alt="" />
+            <img src={project.screenshotURL} alt="" />
             <div className="cover">
-              <div className="summary">Some shit</div>
+              <div className="summary">{project.summary}</div>
               <div className="buttons">
                 <a href={project.websiteURL} target="_blank" rel="noreferrer noopener">
                   <Button icon="open" text="Open Website" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />

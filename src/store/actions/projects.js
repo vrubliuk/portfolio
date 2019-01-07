@@ -73,3 +73,18 @@ export const saveProjects = () => {
     type: actionTypes.SAVE_PROJECTS
   };
 };
+
+export const saveProjectScreenshot = (projectId, file) => {
+  return {
+    type: actionTypes.SAVE_PROJECT_SCREENSHOT,
+    projectId,
+    file
+  };
+};
+
+export const deleteProjectScreenshot = (projectId) => {
+  return {
+    type: actionTypes.DELETE_PROJECT_SCREENSHOT,
+    projectId
+  };
+};

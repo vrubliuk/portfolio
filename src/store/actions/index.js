@@ -32,7 +32,9 @@ export {
   updateProjectTag,
   moveProjectTag,
   deleteProjectTag,
-  saveProjects
+  saveProjects,
+  saveProjectScreenshot,
+  deleteProjectScreenshot
 } from "./projects";
 
 export { updateResume, saveResume, deleteResume } from "./resume";

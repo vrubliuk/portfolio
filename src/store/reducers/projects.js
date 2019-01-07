@@ -1,11 +1,12 @@
 import * as actionTypes from "../actions/actionTypes";
 import updateState from "../../helpers/updateState";
+import screenshot from "../../assets/images/calendar.jpg";
 
 const initialState = {
   projects: [
     {
       name: "Calendar",
-      screenshotURL: "",
+      screenshotURL: screenshot,
       summary: "Some text",
       tags: ["jQuery"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",
@@ -13,7 +14,7 @@ const initialState = {
     },
     {
       name: "Calendar",
-      screenshotURL: "",
+      screenshotURL: screenshot,
       summary: "Some text",
       tags: ["React", "jQuery", "Vue", "Vue", "Vue"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",
@@ -21,7 +22,7 @@ const initialState = {
     },
     {
       name: "Calendar",
-      screenshotURL: "",
+      screenshotURL: screenshot,
       summary: "Some text",
       tags: ["React", "jQuery", "Vue"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",

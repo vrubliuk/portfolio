@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./Projects.scss";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
-import all from "../../../helpers/all"
+import all from "../../../helpers/all";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
 import Button from "../../../components/Button/Button.jsx";
+import ImageInput from "../../../components/inputs/ImageInput/ImageInput";
+import Textarea from "../../../components/inputs/Textarea/Textarea";
 
 // const Projects = ({ projects, updateProject, moveProject, deleteProject, addProjectTag, updateProjectTag, moveProjectTag, deleteProjectTag, saveProjects }) => {
 //   return <div className="Projects">AdminProjects</div>;
@@ -18,7 +20,20 @@ class Projects extends Component {
 
   render() {
     const { openedProjectIndex } = this.state;
-    const { projects, addProject, updateProject, moveProject, deleteProject, addProjectTag, updateProjectTag, moveProjectTag, deleteProjectTag, saveProjects } = this.props;
+    const {
+      projects,
+      addProject,
+      updateProject,
+      moveProject,
+      deleteProject,
+      addProjectTag,
+      updateProjectTag,
+      moveProjectTag,
+      deleteProjectTag,
+      saveProjects,
+      saveProjectScreenshot,
+      deleteProjectScreenshot
+    } = this.props;
 
     return (
       <div className="Projects">
@@ -28,13 +43,30 @@ class Projects extends Component {
               {project.name ? project.name : "Your project name"}
             </div>
             <div className="description" style={openedProjectIndex === i ? null : { height: 0 }}>
-              <TextInput value={project.name} label="Name" 
-              changeHandler={value => all(() =>updateProject(i, { name: value }), ()=> saveProjects())} />
-              <TextInput value={project.websiteURL} label="Website URL" 
-              changeHandler={value => all(() =>updateProject(i, { websiteURL: value }),()=> saveProjects())} />
-              <TextInput value={project.repositoryURL} label="Repository URL" 
-              changeHandler={value => all(()=>updateProject(i, { repositoryURL: value }),()=> saveProjects())} />
-              
+              <TextInput value={project.name} label="Name" changeHandler={value => all(() => updateProject(i, { name: value }), () => saveProjects())} />
+              <ImageInput
+                value={project.screenshotURL}
+                label="Screenshot"
+                changeHandler={ (value, file) => all(() => updateProject(i, { screenshotURL: value }), () => saveProjectScreenshot(i, file))}
+                removeHandler={() => all(() => updateProject(i, { screenshotURL: null }), () => deleteProjectScreenshot(i))}
+              />
+              <Textarea 
+                label='Summary'
+                placeholder="Few words about the project..."
+                value={project.summary} 
+                changeHandler={value => all(()=> updateProject(i, { summary: value }), () => saveProjects() )}
+               />
+
+              <TextInput
+                value={project.websiteURL}
+                label="Website URL"
+                changeHandler={value => all(() => updateProject(i, { websiteURL: value }), () => saveProjects())}
+              />
+              <TextInput
+                value={project.repositoryURL}
+                label="Repository URL"
+                changeHandler={value => all(() => updateProject(i, { repositoryURL: value }), () => saveProjects())}
+              />
             </div>
           </div>
         ))}
@@ -55,7 +87,9 @@ const mapDispatchToProps = dispatch => {
     updateProjectTag: (projectIndex, tagIndex, value) => dispatch(actions.updateProjectTag(projectIndex, tagIndex, value)),
     moveProjectTag: (projectIndex, tagIndex, direction) => dispatch(actions.moveProjectTag(projectIndex, tagIndex, direction)),
     deleteProjectTag: (projectIndex, tagIndex) => dispatch(actions.deleteProjectTag(projectIndex, tagIndex)),
-    saveProjects: () => dispatch(actions.saveProjects())
+    saveProjects: () => dispatch(actions.saveProjects()),
+    saveProjectScreenshot: (projectId, file) => dispatch(actions.saveProjectScreenshot(projectId, file)),
+    deleteProjectScreenshot: projectId => dispatch(actions.deleteProjectScreenshot(projectId))
   };
 };
 

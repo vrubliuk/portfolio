@@ -12,7 +12,7 @@ class ImageInput extends Component {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {
-      this.props.changeHandler(reader.result);
+      this.props.changeHandler(reader.result, file);
     };
     file && reader.readAsDataURL(file);
   };

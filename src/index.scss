@@ -4,6 +4,7 @@
 * {
   box-sizing: border-box;
   outline: none;
+  font-family: inherit;
 }
 
 body {
@@ -31,7 +32,6 @@ a {
 }
 
 input {
-  font-family: inherit;
   font-size: 16px;
   height: 40px;
   border: none;
@@ -39,9 +39,15 @@ input {
   background-color: white;
 }
 
+textarea {
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  background-color: white;
+}
+
 
 button {
-  font-family: inherit;
   font-size: inherit;
   transition: 0.2s;
   cursor: pointer;
