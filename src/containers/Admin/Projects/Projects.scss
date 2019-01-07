@@ -1,0 +1,23 @@
+@import '../../../assets/styles/variables.scss';
+
+.Projects {
+  
+  .project {
+    border: 1px solid $blue;
+    overflow: hidden;
+    .title {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 40px;
+      padding: 0 20px;
+      color: #8c8c8c;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .description {
+   
+    }
+  }
+  
+}

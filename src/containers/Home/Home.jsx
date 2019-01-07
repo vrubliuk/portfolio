@@ -28,7 +28,7 @@ class Home extends Component {
   initIsotope = () => {
     const projects = document.querySelector(".Projects");
     this.isotope = new Isotope(projects, {
-      itemSelector: ".project",
+      itemSelector: ".isotope-project",
       masonry: {
         isFitWidth: true
       }

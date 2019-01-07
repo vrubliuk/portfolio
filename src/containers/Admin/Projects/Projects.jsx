@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Projects.scss";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
+import all from "../../../helpers/all"
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
 import Button from "../../../components/Button/Button.jsx";
@@ -12,24 +13,32 @@ import Button from "../../../components/Button/Button.jsx";
 
 class Projects extends Component {
   state = {
-    openedProjectIndex: 0
+    openedProjectIndex: null
   };
 
   render() {
-    const { projects, updateProject, moveProject, deleteProject, addProjectTag, updateProjectTag, moveProjectTag, deleteProjectTag, saveProjects } = this.props;
+    const { openedProjectIndex } = this.state;
+    const { projects, addProject, updateProject, moveProject, deleteProject, addProjectTag, updateProjectTag, moveProjectTag, deleteProjectTag, saveProjects } = this.props;
 
     return (
       <div className="Projects">
         {projects.map((project, i) => (
-          <div className="project">
-  
-            <div className="title">{project.name ? project.name : "Your project name"}</div>
-            <div className="description">
-            <TextInput value={project.name} label="Name" changeHandler={value => (updateProject(i, { name: value }), saveProjects())} />
-            
+          <div className="project" key={i}>
+            <div className="title" onClick={() => this.setState({ openedProjectIndex: openedProjectIndex === i ? null : i })}>
+              {project.name ? project.name : "Your project name"}
+            </div>
+            <div className="description" style={openedProjectIndex === i ? null : { height: 0 }}>
+              <TextInput value={project.name} label="Name" 
+              changeHandler={value => all(() =>updateProject(i, { name: value }), ()=> saveProjects())} />
+              <TextInput value={project.websiteURL} label="Website URL" 
+              changeHandler={value => all(() =>updateProject(i, { websiteURL: value }),()=> saveProjects())} />
+              <TextInput value={project.repositoryURL} label="Repository URL" 
+              changeHandler={value => all(()=>updateProject(i, { repositoryURL: value }),()=> saveProjects())} />
+              
             </div>
           </div>
         ))}
+        <Button text="Add project" additionalClassName="blue" style={{ width: "200px", height: "40px" }} onClick={() => addProject()} />
       </div>
     );
   }

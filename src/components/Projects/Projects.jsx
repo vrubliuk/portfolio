@@ -15,7 +15,7 @@ const Projects = ({ projects, activeTag }) => {
   return (
     <div className="Projects">
       {filteredProjects.map((project, i) => (
-        <div className={`project ${project.tags.join(" ")}`} key={i}>
+        <div className={`isotope-project ${project.tags.join(" ")}`} key={i}>
           <div>
             <img src={screenshot} alt="" />
             <div className="cover">

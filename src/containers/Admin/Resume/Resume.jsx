@@ -1,19 +1,17 @@
 import React from "react";
-
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
-
-import TextInput from "../../../components/inputs/TextInput/TextInput";
+import all from "../../../helpers/all";
 import FileInput from "../../../components/inputs/FileInput/FileInput";
 
 const Resume = ({ resume, updateResume, saveResume, deleteResume }) => {
   return (
     <div className="Resume">
       <FileInput
-        fileName={ resume && resume.name || resume }
+        fileName={(resume && resume.name) || resume}
         label="Resume"
-        changeHandler={value => (updateResume(value), saveResume())}
-        removeHandler={() => (updateResume(null), deleteResume())}
+        changeHandler={(value) => all(() => updateResume(value), () => saveResume())}
+        removeHandler={() => all(() => updateResume(null), () => deleteResume())}
       />
     </div>
   );
@@ -24,7 +22,7 @@ const mapDispatchToProps = dispatch => {
   return {
     updateResume: file => dispatch(actions.updateResume(file)),
     saveResume: () => dispatch(actions.saveResume()),
-    deleteResume: () => dispatch(actions.deleteResume()),
+    deleteResume: () => dispatch(actions.deleteResume())
   };
 };
 
