@@ -7,7 +7,7 @@ import { saveSkills } from "./skills";
 import { saveExperiences } from "./experiences";
 import { saveEducation } from "./education";
 import { saveLanguages } from "./languages";
-import { getProjects, saveProjects } from "./projects";
+import { getProjects, saveProjects, saveProjectScreenshot, deleteProjectScreenshot } from "./projects";
 import { saveResume, deleteResume } from "./resume";
 
 export function* watchAuth() {
@@ -41,6 +41,8 @@ export function* watchLanguages() {
 export function* watchProjects() {
   yield takeLatest(actionTypes.GET_PROJECTS, getProjects);
   yield takeLatest(actionTypes.SAVE_PROJECTS, saveProjects);
+  yield takeEvery(actionTypes.SAVE_PROJECT_SCREENSHOT, saveProjectScreenshot);
+  yield takeEvery(actionTypes.DELETE_PROJECT_SCREENSHOT, deleteProjectScreenshot);
 }
 
 export function* watchResume() {

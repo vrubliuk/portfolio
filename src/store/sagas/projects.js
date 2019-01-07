@@ -31,3 +31,20 @@ export function* saveProjects() {
   }
 }
 
+export function* saveProjectScreenshot({projectId, file}) {
+  yield delay(2000)
+  try {
+    yield API.putProjectScreenshot(projectId, file);
+  } catch (err) {
+    alert(err);
+  }
+}
+
+export function* deleteProjectScreenshot({projectId}) {
+  yield delay(2000)
+  try {
+    yield API.deleteProjectScreenshot(projectId);
+  } catch (err) {
+    alert(err);
+  }
+}

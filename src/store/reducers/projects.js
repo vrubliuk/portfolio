@@ -13,15 +13,15 @@ const initialState = {
       repositoryURL: "https://github.com/vrubliuk/painting-cart/"
     },
     {
-      name: "Calendar",
+      name: "Requirements",
       screenshotURL: screenshot,
       summary: "Some text",
-      tags: ["React", "jQuery", "Vue", "Vue", "Vue"],
+      tags: ["React", "jQuery", "Vue"],
       websiteURL: "https://vrubliuk.github.io/painting-cart/",
       repositoryURL: "https://github.com/vrubliuk/painting-cart/"
     },
     {
-      name: "Calendar",
+      name: "Statistics",
       screenshotURL: screenshot,
       summary: "Some text",
       tags: ["React", "jQuery", "Vue"],
@@ -116,7 +116,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.DELETE_PROJECT:
       return deleteProject(state, action);
     case actionTypes.ADD_PROJECT_TAG:
-      return addProjectTag(state);
+      return addProjectTag(state, action);
     case actionTypes.UPDATE_PROJECT_TAG:
       return updateProjectTag(state, action);
     case actionTypes.MOVE_PROJECT_TAG:

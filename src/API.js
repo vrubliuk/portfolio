@@ -78,3 +78,21 @@ export const putProjects = projects => {
     }, 1000);
   });
 };
+
+export const putProjectScreenshot = (projectId, file) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+      console.log(projectId, file);
+    }, 1000);
+  });
+};
+
+export const deleteProjectScreenshot = projectId => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+      console.log(projectId);
+    }, 1000);
+  });
+};
