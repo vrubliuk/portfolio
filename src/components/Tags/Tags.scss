@@ -4,16 +4,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  // padding: 20px;
   .tag {
-    height: 40px;
+    height: 80px;
     padding: 0 15px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     background-color: transparent;
-    color: rgb(140, 140, 140);
-    border-top: 2px solid transparent;
-    // border-bottom: 2px solid transparent;
+    // color: rgb(140, 140, 140);
+    color: #a0a0a0;
+  
+    border-top: 3px solid transparent; 
+    border-bottom: 3px solid transparent;
 
     // border: 1px solid transparent;
 
@@ -24,7 +26,8 @@
   }
 
   .tag-active {
-    border-top: 2px solid $blue;
+    border-top: 3px solid $blue;
+    
     // border: 1px solid $blue;
     color: $blue;
     // &:hover {

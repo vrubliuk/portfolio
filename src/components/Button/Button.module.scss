@@ -7,7 +7,7 @@
   justify-content: center;
   
   
-
+  border-radius: 6px; 
 
   .icon-small {
     font-size: 11px;
@@ -25,11 +25,11 @@
 
   &.blue {
     background-color: $blue;
-    box-shadow: 0 0 10px $blue;
+    // box-shadow: 0 0 10px $blue;
     color: white;
     &:hover {
       background-color: $blue-darker;
-      box-shadow: 0 0 10px $blue-darker;
+      // box-shadow: 0 0 10px $blue-darker;
     }
 
   }

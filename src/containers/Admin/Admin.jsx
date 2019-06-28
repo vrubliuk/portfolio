@@ -56,7 +56,7 @@ const Admin = ({ logOut, history, location }) => {
       <Button
         icon="logOut"
         additionalClassName="blue"
-        style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px" }}
+        style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }}
         onClick={() =>  history.replace("/")}
       />
     </div>
