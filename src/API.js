@@ -1,4 +1,10 @@
-﻿export const putGeneral = (name, surname, qualification) => {
+﻿import axios from "./axios";
+
+export const getUser = () => {
+  return axios.get("users/me")
+}
+
+export const putGeneral = (name, surname, qualification) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve();

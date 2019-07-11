@@ -1,4 +1,6 @@
-﻿export { setToken, logIn, logOut } from "./auth";
+﻿export { getUser } from "./user";
+
+export { setToken, logIn, logOut } from "./auth";
 
 export { setGeneral, saveGeneral } from "./general";
 

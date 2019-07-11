@@ -1,5 +1,6 @@
 import { takeEvery, takeLatest, all } from "redux-saga/effects";
 import * as actionTypes from "../actions/actionTypes";
+import { getUser } from "./user";
 import { logIn, logOut } from "./auth";
 import { saveGeneral } from "./general";
 import { saveContacts } from "./contacts";
@@ -9,6 +10,10 @@ import { saveEducation } from "./education";
 import { saveLanguages } from "./languages";
 import { getProjects, saveProjects, saveProjectScreenshot, deleteProjectScreenshot } from "./projects";
 import { saveResume, deleteResume } from "./resume";
+
+export function* watchUser() {
+  yield takeEvery(actionTypes.GET_USER, getUser);
+}
 
 export function* watchAuth() {
   yield all([takeLatest(actionTypes.LOG_IN, logIn), takeEvery(actionTypes.LOG_OUT, logOut)]);

@@ -4,6 +4,7 @@ import avatar from "../../assets/images/avatar.jpg"
 
 const initialState = {
   general: {
+    _id: "",
     name: "Valentyn",
     surname: "Rubliuk",
     qualification: "Full Stack Developer",
