@@ -1,3 +1,3 @@
 export default (...args) => {
-  args.forEach(arg => arg());
+  args.forEach(arg => typeof arg === 'function' && arg());
 };

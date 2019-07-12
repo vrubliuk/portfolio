@@ -1,4 +1,7 @@
-﻿// AUTH
+﻿// USER
+export const GET_USER = "GET_USER";
+
+// AUTH
 export const LOG_IN = "LOG_IN";
 export const LOG_OUT = "LOG_OUT";
 export const SET_TOKEN = "SET_TOKEN";
@@ -34,11 +37,11 @@ export const SET_EDUCATION = "SET_EDUCATION";
 export const SAVE_EDUCATION = "SAVE_EDUCATION";
 
 // LANGUAGES
-export const SET_LANGUAGE = "SET_LANGUAGE";
-export const ADD_LANGUAGE = "ADD_LANGUAGE";
+export const SET_LANGUAGES = "SET_LANGUAGES";
+export const CREATE_LANGUAGE = "CREATE_LANGUAGE";
+export const UPDATE_LANGUAGE = "UPDATE_LANGUAGE";
 export const MOVE_LANGUAGE = "MOVE_LANGUAGE";
 export const DELETE_LANGUAGE = "DELETE_LANGUAGE";
-export const SAVE_LANGUAGES = "SAVE_LANGUAGES";
 
 // PROJECTS
 export const GET_PROJECTS = "GET_PROJECTS";

@@ -1,14 +1,19 @@
 import { takeEvery, takeLatest, all } from "redux-saga/effects";
 import * as actionTypes from "../actions/actionTypes";
+import { getUser } from "./user";
 import { logIn, logOut } from "./auth";
 import { saveGeneral } from "./general";
 import { saveContacts } from "./contacts";
 import { saveSkills } from "./skills";
 import { saveExperiences } from "./experiences";
 import { saveEducation } from "./education";
-import { saveLanguages } from "./languages";
+import { createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 import { getProjects, saveProjects, saveProjectScreenshot, deleteProjectScreenshot } from "./projects";
 import { saveResume, deleteResume } from "./resume";
+
+export function* watchUser() {
+  yield takeEvery(actionTypes.GET_USER, getUser);
+}
 
 export function* watchAuth() {
   yield all([takeLatest(actionTypes.LOG_IN, logIn), takeEvery(actionTypes.LOG_OUT, logOut)]);
@@ -35,7 +40,10 @@ export function* watchEducation() {
 }
 
 export function* watchLanguages() {
-  yield takeLatest(actionTypes.SAVE_LANGUAGES, saveLanguages);
+  yield takeEvery(actionTypes.CREATE_LANGUAGE, createLanguage);
+  yield takeLatest(actionTypes.UPDATE_LANGUAGE, updateLanguage);
+  yield takeEvery(actionTypes.MOVE_LANGUAGE, moveLanguage);
+  yield takeEvery(actionTypes.DELETE_LANGUAGE, deleteLanguage);
 }
 
 export function* watchProjects() {

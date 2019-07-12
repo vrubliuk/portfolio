@@ -1,36 +1,39 @@
 import * as actionTypes from "./actionTypes";
 
-export const addLanguage = () => {
+export const setLanguages = (payload) => {
   return {
-    type: actionTypes.ADD_LANGUAGE,
-  };
-};
-
-export const setLanguage = (index, payload) => {
-  return {
-    type: actionTypes.SET_LANGUAGE,
-    index,
+    type: actionTypes.SET_LANGUAGES,
     payload
   };
 };
 
-export const moveLanguage = (index, indexDifference) => { // перейменувати на зміщення
+export const createLanguage = (name, level) => {
+  return {
+    type: actionTypes.CREATE_LANGUAGE,
+    name,
+    level
+  };
+};
+
+export const updateLanguage = (id, payload) => {
+  return {
+    type: actionTypes.UPDATE_LANGUAGE,
+    id,
+    payload
+  };
+};
+
+export const moveLanguage = (id, direction) => {
   return {
     type: actionTypes.MOVE_LANGUAGE,
-    index,
-    indexDifference
+    id,
+    direction
   };
 };
 
-export const deleteLanguage = (index) => { 
+export const deleteLanguage = (id) => { 
   return {
     type: actionTypes.DELETE_LANGUAGE,
-    index
-  };
-};
-
-export const saveLanguages = () => {
-  return {
-    type: actionTypes.SAVE_LANGUAGES,
+    id
   };
 };

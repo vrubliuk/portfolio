@@ -13,8 +13,10 @@
       font-size: 18px;
       text-align: center;
       font-weight: 600;
+      color: white;
     }
     .subsection {
+      color: rgb(158, 162, 168);
       & > *.title {
         font-weight: 500;
       }
@@ -26,7 +28,9 @@
 
   .general {
     align-items: center;
-    background: rgba(0, 0, 0, 0.25);
+    //background: $blue-darker;
+    background: rgb(65, 72, 82);
+    color: white;
     .avatar {
       width: 150px;
       height: 150px;
@@ -49,6 +53,9 @@
     }
   }
   .contact {
+    color: rgb(158, 162, 168);
+    // color: white;
+    
     .row {
       display: flex;
       align-items: center;

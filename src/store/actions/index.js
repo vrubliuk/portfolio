@@ -1,4 +1,6 @@
-﻿export { setToken, logIn, logOut } from "./auth";
+﻿export { getUser } from "./user";
+
+export { setToken, logIn, logOut } from "./auth";
 
 export { setGeneral, saveGeneral } from "./general";
 
@@ -20,7 +22,7 @@ export { addExperience, updateExperience, moveExperience, deleteExperience, save
 
 export { setEducation, saveEducation } from "./education";
 
-export { setLanguage, addLanguage, moveLanguage, deleteLanguage, saveLanguages } from "./languages";
+export {setLanguages, createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 
 export {
   getProjects,

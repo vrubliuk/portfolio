@@ -57,7 +57,7 @@ class Home extends Component {
           <Button
             icon="logIn"
             additionalClassName="blue"
-            style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px" }}
+            style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }} 
             onClick={() => history.push("/admin")}
           />
 

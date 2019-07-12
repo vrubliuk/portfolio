@@ -2,9 +2,11 @@
 import { put } from "redux-saga/effects";
 import {setToken} from "../actions";
 // import * as API from "../../API";
+//import axios from "../../axios";
 
 export function* logIn(action) {
   yield console.log("log in")
+  // yield (axios.defaults.headers.common["Authorization"] = `Bearer ${token}`);
   try {
     // const res = yield API.postEmailPassword(action.email, action.password);
     // yield (localStorage.refreshTokenRequirements = res.data.refreshToken);
