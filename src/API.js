@@ -1,11 +1,11 @@
 ﻿import axios from "./axios";
 
 export const getUser = () => {
-  return axios.get(`users/${process.env.REACT_APP_USER_ID}`)
-}
+  return axios.get(`users/${process.env.REACT_APP_USER_ID}`);
+};
 
 export const putUser = (_id, payload) => {
-  return axios.put(`users/${_id}`, payload)
+  return axios.put(`users/${_id}`, payload);
 };
 
 export const putExperiences = experiences => {
@@ -35,14 +35,17 @@ export const putEducation = (speciality, institution, startDate, endDate) => {
   });
 };
 
-export const putLanguages = languages => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      console.log(languages);
-    }, 1000);
-  });
-};
+// languages
+
+export const postLanguage = payload => axios.post("languages", payload);
+
+export const putLanguage = (id, payload) => axios.put(`languages/${id}`, payload);
+
+export const deleteLanguage = id => axios.delete(`languages/${id}`)
+
+
+
+
 
 export const putResume = file => {
   return new Promise((resolve, reject) => {

@@ -7,37 +7,33 @@ export const setLanguages = (payload) => {
   };
 };
 
-export const addLanguage = () => {
+export const createLanguage = (name, level) => {
   return {
-    type: actionTypes.ADD_LANGUAGE,
+    type: actionTypes.CREATE_LANGUAGE,
+    name,
+    level
   };
 };
 
-export const setLanguage = (index, payload) => {
+export const updateLanguage = (id, payload) => {
   return {
-    type: actionTypes.SET_LANGUAGE,
-    index,
+    type: actionTypes.UPDATE_LANGUAGE,
+    id,
     payload
   };
 };
 
-export const moveLanguage = (index, direction) => {
+export const moveLanguage = (id, direction) => {
   return {
     type: actionTypes.MOVE_LANGUAGE,
-    index,
+    id,
     direction
   };
 };
 
-export const deleteLanguage = (index) => { 
+export const deleteLanguage = (id) => { 
   return {
     type: actionTypes.DELETE_LANGUAGE,
-    index
-  };
-};
-
-export const saveLanguages = () => {
-  return {
-    type: actionTypes.SAVE_LANGUAGES,
+    id
   };
 };

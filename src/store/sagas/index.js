@@ -7,7 +7,7 @@ import { saveContacts } from "./contacts";
 import { saveSkills } from "./skills";
 import { saveExperiences } from "./experiences";
 import { saveEducation } from "./education";
-import { saveLanguages } from "./languages";
+import { createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 import { getProjects, saveProjects, saveProjectScreenshot, deleteProjectScreenshot } from "./projects";
 import { saveResume, deleteResume } from "./resume";
 
@@ -40,7 +40,10 @@ export function* watchEducation() {
 }
 
 export function* watchLanguages() {
-  yield takeLatest(actionTypes.SAVE_LANGUAGES, saveLanguages);
+  yield takeEvery(actionTypes.CREATE_LANGUAGE, createLanguage);
+  yield takeLatest(actionTypes.UPDATE_LANGUAGE, updateLanguage);
+  yield takeEvery(actionTypes.MOVE_LANGUAGE, moveLanguage);
+  yield takeEvery(actionTypes.DELETE_LANGUAGE, deleteLanguage);
 }
 
 export function* watchProjects() {
