@@ -5,9 +5,9 @@ import * as API from "../../API";
 
 export function* saveGeneral() {
   yield delay(2000)
-  const {name, surname, qualification} = yield select(store => store.general.general)
+  const {_id, name, surname, qualification} = yield select(store => store.general.general)
   try {
-    yield API.putGeneral(name, surname, qualification);
+    yield API.putUser(_id, {name, surname, qualification});
   } catch (err) {
     alert(err);
   }

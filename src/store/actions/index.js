@@ -22,7 +22,7 @@ export { addExperience, updateExperience, moveExperience, deleteExperience, save
 
 export { setEducation, saveEducation } from "./education";
 
-export { setLanguage, addLanguage, moveLanguage, deleteLanguage, saveLanguages } from "./languages";
+export {setLanguages, setLanguage, addLanguage, moveLanguage, deleteLanguage, saveLanguages } from "./languages";
 
 export {
   getProjects,

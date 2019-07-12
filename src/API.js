@@ -1,25 +1,11 @@
 ﻿import axios from "./axios";
 
 export const getUser = () => {
-  return axios.get("users/me")
+  return axios.get(`users/${process.env.REACT_APP_USER_ID}`)
 }
 
-export const putGeneral = (name, surname, qualification) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      console.log(name, surname, qualification);
-    }, 1000);
-  });
-};
-
-export const putContacts = (location, phone, email, github, linkedIn) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      console.log(location, phone, email, github, linkedIn);
-    }, 1000);
-  });
+export const putUser = (_id, payload) => {
+  return axios.put(`users/${_id}`, payload)
 };
 
 export const putExperiences = experiences => {

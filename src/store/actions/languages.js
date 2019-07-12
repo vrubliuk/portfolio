@@ -1,5 +1,12 @@
 import * as actionTypes from "./actionTypes";
 
+export const setLanguages = (payload) => {
+  return {
+    type: actionTypes.SET_LANGUAGES,
+    payload
+  };
+};
+
 export const addLanguage = () => {
   return {
     type: actionTypes.ADD_LANGUAGE,
@@ -14,11 +21,11 @@ export const setLanguage = (index, payload) => {
   };
 };
 
-export const moveLanguage = (index, indexDifference) => { // перейменувати на зміщення
+export const moveLanguage = (index, direction) => {
   return {
     type: actionTypes.MOVE_LANGUAGE,
     index,
-    indexDifference
+    direction
   };
 };
 

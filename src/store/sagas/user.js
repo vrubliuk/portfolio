@@ -5,9 +5,8 @@ import * as API from "../../API";
 export function* getUser({ promise }) {
   try {
     const {data} = yield API.getUser();
-     
-    const {_id, name, surname, qualification, avatar, location, phone, email, github, linkedIn, resume } = data;
     console.log(data);
+    const {_id, name, surname, qualification, avatar, location, phone, email, github, linkedIn, resume } = data.user;
     yield put(actions.setGeneral({
       _id,
       name,
@@ -23,8 +22,11 @@ export function* getUser({ promise }) {
       github,
       linkedIn
     }));
-    
+
     yield put(actions.updateResume(resume));
+    
+    yield put(actions.setLanguages(data.languages));
+    
     
     promise.resolve();
   } catch (err) {
