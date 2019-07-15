@@ -1,30 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Languages.scss";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
-import all from "../../../helpers/all";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
 import Button from "../../../components/Button/Button.jsx";
 
 const Languages = ({ languages, createLanguage, updateLanguage, moveLanguage, deleteLanguage }) => {
-  const [name, setName] = useState("");
-  const [level, setLevel] = useState("");
-
   return (
     <div className="Languages">
-      <div className="language">
-        <TextInput value={name} changeHandler={value => setName(value)} label="Name" />
-        <TextInput value={level} changeHandler={value => setLevel(value)} label="Level" />
-        <Button
-          text="Add Language"
-          additionalClassName="blue"
-          style={{ margin: 20, width: 140, height: 40 }}
-          onClick={() => all(() => createLanguage(name, level), () => setName(""), () => setLevel(""))}
-        />
-      </div>
-      {languages.map((language, i) => (
-        <div className="language" key={i}>
+      <Button
+        icon="plus"
+        additionalClassName="blue"
+        style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
+        onClick={createLanguage}
+      />
+      {languages.map(language => (
+        <div className="language" key={language._id}>
           <TextInput value={language.name} changeHandler={value => updateLanguage(language._id, { name: value })} label="Name" />
           <TextInput value={language.level} changeHandler={value => updateLanguage(language._id, { level: value })} label="Level" />
           <DownUpDeleteButtonsBlock
@@ -41,10 +33,10 @@ const Languages = ({ languages, createLanguage, updateLanguage, moveLanguage, de
 const mapStateToProps = ({ languages }) => ({ languages: languages.languages });
 const mapDispatchToProps = dispatch => {
   return {
-    createLanguage: (name, level) => dispatch(actions.createLanguage(name, level)),
+    createLanguage: () => dispatch(actions.createLanguage()),
     updateLanguage: (id, payload) => dispatch(actions.updateLanguage(id, payload)),
     moveLanguage: (id, direction) => dispatch(actions.moveLanguage(id, direction)),
-    deleteLanguage: index => dispatch(actions.deleteLanguage(index)),
+    deleteLanguage: index => dispatch(actions.deleteLanguage(index))
   };
 };
 

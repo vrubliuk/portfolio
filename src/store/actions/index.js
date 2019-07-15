@@ -18,7 +18,7 @@ export {
   saveSkills
 } from "./skills";
 
-export { addExperience, updateExperience, moveExperience, deleteExperience, saveExperiences } from "./experiences";
+export { setExperiences, createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 
 export { setEducation, saveEducation } from "./education";
 

@@ -4,11 +4,11 @@ import { select } from "redux-saga/effects";
 import * as actions from "../actions/index";
 import * as API from "../../API";
 
-export function* createLanguage({ name, level }) {
+export function* createLanguage() {
   yield put(actions.adjustRequestsQuantity(1));
   const { languages } = yield select(store => store.languages);
   try {
-    const { data } = yield API.postLanguage({ name, level, priority: languages.length + 1 });
+    const { data } = yield API.postLanguage({ name: "", level: "", priority: languages.length + 1 });
     yield put(actions.setLanguages([...languages, data]));
   } catch (err) {
     alert(err);

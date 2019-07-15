@@ -1,0 +1,13 @@
+.Experiences {
+  position: relative;
+  .experienceWrapper {
+    display: flex;
+    
+    .experience {
+      display: flex;
+      flex-wrap: wrap;
+      width: 580px;
+    }
+  }
+  
+}

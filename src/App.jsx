@@ -23,7 +23,8 @@ import {
   faExternalLinkAlt,
   faTag,
   faUserCircle,
-  faTrashAlt
+  faTrashAlt,
+  faPlus
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // library.add(faMapMarkerAlt, faPhone, faEnvelope, faCheck, faGithub, faLinkedin);
@@ -41,7 +42,8 @@ library.add(
   faExternalLinkAlt,
   faTag,
   faUserCircle,
-  faTrashAlt
+  faTrashAlt,
+  faPlus
 );
 
 class App extends Component {

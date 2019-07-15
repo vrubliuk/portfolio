@@ -1,17 +1,15 @@
 import * as actionTypes from "./actionTypes";
 
-export const setLanguages = (payload) => {
+export const setLanguages = payload => {
   return {
     type: actionTypes.SET_LANGUAGES,
     payload
   };
 };
 
-export const createLanguage = (name, level) => {
+export const createLanguage = () => {
   return {
-    type: actionTypes.CREATE_LANGUAGE,
-    name,
-    level
+    type: actionTypes.CREATE_LANGUAGE
   };
 };
 
@@ -31,7 +29,7 @@ export const moveLanguage = (id, direction) => {
   };
 };
 
-export const deleteLanguage = (id) => { 
+export const deleteLanguage = id => {
   return {
     type: actionTypes.DELETE_LANGUAGE,
     id

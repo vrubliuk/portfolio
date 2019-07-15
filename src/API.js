@@ -8,14 +8,15 @@ export const putUser = (_id, payload) => {
   return axios.put(`users/${_id}`, payload);
 };
 
-export const putExperiences = experiences => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      console.log(experiences);
-    }, 1000);
-  });
-};
+// experiences
+
+export const postExperience = payload => axios.post("experiences", payload);
+
+export const putExperience = (id, payload) => axios.put(`experiences/${id}`, payload);
+
+export const deleteExperience = id => axios.delete(`experiences/${id}`)
+
+
 
 export const putSkills = skills => {
   return new Promise((resolve, reject) => {
@@ -45,7 +46,7 @@ export const deleteLanguage = id => axios.delete(`languages/${id}`)
 
 
 
-
+// resume
 
 export const putResume = file => {
   return new Promise((resolve, reject) => {

@@ -13,5 +13,6 @@ export default {
   open: "external-link-alt",
   tag: "tag",
   userLogo: "user-circle",
-  trash: "trash-alt"
+  trash: "trash-alt",
+  plus: "plus"
 };

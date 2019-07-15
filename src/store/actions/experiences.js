@@ -1,36 +1,37 @@
 import * as actionTypes from "./actionTypes";
 
-export const addExperience = () => {
+export const setExperiences = payload => {
   return {
-    type: actionTypes.ADD_EXPERIENCE,
-  };
-};
-
-export const updateExperience = (experienceIndex, payload) => {
-  return {
-    type: actionTypes.UPDATE_EXPERIENCE,
-    experienceIndex,
+    type: actionTypes.SET_EXPERIENCES,
     payload
   };
 };
 
-export const moveExperience = (experienceIndex, direction) => {
+export const createExperience = () => {
+  return {
+    type: actionTypes.CREATE_EXPERIENCE
+  };
+};
+
+export const updateExperience = (id, payload) => {
+  return {
+    type: actionTypes.UPDATE_EXPERIENCE,
+    id,
+    payload
+  };
+};
+
+export const moveExperience = (id, direction) => {
   return {
     type: actionTypes.MOVE_EXPERIENCE,
-    experienceIndex,
+    id,
     direction
   };
 };
 
-export const deleteExperience = experienceIndex => {
+export const deleteExperience = id => {
   return {
     type: actionTypes.DELETE_EXPERIENCE,
-    experienceIndex
-  };
-};
-
-export const saveExperiences = () => {
-  return {
-    type: actionTypes.SAVE_EXPERIENCES
+    id
   };
 };
