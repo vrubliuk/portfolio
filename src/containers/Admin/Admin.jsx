@@ -13,6 +13,7 @@ import Languages from "./Languages/Languages.jsx";
 import Projects from "./Projects/Projects.jsx";
 import Resume from "./Resume/Resume"
 import Button from "../../components/Button/Button";
+import SavingIndicator from "../../components/SavingIndicator/SavingIndicator.jsx"
 import * as actions from "../../store/actions/index";
 
 const Admin = ({ logOut, history, location }) => {
@@ -59,6 +60,8 @@ const Admin = ({ logOut, history, location }) => {
         style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }}
         onClick={() =>  history.replace("/")}
       />
+      
+      <SavingIndicator style={{position: "fixed", margin: "auto", left: 0, right: 0, bottom: 20}}/>
     </div>
   );
 };

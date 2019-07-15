@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 114px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .text {
+    color: rgb(47, 52, 61);
+  }
+}
