@@ -16,7 +16,7 @@ import Button from "../../components/Button/Button";
 import SavingIndicator from "../../components/SavingIndicator/SavingIndicator.jsx"
 import * as actions from "../../store/actions/index";
 
-const Admin = ({ logOut, history, location }) => {
+const Admin = ({ requestsQuantity, logOut, history, location }) => {
   const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects", "resume"];
 
   // const handleLogOutButtonClick = () => {
@@ -61,10 +61,16 @@ const Admin = ({ logOut, history, location }) => {
         onClick={() =>  history.replace("/")}
       />
       
-      <SavingIndicator style={{position: "fixed", margin: "auto", left: 0, right: 0, bottom: 20}}/>
+      {requestsQuantity > 0 && <SavingIndicator style={{position: "fixed", margin: "auto", left: 0, right: 0, bottom: 20}}/> }
+    
+      
     </div>
   );
 };
+
+const mapStateToProps =({userInterface}) => ({
+  requestsQuantity: userInterface.requestsQuantity
+})
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -74,7 +80,7 @@ const mapDispatchToProps = dispatch => {
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(Admin)
 );

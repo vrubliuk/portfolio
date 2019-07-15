@@ -22,7 +22,7 @@ export { addExperience, updateExperience, moveExperience, deleteExperience, save
 
 export { setEducation, saveEducation } from "./education";
 
-export {setLanguages, createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
+export { setLanguages, createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 
 export {
   getProjects,
@@ -40,3 +40,5 @@ export {
 } from "./projects";
 
 export { updateResume, saveResume, deleteResume } from "./resume";
+
+export { adjustRequestsQuantity } from "./userInterface";

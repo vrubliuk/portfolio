@@ -8,6 +8,7 @@ import education from "./education"
 import languages from "./languages"
 import projects from "./projects"
 import resume from "./resume"
+import userInterface from "./userInterface"
 
 
 export default combineReducers({
@@ -19,5 +20,6 @@ export default combineReducers({
   education,
   languages,
   projects,
-  resume
+  resume,
+  userInterface
 })

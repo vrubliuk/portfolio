@@ -5,6 +5,7 @@ import * as actions from "../actions/index";
 import * as API from "../../API";
 
 export function* createLanguage({ name, level }) {
+  yield put(actions.adjustRequestsQuantity(1));
   const { languages } = yield select(store => store.languages);
   try {
     const { data } = yield API.postLanguage({ name, level, priority: languages.length + 1 });
@@ -12,6 +13,7 @@ export function* createLanguage({ name, level }) {
   } catch (err) {
     alert(err);
   }
+  yield put(actions.adjustRequestsQuantity(-1));
 }
 
 export function* updateLanguage({ id, payload }) {
@@ -21,14 +23,17 @@ export function* updateLanguage({ id, payload }) {
   languagesCopy[languageIndex] = { ...languages[languageIndex], ...payload };
   yield put(actions.setLanguages(languagesCopy));
   yield delay(2000);
+  yield put(actions.adjustRequestsQuantity(1));
   try {
     yield API.putLanguage(id, payload);
   } catch (err) {
     alert(err);
   }
+  yield put(actions.adjustRequestsQuantity(-1));
 }
 
 export function* moveLanguage({ id, direction }) {
+  yield put(actions.adjustRequestsQuantity(1));
   const { languages } = yield select(store => store.languages);
   const languagesCopy = [...languages];
   const language = languagesCopy.find(l => l._id === id);
@@ -41,9 +46,11 @@ export function* moveLanguage({ id, direction }) {
   } catch (err) {
     alert(err);
   }
+  yield put(actions.adjustRequestsQuantity(-1));
 }
 
 export function* deleteLanguage({ id }) {
+  yield put(actions.adjustRequestsQuantity(1));
   const { languages } = yield select(store => store.languages);
   try {
     yield API.deleteLanguage(id);
@@ -51,4 +58,5 @@ export function* deleteLanguage({ id }) {
   } catch (err) {
     alert(err);
   }
+  yield put(actions.adjustRequestsQuantity(-1));
 }
