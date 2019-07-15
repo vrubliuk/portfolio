@@ -4,6 +4,7 @@ import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
 import withPromise from "./helpers/withPromise";
+import Spinner from "./components/Spinner/Spinner.jsx";
 import Home from "./containers/Home/Home.jsx";
 import Auth from "./containers/Auth/Auth.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
@@ -58,18 +59,22 @@ class App extends Component {
   render() {
     const { isShown } = this.state;
     const { token } = this.props;
-    return isShown ? (
+    return (
       <div className="App">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/auth" exact render={() => (!token ? <Auth /> : <Redirect to="/" />)} />
-          <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/auth" />)} />
-          <Redirect to="/" />
-        </Switch>
-        <Up />
+        {isShown ? (
+          <>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/auth" exact render={() => (!token ? <Auth /> : <Redirect to="/" />)} />
+              <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/auth" />)} />
+              <Redirect to="/" />
+            </Switch>
+            <Up />
+          </>
+        ) : (
+          <Spinner style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}/>
+        )}
       </div>
-    ) : (
-      <div>Loading</div>
     );
   }
 }
