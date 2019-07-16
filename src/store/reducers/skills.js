@@ -18,7 +18,7 @@ const initialState = {
     {
       _id: 3,
       title: "Others",
-      technologies: ["Photoshop", "Gimp"],
+      technologies: [],
       priority: 3, 
     }
   ],

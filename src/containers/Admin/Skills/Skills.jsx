@@ -60,11 +60,10 @@ const Skills = ({
         style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
         onClick={addSkillsCategory}
       />
-
       {skills.map(skill => (
         <div className="skill" key={skill._id}>
           <TextInput label="Category" value={skill.title} changeHandler={value => value} />
-          <div className="technologies">
+          <div>
             <Label style={{ margin: "20px 0 -10px 20px" }} text="Technologies:" />
             {skill.technologies.map((technology, i) => (
               <TextInput value={technology} changeHandler={value => value} key={i} />
@@ -72,17 +71,10 @@ const Skills = ({
             <Button
               icon="plus"
               additionalClassName="blue"
-              style={{ margin: "10px 0 20px 125px", width: "40px", height: "40px", borderRadius: "50%" }}
+              style={{ margin: "20px 125px 20px 125px", width: "40px", height: "40px", borderRadius: "50%" }}
               onClick={addSkillsCategory}
             />
           </div>
-
-          {/* <DownUpDeleteButtonsBlock
-            clickDownButtonHandler={i !== categories.length - 1 ? () => handleCategoryMove(i, "down") : null}
-            clickUpButtonHandler={i !== 0 ? () => handleCategoryMove(i, "up") : null}
-            clickDeleteButtonHandler={() => handleCategoryDelete(i)}
-          /> */}
-
           <DownUpDeleteButtonsBlock
             style={{ marginTop: 30 }}
             clickDownButtonHandler={skill.priority > 1 ? () => moveSkill(skill._id, -1) : null}
