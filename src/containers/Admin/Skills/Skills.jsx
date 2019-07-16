@@ -4,92 +4,111 @@ import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
-import Button from "../../../components/Button/Button.jsx"
+import Button from "../../../components/Button/Button.jsx";
+import Label from "../../../components/inputs/Label/Label.jsx";
 
+const Skills = ({
+  skills,
+  addSkillsCategory,
+  updateSkillsCategoryName,
+  moveSkillsCategory,
+  deleteSkillsCategory,
+  addSkillsCategoryTechnology,
+  updateSkillsCategoryTechnology,
+  moveSkillsCategoryTechnology,
+  deleteSkillsCategoryTechnology,
+  saveSkills,
 
+  moveSkill,
+  deleteSkill
+}) => {
+  // const handleCategoryNameChange = (categoryIndex, value) => {
+  //   updateSkillsCategoryName(categoryIndex, value);
+  //   saveSkills();
+  // };
 
-const Skills = ({categories, addSkillsCategory, updateSkillsCategoryName, moveSkillsCategory, deleteSkillsCategory, addSkillsCategoryTechnology, updateSkillsCategoryTechnology, moveSkillsCategoryTechnology, deleteSkillsCategoryTechnology, saveSkills }) => {
+  // const handleCategoryMove = (categoryIndex, direction) => {
+  //   moveSkillsCategory(categoryIndex, direction);
+  //   saveSkills();
+  // };
 
-  const handleCategoryNameChange = (categoryIndex, value) => {
-    updateSkillsCategoryName(categoryIndex, value)
-    saveSkills()
-  }
+  // const handleCategoryDelete = categoryIndex => {
+  //   deleteSkillsCategory(categoryIndex);
+  //   saveSkills();
+  // };
 
-  const handleCategoryMove = (categoryIndex, direction) => {
-    moveSkillsCategory(categoryIndex, direction)
-    saveSkills()
-  }
+  // const handleCategoryTechnologyChange = (categoryIndex, technologyIndex, value) => {
+  //   updateSkillsCategoryTechnology(categoryIndex, technologyIndex, value);
+  //   saveSkills();
+  // };
 
-  const handleCategoryDelete = (categoryIndex) => {
-    deleteSkillsCategory(categoryIndex)
-    saveSkills()
-  }
+  // const handleCategoryTechnologyMove = (categoryIndex, technologyIndex, direction) => {
+  //   moveSkillsCategoryTechnology(categoryIndex, technologyIndex, direction);
+  //   saveSkills();
+  // };
 
-  const handleCategoryTechnologyChange = (categoryIndex, technologyIndex, value) => {
-    updateSkillsCategoryTechnology(categoryIndex, technologyIndex, value)
-    saveSkills()
-  }
+  // const handleCategoryTechnologyDelete = (categoryIndex, technologyIndex) => {
+  //   deleteSkillsCategoryTechnology(categoryIndex, technologyIndex);
+  //   saveSkills();
+  // };
 
-  const handleCategoryTechnologyMove = (categoryIndex, technologyIndex, direction) => {
-    moveSkillsCategoryTechnology(categoryIndex, technologyIndex, direction)
-    saveSkills()
-  }
+  return (
+    <div className="Skills">
+      <Button
+        icon="plus"
+        additionalClassName="blue"
+        style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
+        onClick={addSkillsCategory}
+      />
 
-  const handleCategoryTechnologyDelete = (categoryIndex, technologyIndex) => {
-    deleteSkillsCategoryTechnology(categoryIndex, technologyIndex)
-    saveSkills()
-  }
+      {skills.map(skill => (
+        <div className="skill" key={skill._id}>
+          <TextInput label="Category" value={skill.title} changeHandler={value => value} />
+          <div className="technologies">
+            <Label style={{ margin: "20px 0 -10px 20px" }} text="Technologies:" />
+            {skill.technologies.map((technology, i) => (
+              <TextInput value={technology} changeHandler={value => value} key={i} />
+            ))}
+            <Button
+              icon="plus"
+              additionalClassName="blue"
+              style={{ margin: "10px 0 20px 125px", width: "40px", height: "40px", borderRadius: "50%" }}
+              onClick={addSkillsCategory}
+            />
+          </div>
 
+          {/* <DownUpDeleteButtonsBlock
+            clickDownButtonHandler={i !== categories.length - 1 ? () => handleCategoryMove(i, "down") : null}
+            clickUpButtonHandler={i !== 0 ? () => handleCategoryMove(i, "up") : null}
+            clickDeleteButtonHandler={() => handleCategoryDelete(i)}
+          /> */}
 
-  return <div className="Skills">
-  {
-    categories.map((category, i) => ( <div className="category" key={i}>
-    <TextInput value={category.name} changeHandler={value => handleCategoryNameChange(i, value)} label="Category" />
-    <div>
-      {category.technologies.map((technology, k) => ( <div className="technology" key={k}> 
-        <TextInput value={technology} changeHandler={value => handleCategoryTechnologyChange(i, k, value)}  /> 
-        <DownUpDeleteButtonsBlock 
-          clickDownButtonHandler={k !== category.technologies.length - 1 ? () => handleCategoryTechnologyMove(i, k, "down") : null}
-          clickUpButtonHandler={k !== 0 ? () => handleCategoryTechnologyMove(i, k, "up") : null }
-          clickDeleteButtonHandler={()=> handleCategoryTechnologyDelete(i, k)}
-        />
-        </div> )) }
-      <Button text="Add Technology" additionalClassName="blue" style={{ width: "200px", height: "40px"}} onClick={() => addSkillsCategoryTechnology(i)}/>
+          <DownUpDeleteButtonsBlock
+            style={{ marginTop: 30 }}
+            clickDownButtonHandler={skill.priority > 1 ? () => moveSkill(skill._id, -1) : null}
+            clickUpButtonHandler={skill.priority < skill.length ? () => moveSkill(skill._id, 1) : null}
+            clickDeleteButtonHandler={() => deleteSkill(skill._id)}
+          />
+        </div>
+      ))}
     </div>
-
-    <DownUpDeleteButtonsBlock 
-      clickDownButtonHandler={i !== categories.length - 1 ? () => handleCategoryMove(i, "down") : null}
-      clickUpButtonHandler={i !== 0 ? () => handleCategoryMove(i, "up") : null }
-      clickDeleteButtonHandler={()=> handleCategoryDelete(i)}
-    />
-    
-  
-  
-    </div> ) )
-  }
-
-
-  
-  
-    <Button text="Add Category" additionalClassName="blue" style={{ width: "200px", height: "40px"}} onClick={() => addSkillsCategory()}/>
-  
-  </div>;
+  );
 };
 
-
-
-const mapStateToProps = ({ skills }) => ({ categories: skills.categories });
+const mapStateToProps = ({ skills }) => ({ skills: skills.skills });
 const mapDispatchToProps = dispatch => {
   return {
-    addSkillsCategory: () => dispatch(actions.addSkillsCategory()),
-    updateSkillsCategoryName: (categoryIndex, value) => dispatch(actions.updateSkillsCategoryName(categoryIndex, value)),
-    moveSkillsCategory: (categoryIndex, direction) => dispatch(actions.moveSkillsCategory(categoryIndex, direction)),
-    deleteSkillsCategory: (categoryIndex) => dispatch(actions.deleteSkillsCategory(categoryIndex)),
-    addSkillsCategoryTechnology: (index) => dispatch(actions.addSkillsCategoryTechnology(index)),
-    updateSkillsCategoryTechnology: (categoryIndex, technologyIndex, value) => dispatch(actions.updateSkillsCategoryTechnology(categoryIndex, technologyIndex, value)),
-    moveSkillsCategoryTechnology: (categoryIndex, technologyIndex, direction) => dispatch(actions.moveSkillsCategoryTechnology(categoryIndex, technologyIndex, direction)),
-    deleteSkillsCategoryTechnology: (categoryIndex, technologyIndex) => dispatch(actions.deleteSkillsCategoryTechnology(categoryIndex, technologyIndex)),
-    saveSkills: () => dispatch(actions.saveSkills())
+    // addSkillsCategory: () => dispatch(actions.addSkillsCategory()),
+    // updateSkillsCategoryName: (categoryIndex, value) => dispatch(actions.updateSkillsCategoryName(categoryIndex, value)),
+    // moveSkillsCategory: (categoryIndex, direction) => dispatch(actions.moveSkillsCategory(categoryIndex, direction)),
+    // deleteSkillsCategory: categoryIndex => dispatch(actions.deleteSkillsCategory(categoryIndex)),
+    // addSkillsCategoryTechnology: index => dispatch(actions.addSkillsCategoryTechnology(index)),
+    // updateSkillsCategoryTechnology: (categoryIndex, technologyIndex, value) =>
+    //   dispatch(actions.updateSkillsCategoryTechnology(categoryIndex, technologyIndex, value)),
+    // moveSkillsCategoryTechnology: (categoryIndex, technologyIndex, direction) =>
+    //   dispatch(actions.moveSkillsCategoryTechnology(categoryIndex, technologyIndex, direction)),
+    // deleteSkillsCategoryTechnology: (categoryIndex, technologyIndex) => dispatch(actions.deleteSkillsCategoryTechnology(categoryIndex, technologyIndex)),
+    // saveSkills: () => dispatch(actions.saveSkills())
   };
 };
 

@@ -10,7 +10,6 @@ import projects from "./projects"
 import resume from "./resume"
 import userInterface from "./userInterface"
 
-
 export default combineReducers({
   auth,
   general,
