@@ -8,7 +8,7 @@ import {
   watchContacts,
   watchSkills,
   watchExperiences,
-  watchEducation,
+  watchEducations,
   watchLanguages,
   watchProjects,
   watchResume
@@ -24,7 +24,7 @@ sagaMiddleware.run(watchGeneral);
 sagaMiddleware.run(watchContacts);
 sagaMiddleware.run(watchSkills);
 sagaMiddleware.run(watchExperiences);
-sagaMiddleware.run(watchEducation);
+sagaMiddleware.run(watchEducations);
 sagaMiddleware.run(watchLanguages);
 sagaMiddleware.run(watchProjects);
 sagaMiddleware.run(watchResume);

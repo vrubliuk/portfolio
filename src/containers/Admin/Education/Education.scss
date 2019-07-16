@@ -1,0 +1,11 @@
+.Education {
+  position: relative;
+  .educationWrapper {
+    display: flex;
+    .education {
+      display: flex;
+      flex-wrap: wrap;
+      width: 580px;
+    }
+  } 
+}

@@ -27,14 +27,15 @@ export const putSkills = skills => {
   });
 };
 
-export const putEducation = (speciality, institution, startDate, endDate) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      console.log(speciality, institution, startDate, endDate);
-    }, 1000);
-  });
-};
+// educations
+
+export const postEducation = payload => axios.post("educations", payload);
+
+export const putEducation = (id, payload) => axios.put(`educations/${id}`, payload);
+
+export const deleteEducation = id => axios.delete(`educations/${id}`)
+
+
 
 // languages
 

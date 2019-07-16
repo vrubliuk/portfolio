@@ -20,7 +20,7 @@ export {
 
 export { setExperiences, createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 
-export { setEducation, saveEducation } from "./education";
+export { setEducations, createEducation, updateEducation, moveEducation, deleteEducation } from "./educations";
 
 export { setLanguages, createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 

@@ -75,8 +75,8 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ general, contacts, skills, experiences, education, languages, projects, resume }) => ({
-  profile: { ...general, ...contacts, ...skills, ...experiences, ...education, ...languages },
+const mapStateToProps = ({ general, contacts, skills, experiences, educations, languages, projects, resume }) => ({
+  profile: { ...general, ...contacts, ...skills, ...experiences, ...educations, ...languages },
   projects: projects.projects,
   resume: resume.resume
 });
