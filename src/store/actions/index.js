@@ -6,17 +6,7 @@ export { setGeneral, saveGeneral } from "./general";
 
 export { setContacts, saveContacts } from "./contacts";
 
-export {
-  addSkillsCategory,
-  updateSkillsCategoryName,
-  moveSkillsCategory,
-  deleteSkillsCategory,
-  addSkillsCategoryTechnology,
-  updateSkillsCategoryTechnology,
-  moveSkillsCategoryTechnology,
-  deleteSkillsCategoryTechnology,
-  saveSkills
-} from "./skills";
+export { setSkills, createSkill, updateSkill, moveSkill, deleteSkill } from "./skills";
 
 export { setExperiences, createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 

@@ -1,69 +1,37 @@
 import * as actionTypes from "./actionTypes";
 
-export const addSkillsCategory = () => {
+export const setSkills = payload => {
   return {
-    type: actionTypes.ADD_SKILLS_CATEGORY,
+    type: actionTypes.SET_SKILLS,
+    payload
   };
 };
 
-export const updateSkillsCategoryName = (categoryIndex, value) => {
+export const createSkill = () => {
   return {
-    type: actionTypes.UPDATE_SKILLS_CATEGORY_NAME,
-    categoryIndex,
-    value
+    type: actionTypes.CREATE_SKILL
   };
 };
 
-export const moveSkillsCategory = (categoryIndex, direction) => {
+export const updateSkill = (id, payload) => {
   return {
-    type: actionTypes.MOVE_SKILLS_CATEGORY,
-    categoryIndex,
+    type: actionTypes.UPDATE_SKILL,
+    id,
+    payload
+  };
+};
+
+export const moveSkill = (id, direction) => {
+  return {
+    type: actionTypes.MOVE_SKILL,
+    id,
     direction
   };
 };
 
-export const deleteSkillsCategory = (categoryIndex) => {
+export const deleteSkill = id => {
   return {
-    type: actionTypes.DELETE_SKILLS_CATEGORY,
-    categoryIndex,
-  };
-};
-
-export const addSkillsCategoryTechnology = (categoryIndex) => {
-  return {
-    type: actionTypes.ADD_SKILLS_CATEGORY_TECHNOLOGY,
-    categoryIndex
-  };
-};
-
-export const updateSkillsCategoryTechnology = (categoryIndex, technologyIndex, value) => {
-  return {
-    type: actionTypes.UPDATE_SKILLS_CATEGORY_TECHNOLOGY,
-    categoryIndex,
-    technologyIndex,
-    value
-  };
-};
-
-export const moveSkillsCategoryTechnology = (categoryIndex, technologyIndex, direction) => {
-  return {
-    type: actionTypes.MOVE_SKILLS_CATEGORY_TECHNOLOGY,
-    categoryIndex,
-    technologyIndex,
-    direction
-  };
-};
-
-export const deleteSkillsCategoryTechnology = (categoryIndex, technologyIndex) => {
-  return {
-    type: actionTypes.DELETE_SKILLS_CATEGORY_TECHNOLOGY,
-    categoryIndex,
-    technologyIndex
-  };
-};
-
-export const saveSkills = () => {
-  return {
-    type: actionTypes.SAVE_SKILLS,
+    type: actionTypes.DELETE_SKILL,
+    id
   };
 };

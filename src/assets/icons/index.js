@@ -14,5 +14,6 @@ export default {
   tag: "tag",
   userLogo: "user-circle",
   trash: "trash-alt",
-  plus: "plus"
+  plus: "plus",
+  minus: "minus"
 };

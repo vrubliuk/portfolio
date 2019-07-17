@@ -16,16 +16,10 @@ export const putExperience = (id, payload) => axios.put(`experiences/${id}`, pay
 
 export const deleteExperience = id => axios.delete(`experiences/${id}`)
 
-
-
-export const putSkills = skills => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      console.log(skills);
-    }, 1000);
-  });
-};
+// skills
+export const postSkill = payload => axios.post("skills", payload);
+export const putSkill = (id, payload) => axios.put(`skills/${id}`, payload);
+export const deleteSkill = id => axios.delete(`skills/${id}`)
 
 // educations
 

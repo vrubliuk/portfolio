@@ -4,7 +4,7 @@ import { getUser } from "./user";
 import { logIn, logOut } from "./auth";
 import { saveGeneral } from "./general";
 import { saveContacts } from "./contacts";
-import { saveSkills } from "./skills";
+import { createSkill, updateSkill, moveSkill, deleteSkill } from "./skills";
 import { createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 import { createEducation, updateEducation, moveEducation, deleteEducation } from "./educations";
 import { createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
@@ -28,7 +28,10 @@ export function* watchContacts() {
 }
 
 export function* watchSkills() {
-  yield takeLatest(actionTypes.SAVE_SKILLS, saveSkills);
+  yield takeEvery(actionTypes.CREATE_SKILL, createSkill);
+  yield takeLatest(actionTypes.UPDATE_SKILL, updateSkill);
+  yield takeEvery(actionTypes.MOVE_SKILL, moveSkill);
+  yield takeEvery(actionTypes.DELETE_SKILL, deleteSkill);
 }
 
 export function* watchExperiences() {

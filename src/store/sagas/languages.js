@@ -1,6 +1,5 @@
 import { delay } from "redux-saga";
-import { put } from "redux-saga/effects";
-import { select } from "redux-saga/effects";
+import { select, put } from "redux-saga/effects";
 import * as actions from "../actions/index";
 import * as API from "../../API";
 
