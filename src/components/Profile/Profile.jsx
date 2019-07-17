@@ -97,7 +97,7 @@ const Profile = ({ profile }) => {
       <div className="section">
         <div className="title">Education</div>
         {educations.map((education, i) => (
-          <div className="subsection">
+          <div className="subsection" key={i}>
             <div className="title">{education.speciality}</div>
             <div className="row">{education.institution}</div>
             <div className="row">

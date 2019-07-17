@@ -1,6 +1,6 @@
 import * as actionTypes from "./actionTypes";
 
-export const setExperiences = payload => {
+export const setExperiences = payload => {  
   return {
     type: actionTypes.SET_EXPERIENCES,
     payload

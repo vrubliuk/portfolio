@@ -1,4 +1,3 @@
-import { delay } from "redux-saga";
 import { select, put } from "redux-saga/effects";
 import * as actions from "../actions/index"
 import * as API from "../../API";
@@ -16,18 +15,16 @@ export function* createSkill() {
 }
 
 export function* updateSkill({ id, payload }) {
+  yield put(actions.adjustRequestsQuantity(1));
   const { skills } = yield select(store => store.skills);
   const skillsCopy = [...skills];
   const skillIndex = skillsCopy.findIndex(l => l._id === id);
   skillsCopy[skillIndex] = { ...skills[skillIndex], ...payload };
-  console.log(skillsCopy[skillIndex]);
   yield put(actions.setSkills(skillsCopy));
-  yield delay(2000);
-  yield put(actions.adjustRequestsQuantity(1));
   try {
     yield API.putSkill(id, payload);
   } catch (err) {
-    alert(err);
+    alert(err); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

@@ -1,4 +1,3 @@
-import { delay } from "redux-saga";
 import { select, put } from "redux-saga/effects";
 import * as actions from "../actions/index";
 import * as API from "../../API";
@@ -16,13 +15,12 @@ export function* createLanguage() {
 }
 
 export function* updateLanguage({ id, payload }) {
+  yield put(actions.adjustRequestsQuantity(1));
   const { languages } = yield select(store => store.languages);
   const languagesCopy = [...languages];
   const languageIndex = languagesCopy.findIndex(l => l._id === id);
   languagesCopy[languageIndex] = { ...languages[languageIndex], ...payload };
   yield put(actions.setLanguages(languagesCopy));
-  yield delay(2000);
-  yield put(actions.adjustRequestsQuantity(1));
   try {
     yield API.putLanguage(id, payload);
   } catch (err) {

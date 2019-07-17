@@ -24,6 +24,7 @@ const initialState = {
 };
 
 const setExperiences = (state, { payload }) => {
+  
   return updateState(state, {
     experiences: payload.sort(sortByPriority)
   });
@@ -32,7 +33,7 @@ const setExperiences = (state, { payload }) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_EXPERIENCES:
-      return setExperiences(state);
+      return setExperiences(state, action);
     default:
       return state;
   }

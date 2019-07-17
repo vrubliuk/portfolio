@@ -1,6 +1,4 @@
-import { delay } from "redux-saga";
-import { put } from "redux-saga/effects";
-import { select } from "redux-saga/effects";
+import { select, put } from "redux-saga/effects";
 import * as actions from "../actions/index";
 import * as API from "../../API";
 
@@ -17,13 +15,12 @@ export function* createEducation() {
 }
 
 export function* updateEducation({ id, payload }) {
+  yield put(actions.adjustRequestsQuantity(1));
   const { educations } = yield select(store => store.educations);
   const educationsCopy = [...educations];
   const educationIndex = educationsCopy.findIndex(l => l._id === id);
   educationsCopy[educationIndex] = { ...educations[educationIndex], ...payload };
   yield put(actions.setEducations(educationsCopy));
-  yield delay(2000);
-  yield put(actions.adjustRequestsQuantity(1));
   try {
     yield API.putEducation(id, payload);
   } catch (err) {
