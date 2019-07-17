@@ -24,11 +24,11 @@ export function* updateSkill({ id, payload }) {
   yield put(actions.setSkills(skillsCopy));
   yield delay(2000);
   yield put(actions.adjustRequestsQuantity(1));
-  // try {
-  //   yield API.putSkill(id, payload);
-  // } catch (err) {
-  //   alert(err);
-  // }
+  try {
+    yield API.putSkill(id, payload);
+  } catch (err) {
+    alert(err);
+  }
   yield put(actions.adjustRequestsQuantity(-1));
 }
 

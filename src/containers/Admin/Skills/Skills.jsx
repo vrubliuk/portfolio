@@ -22,7 +22,11 @@ const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) =>
           <div>
             <Label style={{ margin: "20px 0 -10px 20px" }} text="Technologies:" />
             {skill.technologies.map((technology, i) => (
-              <TextInput value={technology} changeHandler={value => value} key={i} />
+              <TextInput
+                value={technology}
+                changeHandler={value => updateSkill(skill._id, { technologies: skill.technologies.map((t, k) => (k === i ? value : t)) })}
+                key={i}
+              />
             ))}
             <div className="buttons">
               {!!skill.technologies.length && (
