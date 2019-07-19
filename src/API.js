@@ -1,11 +1,16 @@
 ﻿import axios from "./axios";
+import objectToFormdata from "object-to-formdata";
 
 export const getUser = () => {
   return axios.get(`users/${process.env.REACT_APP_USER_ID}`);
 };
 
 export const putUser = (_id, payload) => {
-  return axios.put(`users/${_id}`, payload);
+  return axios.put(`users/${_id}`, objectToFormdata(payload), {
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
+  });
 };
 
 // experiences
