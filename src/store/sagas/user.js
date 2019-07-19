@@ -6,7 +6,23 @@ export function* getUser({ promise }) {
   try {
     const { data } = yield API.getUser();
     console.log(data);
-    const { _id, name, surname, qualification, avatar, location, phone, email, github, linkedIn, resume } = data.user;
+    const {
+      _id,
+      name,
+      surname,
+      qualification,
+      avatar,
+      location,
+      phone,
+      email,
+      github,
+      linkedIn,
+      resume,
+      skills = [],
+      experiences = [],
+      educations = [],
+      languages = []
+    } = data;
     yield put(
       actions.setGeneral({
         _id,
@@ -26,7 +42,6 @@ export function* getUser({ promise }) {
       })
     );
     yield put(actions.updateResume(resume));
-    const { skills = [], experiences = [], educations = [], languages = [] } = data;
     yield put(actions.setSkills(skills));
     yield put(actions.setExperiences(experiences));
     yield put(actions.setEducations(educations));
