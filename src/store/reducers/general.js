@@ -1,6 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
 import updateState from "../../helpers/updateState"
-import avatar from "../../assets/images/avatar.jpg"
 
 const initialState = {
   general: {
@@ -8,7 +7,7 @@ const initialState = {
     name: "Valentyn",
     surname: "Rubliuk",
     qualification: "Full Stack Developer",
-    avatar: avatar
+    avatar: ""
   },
 
   
@@ -17,9 +16,9 @@ const initialState = {
 
 };
 
-const setGeneral = (state, action) => {
+const setGeneral = (state, {payload}) => {
   return updateState(state, {
-    general: {...state.general, ...action.payload}
+    general: {...state.general, ...payload}
   });
 };
 

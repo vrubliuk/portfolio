@@ -2,8 +2,8 @@ import { takeEvery, takeLatest, all } from "redux-saga/effects";
 import * as actionTypes from "../actions/actionTypes";
 import { getUser } from "./user";
 import { logIn, logOut } from "./auth";
-import { saveGeneral } from "./general";
-import { saveContacts } from "./contacts";
+import { updateGeneral } from "./general";
+import { updateContacts } from "./contacts";
 import { createSkill, updateSkill, moveSkill, deleteSkill } from "./skills";
 import { createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 import { createEducation, updateEducation, moveEducation, deleteEducation } from "./educations";
@@ -20,11 +20,11 @@ export function* watchAuth() {
 }
 
 export function* watchGeneral() {
-  yield takeEvery(actionTypes.SAVE_GENERAL, saveGeneral);
+  yield takeEvery(actionTypes.UPDATE_GENERAL, updateGeneral);
 }
 
 export function* watchContacts() {
-  yield takeEvery(actionTypes.SAVE_CONTACTS, saveContacts);
+  yield takeEvery(actionTypes.UPDATE_CONTACTS, updateContacts);
 }
 
 export function* watchSkills() {

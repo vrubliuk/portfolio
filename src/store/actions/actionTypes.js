@@ -8,11 +8,11 @@ export const SET_TOKEN = "SET_TOKEN";
 
 // GENERAL
 export const SET_GENERAL = "SET_GENERAL";
-export const SAVE_GENERAL = "SAVE_GENERAL";
+export const UPDATE_GENERAL = "UPDATE_GENERAL";
 
 // CONTACTS
 export const SET_CONTACTS = "SET_CONTACTS";
-export const SAVE_CONTACTS = "SAVE_CONTACTS";
+export const UPDATE_CONTACTS = "UPDATE_CONTACTS";
 
 // SKILLS
 // export const ADD_SKILLS_CATEGORY = "ADD_SKILLS_CATEGORY";

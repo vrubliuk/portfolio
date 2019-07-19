@@ -14,9 +14,9 @@ const initialState = {
 };
 
 
-const setContacts = (state, action) => {
+const setContacts = (state, {payload}) => {
   return updateState(state, {
-    contacts: {...state.contacts, ...action.payload}
+    contacts: {...state.contacts, ...payload}
   });
 };
 

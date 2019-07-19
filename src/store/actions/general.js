@@ -7,8 +7,9 @@ export const setGeneral = (payload) => {
   };
 };
 
-export const saveGeneral = () => {
+export const updateGeneral = (payload) => {
   return {
-    type: actionTypes.SAVE_GENERAL,
+    type: actionTypes.UPDATE_GENERAL,
+    payload
   };
 };

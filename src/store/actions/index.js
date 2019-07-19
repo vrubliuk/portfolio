@@ -2,9 +2,9 @@
 
 export { setToken, logIn, logOut } from "./auth";
 
-export { setGeneral, saveGeneral } from "./general";
+export { setGeneral, updateGeneral } from "./general";
 
-export { setContacts, saveContacts } from "./contacts";
+export { setContacts, updateContacts } from "./contacts";
 
 export { setSkills, createSkill, updateSkill, moveSkill, deleteSkill } from "./skills";
 

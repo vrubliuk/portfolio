@@ -7,9 +7,10 @@ export const setContacts = (payload) => {
   };
 };
 
-export const saveContacts = () => {
+export const updateContacts = (payload) => {
   return {
-    type: actionTypes.SAVE_CONTACTS,
+    type: actionTypes.UPDATE_CONTACTS,
+    payload
   };
 };
 
