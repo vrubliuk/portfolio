@@ -1,6 +1,6 @@
 import { takeEvery, takeLatest, all } from "redux-saga/effects";
 import * as actionTypes from "../actions/actionTypes";
-import { getUser } from "./user";
+import { getUser, putUserFile } from "./user";
 import { logIn, logOut } from "./auth";
 import { updateGeneral } from "./general";
 import { updateContacts } from "./contacts";
@@ -9,10 +9,11 @@ import { createExperience, updateExperience, moveExperience, deleteExperience } 
 import { createEducation, updateEducation, moveEducation, deleteEducation } from "./educations";
 import { createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 import { getProjects, saveProjects, saveProjectScreenshot, deleteProjectScreenshot } from "./projects";
-import { saveResume, deleteResume } from "./resume";
+import { saveResume, deleteResume, updateResume } from "./resume";
 
 export function* watchUser() {
   yield takeEvery(actionTypes.GET_USER, getUser);
+  yield takeEvery(actionTypes.PUT_USER_FILE, putUserFile);
 }
 
 export function* watchAuth() {
@@ -64,4 +65,6 @@ export function* watchProjects() {
 
 export function* watchResume() {
   yield all([takeLatest(actionTypes.SAVE_RESUME, saveResume), takeLatest(actionTypes.DELETE_RESUME, deleteResume)]);
+  yield takeEvery(actionTypes.UPDATE_RESUME, updateResume);
+  
 }

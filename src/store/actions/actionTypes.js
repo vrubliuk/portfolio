@@ -1,5 +1,7 @@
 ﻿// USER
 export const GET_USER = "GET_USER";
+export const PUT_USER_FILE = "PUT_USER_FILE";
+export const DELETE_USER_FILE = "DELETE_USER_FILE";
 
 // AUTH
 export const LOG_IN = "LOG_IN";
@@ -66,6 +68,7 @@ export const SAVE_PROJECT_SCREENSHOT = "SAVE_PROJECT_SCREENSHOT";
 export const DELETE_PROJECT_SCREENSHOT = "DELETE_PROJECT_SCREENSHOT";
 
 // RESUME
+export const SET_RESUME = "SET_RESUME";
 export const UPDATE_RESUME = "UPDATE_RESUME";
 export const SAVE_RESUME = "SAVE_RESUME";
 export const DELETE_RESUME = "DELETE_RESUME";

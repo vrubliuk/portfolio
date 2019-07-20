@@ -1,4 +1,4 @@
-﻿export { getUser } from "./user";
+﻿export { getUser, putUserFile, deleteUserFile } from "./user";
 
 export { setToken, logIn, logOut } from "./auth";
 
@@ -29,6 +29,6 @@ export {
   deleteProjectScreenshot
 } from "./projects";
 
-export { updateResume, saveResume, deleteResume } from "./resume";
+export { setResume, updateResume, saveResume, deleteResume } from "./resume";
 
 export { adjustRequestsQuantity } from "./userInterface";

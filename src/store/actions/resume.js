@@ -1,9 +1,16 @@
 import * as actionTypes from "./actionTypes";
 
-export const updateResume = file => {
+export const setResume = payload => {
+  return {
+    type: actionTypes.SET_RESUME,
+    payload
+  };
+};
+
+export const updateResume = payload => {
   return {
     type: actionTypes.UPDATE_RESUME,
-    file
+    payload
   };
 };
 

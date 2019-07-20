@@ -1,21 +1,21 @@
 import * as actionTypes from "../actions/actionTypes";
 import updateState from "../../helpers/updateState";
-import resume from "../../assets/images/Resume.pdf";
+// import resume from "../../assets/images/Resume.pdf";
 
 const initialState = {
-  resume: resume
+  resume: ""
 };
 
-const updateResume = (state, { file }) => {
+const setResume = (state, { payload }) => {
   return updateState(state, {
-    resume: file
+    resume: payload
   });
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.UPDATE_RESUME:
-      return updateResume(state, action);
+    case actionTypes.SET_RESUME:
+      return setResume(state, action);
     default:
       return state;
   }

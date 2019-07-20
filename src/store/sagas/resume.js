@@ -1,6 +1,6 @@
 import { delay } from "redux-saga";
-import { select } from "redux-saga/effects";
-// import * as actions from "../actions/index"
+import { select, put } from "redux-saga/effects";
+import * as actions from "../actions/index"
 import * as API from "../../API";
 
 export function* saveResume() {
@@ -21,4 +21,16 @@ export function* deleteResume() {
   } catch (err) {
     alert(err);
   }
+}
+
+export function* updateResume({payload}) {
+  yield put(actions.adjustRequestsQuantity(1));
+  const {_id} = yield select(store => store.general.general)
+  yield put(actions.setResume(payload));
+  try {
+    yield API.putUser(_id, {resume: payload});
+  } catch (err) {
+    alert(err);
+  }
+  yield put(actions.adjustRequestsQuantity(-1));
 }
