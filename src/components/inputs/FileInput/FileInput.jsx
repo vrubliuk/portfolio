@@ -10,7 +10,7 @@ class FileInput extends Component {
 
   handleChange = e => {
     const file = e.target.files[0];
-    console.log(file);
+    // console.log(file);
     file && this.props.changeHandler(file);
 
     // const reader = new FileReader();

@@ -4,10 +4,11 @@ import * as actions from "../../../store/actions/index";
 import FileInput from "../../../components/inputs/FileInput/FileInput";
 
 const Resume = ({ resume, updateResume, putUserFile }) => {
+  const resumeFileName = resume.split(/\\|\//).pop()
   return (
     <div className="Resume">
       <FileInput
-        fileName={resume}
+        fileName={resumeFileName}
         label="Resume"
         changeHandler={value => putUserFile("resume", value)}
         removeHandler={() => updateResume("")}

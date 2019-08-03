@@ -10,7 +10,7 @@
     // display: flex;
     // justify-content: center;
     // align-items: center;
-    width: 230px;
+    width: 250px;
     height: 40px;
     background-color: white;
     background-position: center;
@@ -24,16 +24,18 @@
     // }
     .text {
       margin: 0 10px;
-      display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    //   display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
       width: calc(100% - 60px);
       height: 100%;
-      
+      line-height: 38px;
       font-size: 18px;
       font-weight: 300;
       color: lightgrey;
       overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .remove {

@@ -3,18 +3,20 @@ import "./General.scss";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
-import ImageInput from "../../../components/inputs/ImageInput/ImageInput";
+import FileInput from "../../../components/inputs/FileInput/FileInput";
 
 const General = ({ general, updateGeneral, putUserFile }) => {
+  
+  const avatarFileName = general.avatar.split(/\\|\//).pop()
   return (
     <div className="General">
       <TextInput label="Name" value={general.name} changeHandler={value => updateGeneral({ name: value })} />
       <TextInput label="Surname" value={general.surname} changeHandler={value => updateGeneral({ surname: value })} />
       <TextInput label="Qualification" value={general.qualification} changeHandler={value => updateGeneral({ qualification: value })} />
-      <ImageInput
+      <FileInput
+        fileName={avatarFileName}
         label="Avatar"
-        value={general.avatar}
-        changeHandler={(value, file) => putUserFile("avatar", file)}
+        changeHandler={file => putUserFile("avatar", file)}
         removeHandler={() => updateGeneral({ avatar: "" })}
       />
     </div>
