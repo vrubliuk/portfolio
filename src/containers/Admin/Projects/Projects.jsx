@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Projects.scss";
+import classes from "./Projects.module.scss";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import all from "../../../helpers/all";
@@ -36,11 +36,17 @@ class Projects extends Component {
     } = this.props;
 
     return (
-      <div className="Projects">
+      <div className={classes.wrapper}>
+        <Button
+          icon="plus"
+          additionalClassName="blue"
+          style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
+          onClick={() => addProject()}
+        />
         {projects.map((project, i) => (
-          <div className="project" key={i}>
-            <div className="title">
-              <div className="name" onClick={() => this.setState({ openedProjectIndex: openedProjectIndex === i ? null : i })}>
+          <div className={classes.project} key={i}>
+            <div className={classes.title}>
+              <div className={classes.name} onClick={() => this.setState({ openedProjectIndex: openedProjectIndex === i ? null : i })}>
                 {project.name ? project.name : "Your project name"}
               </div>
               <DownUpDeleteButtonsBlock
@@ -49,7 +55,7 @@ class Projects extends Component {
                 clickDeleteButtonHandler={() => all(() => deleteProject(i), () => saveProjects())}
               />
             </div>
-            <div className="description" style={openedProjectIndex === i ? null : { height: 0 }}>
+            <div className={classes.description} style={openedProjectIndex === i ? null : { height: 0 }}>
               <TextInput value={project.name} label="Name" changeHandler={value => all(() => updateProject(i, { name: value }), () => saveProjects())} />
               <ImageInput
                 value={project.screenshotURL}
@@ -65,7 +71,7 @@ class Projects extends Component {
               />
 
               {project.tags.map((tag, k) => (
-                <div className="tag" key={k}>
+                <div className={classes.tag} key={k}>
                   <TextInput value={tag} changeHandler={value => all(() => updateProjectTag(i, k, value), () => saveProjects())} />
                   <DownUpDeleteButtonsBlock
                     clickDownButtonHandler={k !== project.tags.length - 1 ? () => all(() => moveProjectTag(i, k, "down"), () => saveProjects()) : null}
@@ -89,7 +95,6 @@ class Projects extends Component {
             </div>
           </div>
         ))}
-        <Button text="Add project" additionalClassName="blue" style={{ width: "200px", height: "40px" }} onClick={() => addProject()} />
       </div>
     );
   }

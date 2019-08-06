@@ -16,8 +16,9 @@ const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) =>
         style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
         onClick={createSkill}
       />
-      {skills.map(skill => (
-        <div className="skill" key={skill._id}>
+      {skills.map((skill, i) => (
+        <div className="skill" key={i}>
+          <div className="form">
           <TextInput label="Category" value={skill.title} changeHandler={value => updateSkill(skill._id, { title: value })} />
           <div>
             <Label style={{ margin: "20px 0 -10px 20px" }} text="Technologies:" />
@@ -45,8 +46,8 @@ const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) =>
               />
             </div>
           </div>
+          </div>
           <DownUpDeleteButtonsBlock
-            style={{ marginTop: 30 }}
             clickDownButtonHandler={skill.priority > 1 ? () => moveSkill(skill._id, -1) : null}
             clickUpButtonHandler={skill.priority < skill.length ? () => moveSkill(skill._id, 1) : null}
             clickDeleteButtonHandler={() => deleteSkill(skill._id)}

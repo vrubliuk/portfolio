@@ -15,5 +15,7 @@ export default {
   userLogo: "user-circle",
   trash: "trash-alt",
   plus: "plus",
-  minus: "minus"
+  minus: "minus",
+  caretUp: "caret-up",
+  caretDown: "caret-down"
 };
