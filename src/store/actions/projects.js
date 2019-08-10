@@ -1,90 +1,52 @@
 import * as actionTypes from "./actionTypes";
 
-export const getProjects = () => {
+export const setProjects = payload => {
   return {
-    type: actionTypes.GET_PROJECTS,
-  };
-};
-
-export const addProject = () => {
-  return {
-    type: actionTypes.ADD_PROJECT,
-  };
-};
-
-export const updateProject = (projectIndex, payload) => {
-  return {
-    type: actionTypes.UPDATE_PROJECT,
-    projectIndex,
+    type: actionTypes.SET_PROJECTS,
     payload
   };
 };
 
-export const moveProject = (projectIndex, direction) => {
+export const createProject = () => {
   return {
-    type: actionTypes.MOVE_PROJECT,
-    projectIndex,
-    direction
+    type: actionTypes.CREATE_PROJECT
   };
 };
 
-export const deleteProject = projectIndex => {
+export const updateProject = (id, payload) => {
   return {
-    type: actionTypes.DELETE_PROJECT,
-    projectIndex
+    type: actionTypes.UPDATE_PROJECT,
+    id,
+    payload
   };
 };
 
-export const addProjectTag = (projectIndex) => {
+export const updateProjectScreenshot = (id, file) => {
   return {
-    type: actionTypes.ADD_PROJECT_TAG,
-    projectIndex
-  };
-};
-
-export const updateProjectTag = (projectIndex, tagIndex, value) => {
-  return {
-    type: actionTypes.UPDATE_PROJECT_TAG,
-    projectIndex,
-    tagIndex,
-    value
-  };
-};
-
-export const moveProjectTag = (projectIndex, tagIndex, direction) => {
-  return {
-    type: actionTypes.MOVE_PROJECT_TAG,
-    projectIndex,
-    tagIndex,
-    direction
-  };
-};
-
-export const deleteProjectTag = (projectIndex, tagIndex) => {
-  return {
-    type: actionTypes.DELETE_PROJECT_TAG,
-    projectIndex,
-    tagIndex
-  };
-};
-
-export const saveProjects = () => {
-  return {
-    type: actionTypes.SAVE_PROJECTS
-  };
-};
-
-export const saveProjectScreenshot = (projectId, file) => {
-  return {
-    type: actionTypes.SAVE_PROJECT_SCREENSHOT,
-    projectId,
+    type: actionTypes.UPDATE_PROJECT_SCREENSHOT,
+    id,
     file
   };
 };
 
-export const deleteProjectScreenshot = (projectId) => {
+export const moveProject = (id, direction) => {
+  return {
+    type: actionTypes.MOVE_PROJECT,
+    id,
+    direction
+  };
+};
+
+export const deleteProject = id => {
+  return {
+    type: actionTypes.DELETE_PROJECT,
+    id
+  };
+};
+
+export const deleteProjectScreenshot = id => {
   return {
     type: actionTypes.DELETE_PROJECT_SCREENSHOT,
-    projectId
+    id
   };
 };

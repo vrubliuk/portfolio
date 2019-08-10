@@ -8,8 +8,8 @@ import { createSkill, updateSkill, moveSkill, deleteSkill } from "./skills";
 import { createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 import { createEducation, updateEducation, moveEducation, deleteEducation } from "./educations";
 import { createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
-import { getProjects, saveProjects, saveProjectScreenshot, deleteProjectScreenshot } from "./projects";
-import { saveResume, deleteResume, updateResume } from "./resume";
+import {createProject , updateProject, updateProjectScreenshot, moveProject, deleteProject, deleteProjectScreenshot, } from "./projects";
+import { updateResume } from "./resume";
 
 export function* watchUser() {
   yield takeEvery(actionTypes.GET_USER, getUser);
@@ -57,14 +57,15 @@ export function* watchLanguages() {
 }
 
 export function* watchProjects() {
-  yield takeLatest(actionTypes.GET_PROJECTS, getProjects);
-  yield takeLatest(actionTypes.SAVE_PROJECTS, saveProjects);
-  yield takeEvery(actionTypes.SAVE_PROJECT_SCREENSHOT, saveProjectScreenshot);
+  yield takeEvery(actionTypes.CREATE_PROJECT, createProject);
+  yield takeEvery(actionTypes.UPDATE_PROJECT, updateProject);
+  yield takeEvery(actionTypes.UPDATE_PROJECT_SCREENSHOT, updateProjectScreenshot);
+  yield takeEvery(actionTypes.MOVE_PROJECT, moveProject);
+  yield takeEvery(actionTypes.DELETE_PROJECT, deleteProject);
   yield takeEvery(actionTypes.DELETE_PROJECT_SCREENSHOT, deleteProjectScreenshot);
 }
 
 export function* watchResume() {
-  yield all([takeLatest(actionTypes.SAVE_RESUME, saveResume), takeLatest(actionTypes.DELETE_RESUME, deleteResume)]);
   yield takeEvery(actionTypes.UPDATE_RESUME, updateResume);
   
 }

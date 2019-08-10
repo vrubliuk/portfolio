@@ -15,20 +15,15 @@ export { setEducations, createEducation, updateEducation, moveEducation, deleteE
 export { setLanguages, createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 
 export {
-  getProjects,
-  addProject,
+  setProjects,
+  createProject,
   updateProject,
+  updateProjectScreenshot,
   moveProject,
   deleteProject,
-  addProjectTag,
-  updateProjectTag,
-  moveProjectTag,
-  deleteProjectTag,
-  saveProjects,
-  saveProjectScreenshot,
   deleteProjectScreenshot
 } from "./projects";
 
-export { setResume, updateResume, saveResume, deleteResume } from "./resume";
+export { setResume, updateResume } from "./resume";
 
 export { adjustRequestsQuantity } from "./userInterface";

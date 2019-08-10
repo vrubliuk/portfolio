@@ -10,7 +10,7 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
     });
   });
 
-  const uniqueTagsSorted = Object.keys(tags).sort((a, b) => {
+  const uniqueTagsSorted = Object.keys(tags).filter(tag => tag !== "").sort((a, b) => {
     if (tags[a] < tags[b]) return 1;
     if (tags[a] > tags[b]) return -1;
     return 0;

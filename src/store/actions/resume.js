@@ -13,15 +13,3 @@ export const updateResume = payload => {
     payload
   };
 };
-
-export const saveResume = () => {
-  return {
-    type: actionTypes.SAVE_RESUME
-  };
-};
-
-export const deleteResume = () => {
-  return {
-    type: actionTypes.DELETE_RESUME
-  };
-};

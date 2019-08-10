@@ -1,10 +1,11 @@
 import React from "react"
 import classes from "./Textarea.module.scss"
 import PropTypes from "prop-types"
+import Label from "../Label/Label.jsx"
 
 const Textarea = ({label, placeholder, value, changeHandler}) => {
   return <div className={classes.Textarea}>
-   {label && <div className={classes.label}>{label}:</div>}
+   {label && <Label style={{marginBottom: 10}} text={`${label}:`}/>}
   <textarea value={value} onChange={(e) => changeHandler(e.target.value)} placeholder={placeholder} ></textarea>
   </div>
 }

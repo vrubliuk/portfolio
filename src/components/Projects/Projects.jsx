@@ -15,14 +15,14 @@ const Projects = ({ projects, activeTag }) => {
       {filteredProjects.map((project, i) => (
         <div className={`isotope-project ${project.tags.join(" ")}`} key={i}>
           <div>
-            <img src={project.screenshotURL} alt="" />
+            <img src={project.screenshot} alt="" />
             <div className="cover">
               <div className="summary">{project.summary}</div>
               <div className="buttons">
-                <a href={project.websiteURL} target="_blank" rel="noreferrer noopener">
+                <a href={project.websiteUrl} target="_blank" rel="noreferrer noopener">
                   <Button icon="open" text="Open Website" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
                 </a>
-                <a href={project.repositoryURL} target="_blank" rel="noreferrer noopener">
+                <a href={project.repositoryUrl} target="_blank" rel="noreferrer noopener">
                   <Button icon="github" text="Explore Repo" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
                 </a>
               </div>
@@ -30,7 +30,7 @@ const Projects = ({ projects, activeTag }) => {
           </div>
           <div>
             <div className="name">
-              <a href={project.websiteURL} target="_blank" rel="noreferrer noopener">
+              <a href={project.websiteUrl} target="_blank" rel="noreferrer noopener">
                 {project.name}
               </a>
             </div>

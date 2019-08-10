@@ -21,7 +21,8 @@ export function* getUser({ promise }) {
       skills = [],
       experiences = [],
       educations = [],
-      languages = []
+      languages = [],
+      projects = []
     } = data;
     yield put(
       actions.setGeneral({
@@ -46,6 +47,7 @@ export function* getUser({ promise }) {
     yield put(actions.setExperiences(experiences));
     yield put(actions.setEducations(educations));
     yield put(actions.setLanguages(languages));
+    yield put(actions.setProjects(projects));
     promise.resolve();
   } catch (err) {
     promise.reject(err);
