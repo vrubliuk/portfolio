@@ -30,7 +30,7 @@ const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) =>
               />
             ))}
             <div className="buttons">
-              {!!skill.technologies.length && (
+              {skill.technologies.length > 1 && (
                 <Button
                   icon="minus"
                   additionalClassName="blue"
@@ -49,7 +49,7 @@ const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) =>
           </div>
           <DownUpDeleteButtonsBlock
             clickDownButtonHandler={skill.priority > 1 ? () => moveSkill(skill._id, -1) : null}
-            clickUpButtonHandler={skill.priority < skill.length ? () => moveSkill(skill._id, 1) : null}
+            clickUpButtonHandler={skill.priority < skills.length ? () => moveSkill(skill._id, 1) : null}
             clickDeleteButtonHandler={() => deleteSkill(skill._id)}
           />
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./Resume.module.scss"
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import FileInput from "../../../components/inputs/FileInput/FileInput";
@@ -6,7 +7,7 @@ import FileInput from "../../../components/inputs/FileInput/FileInput";
 const Resume = ({ resume, updateResume, putUserFile }) => {
   const resumeFileName = resume.split(/\\|\//).pop()
   return (
-    <div className="Resume">
+    <div className={classes.wrapper}>
       <FileInput
         fileName={resumeFileName}
         label="Resume"

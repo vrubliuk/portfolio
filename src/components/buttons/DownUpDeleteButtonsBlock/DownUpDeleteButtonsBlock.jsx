@@ -7,10 +7,10 @@ const DownUpDeleteButtonsBlock = ({ style, clickDownButtonHandler, clickUpButton
   return (
     <div className="DownUpDeleteButtonsBlock" style={style}>
       {clickDownButtonHandler && (
-        <Button icon="caretDown" style={{ marginRight: 10, width: 40, height: 40, borderRadius: "50%" }} onClick={() => clickDownButtonHandler()} />
+        <Button icon="caretDown" additionalClassName="grey" style={{ marginRight: 10, width: 40, height: 40, borderRadius: "50%" }} onClick={() => clickDownButtonHandler()} />
       )}
       {clickUpButtonHandler && (
-        <Button icon="caretUp" style={{ marginRight: 10, width: 40, height: 40, borderRadius: "50%" }} onClick={() => clickUpButtonHandler()} />
+        <Button icon="caretUp" additionalClassName="grey" style={{ marginRight: 10, width: 40, height: 40, borderRadius: "50%" }} onClick={() => clickUpButtonHandler()} />
       )}
       {clickDeleteButtonHandler && (
         <Button icon="trash" additionalClassName="red" style={{ width: 40, height: 40, borderRadius: "50%" }} onClick={() => clickDeleteButtonHandler()} />

@@ -5,6 +5,8 @@ import screenshot from "../../assets/images/calendar.jpg";
 const initialState = {
   projects: [
     {
+      id_: 1,
+      priority: 1,
       name: "Calendar",
       screenshotURL: screenshot,
       summary: "Some text",
@@ -13,6 +15,8 @@ const initialState = {
       repositoryURL: "https://github.com/vrubliuk/painting-cart/"
     },
     {
+      id_: 2,
+      priority: 2,
       name: "Requirements",
       screenshotURL: screenshot,
       summary: "Some text",
@@ -21,6 +25,8 @@ const initialState = {
       repositoryURL: "https://github.com/vrubliuk/painting-cart/"
     },
     {
+      id_: 3,
+      priority: 3,
       name: "Statistics",
       screenshotURL: screenshot,
       summary: "Some text",

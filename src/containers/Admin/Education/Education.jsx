@@ -24,9 +24,8 @@ const Education = ({ educations, createEducation, updateEducation, moveEducation
             <TextInput value={e.endDate} label="End Date" changeHandler={value => updateEducation(e._id, { endDate: value })} />
           </div>
           <DownUpDeleteButtonsBlock
-            style={{ marginTop: 30 }}
             clickDownButtonHandler={e.priority > 1 ? () => moveEducation(e._id, -1) : null}
-            clickUpButtonHandler={e.priority < e.length ? () => moveEducation(e._id, 1) : null}
+            clickUpButtonHandler={e.priority < educations.length ? () => moveEducation(e._id, 1) : null}
             clickDeleteButtonHandler={() => deleteEducation(e._id)}
           />
         </div>

@@ -25,9 +25,8 @@ const Experiences = ({ experiences, createExperience, updateExperience, moveExpe
             <TextInput value={e.endDate} label="End Date" changeHandler={value => updateExperience(e._id, { endDate: value })} />
           </div>
           <DownUpDeleteButtonsBlock
-            style={{ marginTop: 30 }}
             clickDownButtonHandler={e.priority > 1 ? () => moveExperience(e._id, -1) : null}
-            clickUpButtonHandler={e.priority < e.length ? () => moveExperience(e._id, 1) : null}
+            clickUpButtonHandler={e.priority < experiences.length ? () => moveExperience(e._id, 1) : null}
             clickDeleteButtonHandler={() => deleteExperience(e._id)}
           />
         </div>

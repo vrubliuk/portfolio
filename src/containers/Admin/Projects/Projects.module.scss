@@ -2,10 +2,15 @@
 
 .wrapper {
   position: relative;
+  padding:  0 20px 20px;
   
   .project {
     // border: 1px solid $blue;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px; 
+    margin-bottom: 20px;
+    
     .title {
       position: relative;
       height: 40px;

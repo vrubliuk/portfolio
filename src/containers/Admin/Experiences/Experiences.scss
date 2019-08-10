@@ -1,12 +1,20 @@
 .Experiences {
   position: relative;
+  padding:  0 20px 20px;
   .experienceWrapper {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px; 
+    margin-bottom: 20px;
     
     .experience {
       display: flex;
       flex-wrap: wrap;
       width: 580px;
+
     }
   }
   

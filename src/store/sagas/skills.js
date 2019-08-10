@@ -6,7 +6,7 @@ export function* createSkill() {
   yield put(actions.adjustRequestsQuantity(1));
   const { skills } = yield select(store => store.skills);
   try {
-    const { data } = yield API.postSkill({ title: "", technologies: [], priority: skills.length + 1 });
+    const { data } = yield API.postSkill({ title: "", technologies: [""], priority: skills.length + 1 });
     yield put(actions.setSkills([...skills, data]));
   } catch (err) {
     alert(err);

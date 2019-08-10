@@ -16,9 +16,11 @@ const Languages = ({ languages, createLanguage, updateLanguage, moveLanguage, de
         onClick={createLanguage}
       />
       {languages.map(language => (
-        <div className="language" key={language._id}>
-          <TextInput value={language.name} changeHandler={value => updateLanguage(language._id, { name: value })} label="Name" />
-          <TextInput value={language.level} changeHandler={value => updateLanguage(language._id, { level: value })} label="Level" />
+        <div className="languageWrapper" key={language._id}>
+          <div className="language">
+            <TextInput value={language.name} changeHandler={value => updateLanguage(language._id, { name: value })} label="Name" />
+            <TextInput value={language.level} changeHandler={value => updateLanguage(language._id, { level: value })} label="Level" />
+          </div>
           <DownUpDeleteButtonsBlock
             clickDownButtonHandler={language.priority > 1 ? () => moveLanguage(language._id, -1) : null}
             clickUpButtonHandler={language.priority < languages.length ? () => moveLanguage(language._id, 1) : null}
