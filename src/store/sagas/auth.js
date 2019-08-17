@@ -2,22 +2,24 @@
 import { put } from "redux-saga/effects";
 import * as actions from "../actions";
 import * as API from "../../API";
-//import axios from "../../axios";
+import axios from "../../axios";
 
 export function* logIn({promise, login, password}) {
-  yield put(actions.setToken(1));
+  // yield put(actions.setToken(1));
+      
+  try { 
+    const {data} = yield API.logIn(login,password);
+    console.log(data);
+    yield put(actions.setToken(data.token));
+    yield (axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`);
+    promise.resolve();
+  } catch (err) {
+    promise.reject(err);
+  }
   
-  // try { 
-  //   const {data} = yield API.logIn(login,password);
-  //   console.log(data);
-  //   promise.resolve();
-  // } catch (err) {
-  //   promise.reject(err);
-  // }
   
   
-  
- console.log(promise, login, password)
+
   // yield (axios.defaults.headers.common["Authorization"] = `Bearer ${token}`);
   try {
     // const res = yield API.postEmailPassword(action.email, action.password);

@@ -14,7 +14,6 @@ import Projects from "./Projects/Projects.jsx";
 import Resume from "./Resume/Resume"
 import Button from "../../components/Button/Button";
 import SavingIndicator from "../../components/SavingIndicator/SavingIndicator.jsx"
-import * as actions from "../../store/actions/index";
 
 const Admin = ({ requestsQuantity, history, location }) => {
   const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects", "resume"];

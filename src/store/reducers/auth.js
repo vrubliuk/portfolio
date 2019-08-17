@@ -2,7 +2,7 @@
 import updateState from "../../helpers/updateState"
 
 const initialState = {
-  token: 1
+  token: null
 };
 
 const setToken = (state, action) => {

@@ -22,14 +22,14 @@ const Login = ({ history, logIn }) => {
     try {
       await logIn(login, password);
     } catch (err) {
-      setErrorMessage(err.message);
+      setErrorMessage(err.response.data.message);
+      setIsDisabled(false);
       Login.timeout = setTimeout(() => {
         setErrorMessage("");
       }, 1500);
     }
-    setIsDisabled(false);
   };
-
+    
   useEffect(() => {
     return () => {
       clearTimeout(Login.timeout);
@@ -46,8 +46,8 @@ const Login = ({ history, logIn }) => {
       />
       <form className={classes.form} onSubmit={handleSubmit}>
         <div className={classes.title}>Log in to Portfolio</div>
-        <TextInput style={{ width: "100%" }} value={login} label="Login" changeHandler={value => setLogin(value)} isRequired />
-        <TextInput style={{ width: "100%" }} type="password" value={password} label="Password" changeHandler={value => setPassword(value)} isRequired />
+        <TextInput style={{ width: "100%" }} value={login} label="Login" changeHandler={value => setLogin(value)} />
+        <TextInput style={{ width: "100%" }} type="password" value={password} label="Password" changeHandler={value => setPassword(value)} />
         <div className={classes.footer}>
           <Button text="Submit" type="submit" additionalClassName="blue" style={{ height: "40px", padding: "0 16px" }} isDisabled={isDisabled} />
           {errorMessage && <div className={classes.error}>{errorMessage}</div>}
