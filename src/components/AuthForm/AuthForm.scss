@@ -2,8 +2,11 @@
 
 .AuthForm {
   width: 400px;
-  background-color: $blue;
-  box-shadow: 0 0 10px $blue;
+  background-color: white;
+ 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px; 
+  overflow: hidden;
   .title {
     background-color: $blue-darker;
     font-size: 1.4rem;

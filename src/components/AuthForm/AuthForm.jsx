@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import "./AuthForm.scss";
 import PropTypes from "prop-types";
+import TextInput from "../inputs/TextInput/TextInput.jsx"
 import Button from "../Button/Button";
 
 class AuthForm extends Component {
   state = {
-    email: "",
+    login: "",
     password: ""
   };
 
-  handleInput = (e, type) => {
+  handleInput = (input, value) => {
     this.setState({
-      [type]: e.target.value
+      [input]: value
     });
   };
 
   handleSubmit = e => {
     if (!e.target.checkValidity()) return;
     e.preventDefault();
-    this.props.logIn(this.state.email.trim(), this.state.password.trim());
+    this.props.logIn(this.state.login.trim(), this.state.password.trim());
   };
 
   render() {
@@ -28,13 +29,16 @@ class AuthForm extends Component {
       <div className="AuthForm">
         <div className="title">Log in to Portfolio</div>
         <form className="form" onSubmit={this.handleSubmit}>
-          <div className="label">Email address</div>
-          <input className="input" type="email" required value={this.state.email} onChange={e => this.handleInput(e, "email")} />
+          <div className="label">Login</div>
+          <input className="input" type="text" required value={this.state.login} onChange={e => this.handleInput(e, "login")} />
+          
+          <TextInput value={this.state.login} label="Login" changeHandler={login => this.setState({login})} />
+          
           <div className="label">Password</div>
           <input className="input" type="password" required value={this.state.password} onChange={e => this.handleInput(e, "password")} />
           <div className="footer">
             <Button text="Log in" type="submit" additionalClassName="transparent" style={{ height: "40px", padding: "0 16px" }} />
-            {errorWasReceived && <div className="error">Incorrect email address or password</div>}
+            {errorWasReceived && <div className="error">Incorrect login or password</div>}
           </div>
         </form>
       </div>

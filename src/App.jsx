@@ -73,8 +73,13 @@ class App extends Component {
           <>
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/auth" exact render={() => (!token ? <Auth /> : <Redirect to="/" />)} />
-              <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/auth" />)} />
+              {/* <Route path="/auth" exact render={() => (!token ? <Auth /> : <Redirect to="/" />)} /> */}
+        <Route path="/auth" exact render={() => <Auth />} /> 
+              
+              {/* <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/auth" />)} /> */}
+              
+              <Route path="/admin" render={() =>  <Admin /> } />
+              
               <Redirect to="/" />
             </Switch>
             <Up />

@@ -9,7 +9,7 @@ import Button from '../../components/Button/Button';
 
 const Auth = ({history}) => {
   return <div className="Auth">
-    <Button icon="left" additionalClassName="blue" style={{ width: "40px", height: "40px", position: 'absolute', top: '20px', left: '20px'}} onClick={() => history.push('/')}/>
+    <Button icon="left" additionalClassName="blue" style={{ width: "40px", height: "40px", position: 'absolute', top: '20px', left: '20px', borderRadius: "50%" }} onClick={() => history.push('/')}/>
     <AuthForm errorWasReceived/>
   </div>
 }
