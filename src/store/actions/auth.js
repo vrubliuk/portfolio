@@ -1,9 +1,10 @@
 ﻿import * as actionTypes from "./actionTypes";
 
-export const logIn = (email, password) => {
+export const logIn = (promise, login, password) => {
   return {
     type: actionTypes.LOG_IN,
-    email,
+    promise,
+    login,
     password
   };
 };
@@ -11,7 +12,6 @@ export const logIn = (email, password) => {
 export const logOut = () => {
   return {
     type: actionTypes.LOG_OUT,
-
   };
 };
 

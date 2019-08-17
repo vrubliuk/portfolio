@@ -1,11 +1,23 @@
 ﻿// import { delay } from "redux-saga";
 import { put } from "redux-saga/effects";
-import {setToken} from "../actions";
-// import * as API from "../../API";
+import * as actions from "../actions";
+import * as API from "../../API";
 //import axios from "../../axios";
 
-export function* logIn(action) {
-  yield console.log("log in")
+export function* logIn({promise, login, password}) {
+  yield put(actions.setToken(1));
+  
+  // try { 
+  //   const {data} = yield API.logIn(login,password);
+  //   console.log(data);
+  //   promise.resolve();
+  // } catch (err) {
+  //   promise.reject(err);
+  // }
+  
+  
+  
+ console.log(promise, login, password)
   // yield (axios.defaults.headers.common["Authorization"] = `Bearer ${token}`);
   try {
     // const res = yield API.postEmailPassword(action.email, action.password);
@@ -22,6 +34,6 @@ export function* logIn(action) {
 }
 
 export function* logOut() {
-  yield put(setToken(null));
+  yield put(actions.setToken(null));
 }
 

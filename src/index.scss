@@ -15,11 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-::selection {
-  color: white;
-  background: $blue;
-}
-
 input::-ms-clear {
   display: none;
 }

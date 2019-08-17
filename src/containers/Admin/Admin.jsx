@@ -16,7 +16,7 @@ import Button from "../../components/Button/Button";
 import SavingIndicator from "../../components/SavingIndicator/SavingIndicator.jsx"
 import * as actions from "../../store/actions/index";
 
-const Admin = ({ requestsQuantity, logOut, history, location }) => {
+const Admin = ({ requestsQuantity, history, location }) => {
   const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects", "resume"];
 
   // const handleLogOutButtonClick = () => {
@@ -27,7 +27,11 @@ const Admin = ({ requestsQuantity, logOut, history, location }) => {
  
   return (
     <div className="Admin">
+    
       <Sidebar>
+      
+        
+        
         <div className="links">
           {links.map(link => (
             <NavLink to={`/admin/${link}`} activeClassName="active" key={link}>
@@ -38,6 +42,15 @@ const Admin = ({ requestsQuantity, logOut, history, location }) => {
       </Sidebar>
 
       <main>
+      <Button
+        icon="left"
+        additionalClassName="blue"
+        style={{ width: "40px", height: "40px", position: "absolute", top: "20px", left: "20px", borderRadius: "50%" }}
+        onClick={() => history.push("/")}
+      />
+        
+        
+        
       <PageTitle title={location.pathname.split('/').pop()} />
       <Switch>
         <Redirect exact from="/admin" to="/admin/general" />
@@ -54,12 +67,6 @@ const Admin = ({ requestsQuantity, logOut, history, location }) => {
       </main>
 
    
-      <Button
-        icon="logOut"
-        additionalClassName="blue"
-        style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }}
-        onClick={() =>  history.replace("/")}
-      />
       
       {requestsQuantity > 0 && <SavingIndicator style={{position: "fixed", margin: "auto", left: 0, right: 0, bottom: 20}}/> }
     
@@ -72,15 +79,9 @@ const mapStateToProps =({userInterface}) => ({
   requestsQuantity: userInterface.requestsQuantity
 })
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logOut: () => dispatch(actions.logOut())
-  };
-};
-
 export default withRouter(
   connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
+   
   )(Admin)
 );

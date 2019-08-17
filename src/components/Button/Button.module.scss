@@ -44,15 +44,17 @@
     color: white;
   }
   
-
+  // &.white {
+  //   background-color: white;
+  //   color:  $blue;
+  // }
+  
+  
   &.transparent {
     color: white;
     background-color: transparent;
     border: 1px solid white;
-  
   }
-
-
 
 
 }

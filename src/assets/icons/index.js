@@ -17,5 +17,6 @@ export default {
   plus: "plus",
   minus: "minus",
   caretUp: "caret-up",
-  caretDown: "caret-down"
+  caretDown: "caret-down",
+  config: "cog"
 };

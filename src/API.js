@@ -1,6 +1,11 @@
 ﻿import axios from "./axios";
 import objectToFormdata from "object-to-formdata";
 
+// auth
+export const logIn = (login, password) => {
+  return axios.post("auth/login", {login, password} );
+};
+
 // users
 export const getUser = () => {
   return axios.get(`users/${process.env.REACT_APP_USER_ID}`);

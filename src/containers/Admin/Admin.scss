@@ -4,9 +4,11 @@
   display: flex;
   
   & > .Sidebar {
+    // position: relative;
     z-index: 1;
     min-width: 300px;
     width: 20%;
+    // padding-top: 50px;
     
     
     .links {
@@ -36,6 +38,7 @@
     }
   }
   & > main {
+    position: relative;
     z-index: 0;
     width: 80%;
   }

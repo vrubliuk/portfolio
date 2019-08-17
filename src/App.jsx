@@ -6,7 +6,7 @@ import * as actions from "./store/actions/index";
 import withPromise from "./helpers/withPromise";
 import Spinner from "./components/Spinner/Spinner.jsx";
 import Home from "./containers/Home/Home.jsx";
-import Auth from "./containers/Auth/Auth.jsx";
+import Login from "./containers/Login/Login.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
 import Up from "./components/buttons/Up";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -27,7 +27,8 @@ import {
   faPlus,
   faMinus,
   faCaretUp,
-  faCaretDown
+  faCaretDown,
+  faCog
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // library.add(faMapMarkerAlt, faPhone, faEnvelope, faCheck, faGithub, faLinkedin);
@@ -49,7 +50,8 @@ library.add(
   faPlus,
   faMinus,
   faCaretUp,
-  faCaretDown
+  faCaretDown,
+  faCog
 );
 
 class App extends Component {
@@ -73,13 +75,8 @@ class App extends Component {
           <>
             <Switch>
               <Route path="/" exact component={Home} />
-              {/* <Route path="/auth" exact render={() => (!token ? <Auth /> : <Redirect to="/" />)} /> */}
-        <Route path="/auth" exact render={() => <Auth />} /> 
-              
-              {/* <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/auth" />)} /> */}
-              
-              <Route path="/admin" render={() =>  <Admin /> } />
-              
+              <Route path="/login" exact render={() => (!token ? <Login /> : <Redirect to="/" />)} />
+              <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/login" />)} />
               <Redirect to="/" />
             </Switch>
             <Up />

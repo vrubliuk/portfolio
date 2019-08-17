@@ -12,7 +12,7 @@ const Experiences = ({ experiences, createExperience, updateExperience, moveExpe
       <Button
         icon="plus"
         additionalClassName="blue"
-        style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
+        style={{ width: "40px", height: "40px", position: "absolute", top: -60, right: 20, borderRadius: "50%" }}
         onClick={createExperience}
       />
       {experiences.map(e => (

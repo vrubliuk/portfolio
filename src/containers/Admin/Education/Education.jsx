@@ -12,7 +12,7 @@ const Education = ({ educations, createEducation, updateEducation, moveEducation
       <Button
         icon="plus"
         additionalClassName="blue"
-        style={{ width: "40px", height: "40px", position: "absolute", top: -60, left: 20, borderRadius: "50%" }}
+        style={{ width: "40px", height: "40px", position: "absolute", top: -60, right: 20, borderRadius: "50%" }}
         onClick={createEducation}
       />
       {educations.map(e => (

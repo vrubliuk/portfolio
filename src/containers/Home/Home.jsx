@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Home.scss";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import * as actions from "../../store/actions/index";
 import Sidebar from "../../HOCs/Sidebar/Sidebar.jsx";
 
 import Profile from "../../components/Profile/Profile";
@@ -45,7 +46,7 @@ class Home extends Component {
 
   render() {
     const { activeTag } = this.state;
-    const { profile, projects, resume, history } = this.props;
+    const { token, profile, projects, resume, history, logOut } = this.props;
     const { setActiveTag } = this;
 
     return (
@@ -54,13 +55,29 @@ class Home extends Component {
           <Profile profile={profile} />
         </Sidebar>
         <main>
-          <Button
-            icon="logIn"
-            additionalClassName="blue"
-            style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }} 
-            onClick={() => history.push("/admin")}
-          />
-
+          {token ? (
+            <>
+              <Button
+                icon="config"
+                additionalClassName="grey"
+                style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "80px", borderRadius: "50%" }}
+                onClick={() => history.push("/admin")}
+              />
+              <Button
+                icon="logOut"
+                additionalClassName="red"
+                style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }}
+                onClick={logOut}
+              />
+            </>
+          ) : (
+            <Button
+              icon="logIn"
+              additionalClassName="blue"
+              style={{ width: "40px", height: "40px", position: "absolute", top: "20px", right: "20px", borderRadius: "50%" }}
+              onClick={() => history.push("/login")}
+            />
+          )}
           <Tags projects={projects} activeTag={activeTag} setActiveTag={setActiveTag} />
           <Projects projects={projects} activeTag={activeTag} />
         </main>
@@ -75,10 +92,20 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ general, contacts, skills, experiences, educations, languages, projects, resume }) => ({
+const mapStateToProps = ({ auth, general, contacts, skills, experiences, educations, languages, projects, resume }) => ({
+  token: auth.token,
   profile: { ...general, ...contacts, ...skills, ...experiences, ...educations, ...languages },
   projects: projects.projects,
   resume: resume.resume
 });
 
-export default withRouter(connect(mapStateToProps)(Home));
+const mapDispatchToProps = dispatch => ({
+  logOut: () => dispatch(actions.logOut())
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Home)
+);
