@@ -3,6 +3,7 @@ import "./App.scss";
 import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
+import axios from "./axios";
 import withPromise from "./helpers/withPromise";
 import Spinner from "./components/Spinner/Spinner.jsx";
 import Home from "./containers/Home/Home.jsx";
@@ -59,11 +60,31 @@ class App extends Component {
     isShown: false
   };
 
+  updateToken = () => {
+    const token = sessionStorage.portfolioToken;
+    if (token) {
+      this.props.setToken(token);
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    }
+  };
+
+  watchServerErrors = () => {
+    axios.interceptors.response.use(null, err => {
+      const { status } = err.response;
+      if (status === 401) {
+        this.props.logOut();
+      }
+      return Promise.reject(err);
+    });
+  };
+
   async componentDidMount() {
+    this.updateToken();
     await this.props.getUser();
     this.setState({
       isShown: true
     });
+    this.watchServerErrors();
   }
 
   render() {
@@ -82,7 +103,7 @@ class App extends Component {
             <Up />
           </>
         ) : (
-          <Spinner style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}/>
+          <Spinner style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
         )}
       </div>
     );
@@ -94,7 +115,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUser: () => withPromise(dispatch, actions.getUser)
+  getUser: () => withPromise(dispatch, actions.getUser),
+  setToken: token => dispatch(actions.setToken(token)),
+  logOut: () => dispatch(actions.logOut())
 });
 
 export default withRouter(
