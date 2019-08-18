@@ -9,7 +9,7 @@ export function* createProject() {
     const { data } = yield API.postProject({ name: "", screenshot:"", websiteUrl: "", repositoryUrl: "", summary: "",  tags: [""], priority: projects.length + 1 });
     yield put(actions.setProjects([...projects, data]));
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -24,7 +24,7 @@ export function* updateProject({ id, payload }) {
   try {
     yield API.putProject(id, payload);
   } catch (err) {
-    alert(err); 
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -39,7 +39,7 @@ export function* updateProjectScreenshot({ id, file }) {
     projectsCopy[projectIndex] = { ...projectsCopy[projectIndex], screenshot: data.screenshot };
     yield put(actions.setProjects(projectsCopy));
   } catch (err) {
-    alert(err); 
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -56,7 +56,7 @@ export function* moveProject({ id, direction }) {
   try {
     yield Promise.all([API.putProject(id, { priority: project.priority }), API.putProject(anotherProject._id, { priority: anotherProject.priority })]);
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -68,7 +68,7 @@ export function* deleteProject({ id }) {
     yield API.deleteProject(id);
     yield put(actions.setProjects(projects.filter(p => p._id !== id)));
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -83,7 +83,7 @@ export function* deleteProjectScreenshot({ id }) {
     projectsCopy[projectIndex] = { ...projectsCopy[projectIndex], screenshot: "" };
     yield put(actions.setProjects(projectsCopy  ));
   } catch (err) {
-    alert(err); 
+    alert(err.response.data.message);  
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

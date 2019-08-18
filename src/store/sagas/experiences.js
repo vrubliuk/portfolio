@@ -9,7 +9,7 @@ export function* createExperience() {
     const { data } = yield API.postExperience({ position: "", company: "", city: "", startDate: "", endDate: "", priority: experiences.length + 1 });
     yield put(actions.setExperiences([...experiences, data]));
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -24,7 +24,7 @@ export function* updateExperience({ id, payload }) {
   try {
     yield API.putExperience(id, payload);
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -41,7 +41,7 @@ export function* moveExperience({ id, direction }) {
   try {
     yield Promise.all([API.putExperience(id, { priority: experience.priority }), API.putExperience(anotherExperience._id, { priority: anotherExperience.priority })]);
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -53,7 +53,7 @@ export function* deleteExperience({ id }) {
     yield API.deleteExperience(id);
     yield put(actions.setExperiences(experiences.filter(l => l._id !== id)));
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

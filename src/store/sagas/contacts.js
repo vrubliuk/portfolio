@@ -9,7 +9,7 @@ export function* updateContacts({payload}) {
   try {
     yield API.putUser(_id, payload);
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

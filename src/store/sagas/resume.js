@@ -10,7 +10,7 @@ export function* updateResume({payload}) {
   try {
     yield API.putUser(_id, {resume: payload});
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

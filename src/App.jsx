@@ -80,11 +80,15 @@ class App extends Component {
 
   async componentDidMount() {
     this.updateToken();
-    await this.props.getUser();
-    this.setState({
-      isShown: true
-    });
     this.watchServerErrors();
+    try {
+      await this.props.getUser();
+      this.setState({
+        isShown: true
+      });
+    } catch (err) {
+      alert(err.response.data.message); 
+    }
   }
 
   render() {
