@@ -62,7 +62,7 @@ export function* putUserFile({ field, payload }) {
     if (field === "avatar") yield put(actions.setGeneral({ [field]: data[field] }));
     if (field === "resume") yield put(actions.setResume(data[field]));
   } catch (err) {
-    alert(err);
+    alert(err.response.data.message); 
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
