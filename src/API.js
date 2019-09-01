@@ -3,7 +3,7 @@ import objectToFormdata from "object-to-formdata";
 
 // auth
 export const logIn = (login, password) => {
-  return axios.post("auth/login", {login, password} );
+  return axios.post("auth/login", { login, password });
 };
 
 // users
@@ -42,7 +42,7 @@ export const deleteLanguage = id => axios.delete(`languages/${id}`);
 export const postProject = payload => axios.post("projects", payload);
 export const putProject = (id, payload) => axios.put(`projects/${id}`, payload);
 export const putProjectScreenshot = (id, screenshot) => {
-  return axios.put(`projects/${id}/screenshot`, objectToFormdata({screenshot}), {
+  return axios.put(`projects/${id}/screenshot`, objectToFormdata({ screenshot }), {
     headers: {
       "Content-Type": "multipart/form-data"
     }
@@ -50,3 +50,10 @@ export const putProjectScreenshot = (id, screenshot) => {
 };
 export const deleteProject = id => axios.delete(`projects/${id}`);
 export const deleteProjectScreenshot = id => axios.delete(`projects/${id}/screenshot`);
+
+export const getResume = id =>
+  axios({
+    method: "get",
+    url: `files/resume/${id}`,
+    responseType: "stream"
+  });

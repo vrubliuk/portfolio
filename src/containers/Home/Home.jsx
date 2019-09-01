@@ -13,6 +13,8 @@ import Projects from "../../components/Projects/Projects";
 import Footer from "../../HOCs/Footer/Footer.jsx";
 import Isotope from "isotope-layout";
 
+import * as API from "../../API";
+
 class Home extends Component {
   state = {
     activeTag: "All"
@@ -83,8 +85,17 @@ class Home extends Component {
         </main>
         {resume && (
           <Footer>
-            <Button icon="download" text="Download Resume" additionalClassName="blue" style={{ width: "200px", height: "40px" }} />
+            <Button
+              icon="download"
+              text="Download Resume"
+              additionalClassName="blue"
+              style={{ width: "200px", height: "40px" }}
+              onClick={() => API.getResume(resume.split("/").pop())}
+            />
             <Button icon="open" text="Open Resume" additionalClassName="blue" style={{ width: "200px", height: "40px" }} />
+            {/* <a  href={resume} ref={resumeLink} download>
+              Download
+            </a> */}
           </Footer>
         )}
       </div>

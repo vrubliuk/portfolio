@@ -24,6 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "cross-env REACT_APP_API_URL=https://val-portfolio-api.herokuapp.com/api react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -40,6 +41,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
     "redux-devtools-extension": "^2.13.8"
   }
