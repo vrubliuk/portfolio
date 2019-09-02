@@ -20,6 +20,8 @@ class Home extends Component {
     activeTag: "All"
   };
 
+  link = React.createRef();
+
   isotope;
 
   setActiveTag = tag => {
@@ -49,7 +51,7 @@ class Home extends Component {
   render() {
     const { activeTag } = this.state;
     const { token, profile, projects, resume, history, logOut } = this.props;
-    const { setActiveTag } = this;
+    const { setActiveTag, link } = this;
 
     return (
       <div className="Home">
@@ -85,17 +87,15 @@ class Home extends Component {
         </main>
         {resume && (
           <Footer>
+            <a style={{ display: "none" }} ref={link} href={resume} />
             <Button
               icon="download"
               text="Download Resume"
               additionalClassName="blue"
               style={{ width: "200px", height: "40px" }}
-              onClick={() => API.getResume(resume.split("/").pop())}
+              onClick={() => link.current.click()}
             />
-            <Button icon="open" text="Open Resume" additionalClassName="blue" style={{ width: "200px", height: "40px" }} />
-            {/* <a  href={resume} ref={resumeLink} download>
-              Download
-            </a> */}
+            {/* <Button icon="open" text="Open Resume" additionalClassName="blue" style={{ width: "200px", height: "40px" }} /> */}
           </Footer>
         )}
       </div>

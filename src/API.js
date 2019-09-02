@@ -50,10 +50,3 @@ export const putProjectScreenshot = (id, screenshot) => {
 };
 export const deleteProject = id => axios.delete(`projects/${id}`);
 export const deleteProjectScreenshot = id => axios.delete(`projects/${id}/screenshot`);
-
-export const getResume = id =>
-  axios({
-    method: "get",
-    url: `files/resume/${id}`,
-    responseType: "stream"
-  });
