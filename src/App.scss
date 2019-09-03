@@ -1,11 +1,9 @@
 @import "./assets/styles/variables.scss";
 
 .App {
-  // background-color: $light-blue;
-  // background-color: rgba(15,34,0,.05);
   position: relative;
+  min-width: 400px;
   min-height: 100vh;
-
   .Up {
     position: fixed;
     bottom: 20px;

@@ -9,7 +9,7 @@ export function* createEducation() {
     const { data } = yield API.postEducation({ speciality: "", institution: "", startDate: "", endDate: "", priority: educations.length + 1 });
     yield put(actions.setEducations([...educations, data]));
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -24,7 +24,7 @@ export function* updateEducation({ id, payload }) {
   try {
     yield API.putEducation(id, payload);
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -39,9 +39,12 @@ export function* moveEducation({ id, direction }) {
   anotherEducation.priority -= direction;
   yield put(actions.setEducations(educationsCopy));
   try {
-    yield Promise.all([API.putEducation(id, { priority: education.priority }), API.putEducation(anotherEducation._id, { priority: anotherEducation.priority })]);
+    yield Promise.all([
+      API.putEducation(id, { priority: education.priority }),
+      API.putEducation(anotherEducation._id, { priority: anotherEducation.priority })
+    ]);
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -53,8 +56,7 @@ export function* deleteEducation({ id }) {
     yield API.deleteEducation(id);
     yield put(actions.setEducations(educations.filter(l => l._id !== id)));
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
-

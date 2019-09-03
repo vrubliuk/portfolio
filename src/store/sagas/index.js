@@ -8,7 +8,7 @@ import { createSkill, updateSkill, moveSkill, deleteSkill } from "./skills";
 import { createExperience, updateExperience, moveExperience, deleteExperience } from "./experiences";
 import { createEducation, updateEducation, moveEducation, deleteEducation } from "./educations";
 import { createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
-import {createProject , updateProject, updateProjectScreenshot, moveProject, deleteProject, deleteProjectScreenshot, } from "./projects";
+import { createProject, updateProject, updateProjectScreenshot, moveProject, deleteProject, deleteProjectScreenshot } from "./projects";
 import { updateResume } from "./resume";
 
 export function* watchUser() {
@@ -67,5 +67,4 @@ export function* watchProjects() {
 
 export function* watchResume() {
   yield takeEvery(actionTypes.UPDATE_RESUME, updateResume);
-  
 }

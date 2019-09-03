@@ -1,16 +1,16 @@
 import React from "react";
 import "./TextInput.scss";
 import PropTypes from "prop-types";
-import Label from "../Label/Label.jsx"
+import Label from "../Label/Label.jsx";
 
-const TextInput = ({ style, type, value, label, changeHandler, isRequired, pattern }) => {  
+const TextInput = ({ style, type, value, label, changeHandler, isRequired, pattern }) => {
   return (
     <div className="TextInput" style={style}>
-      {label && <Label style={{marginBottom: 10}} text={`${label}:`}/>}
+      {label && <Label style={{ marginBottom: 10 }} text={`${label}:`} />}
       <input type={type} value={value} onChange={e => changeHandler(e.target.value)} required={isRequired} pattern={pattern} />
     </div>
   );
-};  
+};
 
 TextInput.propTypes = {
   style: PropTypes.object,
@@ -19,7 +19,7 @@ TextInput.propTypes = {
   label: PropTypes.string,
   changeHandler: PropTypes.func,
   isRequired: PropTypes.bool,
-  pattern: PropTypes.string,
+  pattern: PropTypes.string
 };
 
 TextInput.defaultProps = {
@@ -28,6 +28,6 @@ TextInput.defaultProps = {
   changeHandler: () => {},
   isRequired: false,
   pattern: null
-}
+};
 
 export default TextInput;

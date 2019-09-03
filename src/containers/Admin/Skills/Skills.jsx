@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
-import Button from "../../../components/Button/Button.jsx";
+import Button from "../../../components/buttons/Button/Button.jsx";
 import Label from "../../../components/inputs/Label/Label.jsx";
 
 const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) => {
@@ -19,33 +19,33 @@ const Skills = ({ skills, createSkill, updateSkill, moveSkill, deleteSkill }) =>
       {skills.map((skill, i) => (
         <div className="skill" key={i}>
           <div className="form">
-          <TextInput label="Category" value={skill.title} changeHandler={value => updateSkill(skill._id, { title: value })} />
-          <div>
-            <Label style={{ margin: "20px 0 -10px 20px" }} text="Technologies:" />
-            {skill.technologies.map((technology, i) => (
-              <TextInput
-                value={technology}
-                changeHandler={value => updateSkill(skill._id, { technologies: skill.technologies.map((t, k) => (k === i ? value : t)) })}
-                key={i}
-              />
-            ))}
-            <div className="buttons">
-              {skill.technologies.length > 1 && (
-                <Button
-                  icon="minus"
-                  additionalClassName="blue"
-                  style={{ marginRight: 20, width: "40px", height: "40px", borderRadius: "50%" }}
-                  onClick={() => updateSkill(skill._id, { technologies: skill.technologies.filter((t, i) => i !== skill.technologies.length - 1) })}
+            <TextInput label="Category" value={skill.title} changeHandler={value => updateSkill(skill._id, { title: value })} />
+            <div>
+              <Label style={{ margin: "20px 0 -10px 20px" }} text="Technologies:" />
+              {skill.technologies.map((technology, i) => (
+                <TextInput
+                  value={technology}
+                  changeHandler={value => updateSkill(skill._id, { technologies: skill.technologies.map((t, k) => (k === i ? value : t)) })}
+                  key={i}
                 />
-              )}
-              <Button
-                icon="plus"
-                additionalClassName="blue"
-                style={{ width: "40px", height: "40px", borderRadius: "50%" }}
-                onClick={() => updateSkill(skill._id, { technologies: [...skill.technologies, ""] })}
-              />
+              ))}
+              <div className="buttons">
+                {skill.technologies.length > 1 && (
+                  <Button
+                    icon="minus"
+                    additionalClassName="blue"
+                    style={{ marginRight: 20, width: "40px", height: "40px", borderRadius: "50%" }}
+                    onClick={() => updateSkill(skill._id, { technologies: skill.technologies.filter((t, i) => i !== skill.technologies.length - 1) })}
+                  />
+                )}
+                <Button
+                  icon="plus"
+                  additionalClassName="blue"
+                  style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                  onClick={() => updateSkill(skill._id, { technologies: [...skill.technologies, ""] })}
+                />
+              </div>
             </div>
-          </div>
           </div>
           <DownUpDeleteButtonsBlock
             clickDownButtonHandler={skill.priority > 1 ? () => moveSkill(skill._id, -1) : null}

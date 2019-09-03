@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./Up.scss"
+import "./Up.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import icons from "../../assets/icons";
+import icons from "../../../assets/icons/index";
 import smoothscroll from "smoothscroll-polyfill";
 smoothscroll.polyfill();
 
@@ -28,6 +28,7 @@ class Up extends Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.watchScroll);
   }
+  
   render() {
     const up = (
       <button type="button" className="Up" onClick={this.handleClick}>

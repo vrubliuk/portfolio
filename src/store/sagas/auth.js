@@ -3,7 +3,6 @@ import * as actions from "../actions";
 import * as API from "../../API";
 import axios from "../../axios";
 
-
 export function* logIn({ promise, login, password }) {
   try {
     const { data } = yield API.logIn(login, password);

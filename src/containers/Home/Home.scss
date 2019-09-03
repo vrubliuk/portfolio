@@ -1,5 +1,3 @@
-@import "../../assets/styles/variables.scss";
-
 .Home {
   min-height: 100vh;
   display: flex;
@@ -10,54 +8,22 @@
   }
   & > main {
     z-index: 0;
-  
     width: 80%;
     padding-bottom: 80px;
   }
-
   & > .Footer {
     & button {
       margin: 10px;
     }
-  } 
-
-  // .Button {
-  //   position: absolute;
-  //   top: 20px;
-  //   right: 20px;
-  // }
-
-  // .Projects {
-  //   margin-top: -20px;
-  // }
-
-  // .Tags {
-  //   z-index: 2;
-  //   position: sticky;
-  //   top: 0;
-  //   background-color: $light-blue;
-  //   background: white;
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.075);
-
-  // }
-
-
-
-
- 
-
+  }
 }
-
 @media (max-width: 750px) {
   .Home {
     display: block;
     & > .Sidebar {
-     
       width: 100%;
     }
     & > main {
-      
-    
       width: 100%;
     }
   }

@@ -9,9 +9,8 @@ import Spinner from "./components/Spinner/Spinner.jsx";
 import Home from "./containers/Home/Home.jsx";
 import Login from "./containers/Login/Login.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
-import Up from "./components/buttons/Up";
+import Up from "./components/buttons/Up/Up.jsx";
 import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faMapMarkerAlt, faPhone, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
 import {
   faMapMarkerAlt,
   faPhone,
@@ -32,7 +31,6 @@ import {
   faCog
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-// library.add(faMapMarkerAlt, faPhone, faEnvelope, faCheck, faGithub, faLinkedin);
 library.add(
   faMapMarkerAlt,
   faPhone,
@@ -87,7 +85,7 @@ class App extends Component {
         isShown: true
       });
     } catch (err) {
-      alert(err.response.data.message); 
+      alert(err.response.data.message);
     }
   }
 

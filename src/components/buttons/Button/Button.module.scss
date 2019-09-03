@@ -1,60 +1,37 @@
-@import "../../assets/styles/variables.scss";
+@import "../../../assets/styles/variables.scss";
 
 .Button {
-
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  
   border-radius: 6px; 
-
   .icon-small {
     font-size: 11px;
   }
   .text {
     white-space: nowrap;
   }
-  
-
-
   & > span {
     margin: 0 2px;
   }
-  
-
   &.blue {
     background-color: $blue;
-    // box-shadow: 0 0 10px $blue;
     color: white;
     &:hover {
       background-color: $blue-darker;
-      // box-shadow: 0 0 10px $blue-darker;
     }
-
   }
-  
   &.red {
-    background-color: #cb3837;
+    background-color: $red;
     color: white;
   }
-  
   &.grey {
     background-color: #a0a0a0;
     color: white;
   }
-  
-  // &.white {
-  //   background-color: white;
-  //   color:  $blue;
-  // }
-  
-  
   &.transparent {
     color: white;
     background-color: transparent;
     border: 1px solid white;
   }
-
-
 }

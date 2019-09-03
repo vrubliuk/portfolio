@@ -28,8 +28,7 @@ Spinner.propTypes = {
 Spinner.defaultProps = {
   style: {},
   diameter: 100,
-  thickness: 5,
-  color: "rgb(47, 52, 61)"
+  thickness: 5
 };
 
 export default Spinner;

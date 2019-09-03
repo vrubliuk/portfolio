@@ -25,10 +25,8 @@
       }
     }
   }
-
   .general {
     align-items: center;
-    //background: $blue-darker;
     background: rgb(65, 72, 82);
     color: white;
     .avatar {
@@ -54,8 +52,6 @@
   }
   .contact {
     color: rgb(158, 162, 168);
-    // color: white;
-    
     .row {
       display: flex;
       align-items: center;

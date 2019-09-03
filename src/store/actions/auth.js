@@ -11,7 +11,7 @@ export const logIn = (promise, login, password) => {
 
 export const logOut = () => {
   return {
-    type: actionTypes.LOG_OUT,
+    type: actionTypes.LOG_OUT
   };
 };
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./FileInput.scss";
 import PropTypes from "prop-types";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../../assets/icons/index";
 
@@ -10,14 +9,7 @@ class FileInput extends Component {
 
   handleChange = e => {
     const file = e.target.files[0];
-    // console.log(file);
     file && this.props.changeHandler(file);
-
-    // const reader = new FileReader();
-    // reader.onloadend = () => {
-    //   this.props.changeHandler(reader.result);
-    // };
-    // file && reader.readAsDataURL(file);
   };
 
   handleRemove = e => {

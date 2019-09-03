@@ -2,7 +2,6 @@ export default {
   location: "map-marker-alt",
   phone: "phone",
   email: "envelope",
-  // checkMark: "check",
   github: ["fab", "github"],
   linkedIn: ["fab", "linkedin"],
   up: "angle-up",

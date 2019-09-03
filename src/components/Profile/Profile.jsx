@@ -17,7 +17,6 @@ const Profile = ({ profile }) => {
         </div>
         <div className="qualification">{general.qualification}</div>
       </div>
-
       <div className="contact section">
         <div className="row">
           <div className="icon">
@@ -64,7 +63,6 @@ const Profile = ({ profile }) => {
           </div>
         </div>
       </div>
-
       <div className="section">
         <div className="title">Skills</div>
         {skills.map((skill, i) => (
@@ -78,7 +76,6 @@ const Profile = ({ profile }) => {
           </div>
         ))}
       </div>
-
       <div className="section">
         <div className="title">Experiences</div>
         {experiences.map((experience, i) => (
@@ -93,7 +90,6 @@ const Profile = ({ profile }) => {
           </div>
         ))}
       </div>
-
       <div className="section">
         <div className="title">Education</div>
         {educations.map((education, i) => (
@@ -106,7 +102,6 @@ const Profile = ({ profile }) => {
           </div>
         ))}
       </div>
-
       <div className="section">
         <div className="title">Languages</div>
         <div>

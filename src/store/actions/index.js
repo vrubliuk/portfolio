@@ -1,4 +1,4 @@
-﻿export { getUser, putUserFile, deleteUserFile } from "./user";
+﻿export { getUser, putUserFile } from "./user";
 
 export { setToken, logIn, logOut } from "./auth";
 
@@ -14,15 +14,7 @@ export { setEducations, createEducation, updateEducation, moveEducation, deleteE
 
 export { setLanguages, createLanguage, updateLanguage, moveLanguage, deleteLanguage } from "./languages";
 
-export {
-  setProjects,
-  createProject,
-  updateProject,
-  updateProjectScreenshot,
-  moveProject,
-  deleteProject,
-  deleteProjectScreenshot
-} from "./projects";
+export { setProjects, createProject, updateProject, updateProjectScreenshot, moveProject, deleteProject, deleteProjectScreenshot } from "./projects";
 
 export { setResume, updateResume } from "./resume";
 

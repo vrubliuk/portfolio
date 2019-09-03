@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./Button.module.scss";
 import PropTypes from "prop-types";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import icons from "../../assets/icons";
+import icons from "../../../assets/icons/index";
 
 const Button = ({ type, icon, text, additionalClassName, style, onClick, isDisabled }) => {
   return (
-    <button type={type ? type : "button"} className={`${styles.Button} ${styles[additionalClassName]}`} style={style} onClick={onClick} disabled={isDisabled} >
+    <button type={type ? type : "button"} className={`${styles.Button} ${styles[additionalClassName]}`} style={style} onClick={onClick} disabled={isDisabled}>
       {icon && (
         <span className={icon && text && styles["icon-small"]}>
           <FontAwesomeIcon icon={icons[icon]} />
@@ -24,7 +23,7 @@ Button.propTypes = {
   text: PropTypes.string,
   additionalClassName: PropTypes.string,
   style: PropTypes.object,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 export default Button;

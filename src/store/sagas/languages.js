@@ -9,7 +9,7 @@ export function* createLanguage() {
     const { data } = yield API.postLanguage({ name: "", level: "", priority: languages.length + 1 });
     yield put(actions.setLanguages([...languages, data]));
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -24,7 +24,7 @@ export function* updateLanguage({ id, payload }) {
   try {
     yield API.putLanguage(id, payload);
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -41,7 +41,7 @@ export function* moveLanguage({ id, direction }) {
   try {
     yield Promise.all([API.putLanguage(id, { priority: language.priority }), API.putLanguage(anotherLanguage._id, { priority: anotherLanguage.priority })]);
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -53,7 +53,7 @@ export function* deleteLanguage({ id }) {
     yield API.deleteLanguage(id);
     yield put(actions.setLanguages(languages.filter(l => l._id !== id)));
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

@@ -1,3 +1,5 @@
+@import "../../../assets/styles/variables.scss";
+
 .FileInput {
   padding: 20px;
   .label {
@@ -7,9 +9,6 @@
   }
   .preview {
     position: relative;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     width: 250px;
     height: 40px;
     background-color: white;
@@ -18,15 +17,8 @@
     background-size: contain;
     cursor: pointer;
     border: 1px solid #a0a0a0;
-
-    // &:hover {
-    //   background-color: rgba(0, 0, 0, 0.02);
-    // }
     .text {
       margin: 0 10px;
-    //   display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
       width: calc(100% - 60px);
       height: 100%;
       line-height: 38px;
@@ -37,45 +29,23 @@
       white-space: nowrap;
       text-overflow: ellipsis;
     }
-
     .remove {
       position: absolute;
       width: 38px;
       height: 38px;
-     
       right: 0;
       top: 0;
-     
       display: flex;
       justify-content: center;
       align-items: center;
-     
-      color: #cb3837;
+      color: $red;
       font-size: 20px;
       transition: all 0.2s;
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);
       }
     }
-
-    // .text {
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   align-items: center;
-    //   width: 200px;
-    //   height: 200px;
-    //   font-size: 42px;
-    //   color: lightgrey;
-    //   border: 1px dashed lightgrey;
-    //   border-radius: 10px;
-    //   div {
-    //     margin-top: 10px;
-    //     font-size: 16px;
-    //   }
-    // }
   }
-
   input {
     display: none;
   }

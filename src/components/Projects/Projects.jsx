@@ -3,16 +3,12 @@ import "./Projects.scss";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
-import Button from "../Button/Button";
+import Button from "../buttons/Button/Button.jsx";
 
-const Projects = ({ projects, activeTag }) => {
-  // const filteredProjects = activeTag !== "All" ? projects.filter(project => project.tags.includes(activeTag)) : projects;
-  const filteredProjects = projects;
-  // console.log(filteredProjects);
-
+const Projects = ({ projects }) => {
   return (
     <div className="Projects">
-      {filteredProjects.map((project, i) => (
+      {projects.map((project, i) => (
         <div className={`isotope-project ${project.tags.join(" ")}`} key={i}>
           <div>
             <img src={project.screenshot} alt="" />

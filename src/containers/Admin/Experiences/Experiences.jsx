@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
-import Button from "../../../components/Button/Button.jsx";
+import Button from "../../../components/buttons/Button/Button.jsx";
 
 const Experiences = ({ experiences, createExperience, updateExperience, moveExperience, deleteExperience }) => {
   return (

@@ -4,16 +4,12 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import * as actions from "../../store/actions/index";
 import Sidebar from "../../HOCs/Sidebar/Sidebar.jsx";
-
 import Profile from "../../components/Profile/Profile";
-
-import Button from "../../components/Button/Button.jsx";
+import Button from "../../components/buttons/Button/Button.jsx";
 import Tags from "../../components/Tags/Tags";
 import Projects from "../../components/Projects/Projects";
 import Footer from "../../HOCs/Footer/Footer.jsx";
 import Isotope from "isotope-layout";
-
-import * as API from "../../API";
 
 class Home extends Component {
   state = {
@@ -87,7 +83,9 @@ class Home extends Component {
         </main>
         {resume && (
           <Footer>
-            <a style={{ display: "none" }} ref={link} href={resume} />
+            <a style={{ display: "none" }} ref={link} href={resume}>
+              Download
+            </a>
             <Button
               icon="download"
               text="Download Resume"
@@ -95,7 +93,6 @@ class Home extends Component {
               style={{ width: "200px", height: "40px" }}
               onClick={() => link.current.click()}
             />
-            {/* <Button icon="open" text="Open Resume" additionalClassName="blue" style={{ width: "200px", height: "40px" }} /> */}
           </Footer>
         )}
       </div>

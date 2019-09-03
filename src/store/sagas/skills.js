@@ -1,5 +1,5 @@
 import { select, put } from "redux-saga/effects";
-import * as actions from "../actions/index"
+import * as actions from "../actions/index";
 import * as API from "../../API";
 
 export function* createSkill() {
@@ -9,7 +9,7 @@ export function* createSkill() {
     const { data } = yield API.postSkill({ title: "", technologies: [""], priority: skills.length + 1 });
     yield put(actions.setSkills([...skills, data]));
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -24,7 +24,7 @@ export function* updateSkill({ id, payload }) {
   try {
     yield API.putSkill(id, payload);
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -41,7 +41,7 @@ export function* moveSkill({ id, direction }) {
   try {
     yield Promise.all([API.putSkill(id, { priority: skill.priority }), API.putSkill(anotherSkill._id, { priority: anotherSkill.priority })]);
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }
@@ -53,7 +53,7 @@ export function* deleteSkill({ id }) {
     yield API.deleteSkill(id);
     yield put(actions.setSkills(skills.filter(l => l._id !== id)));
   } catch (err) {
-    alert(err.response.data.message); 
+    alert(err.response.data.message);
   }
   yield put(actions.adjustRequestsQuantity(-1));
 }

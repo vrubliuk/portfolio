@@ -1,24 +1,16 @@
 .Languages {
   position: relative;
-  padding:  0 20px 20px;
-  
-  
-  
+  padding: 0 20px 20px;
   .languageWrapper {
-    
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 6px; 
+    border-radius: 6px;
     margin-bottom: 20px;
-    
     .language {
       display: flex;
       align-items: flex-end;
     }
   }
-  
-
- 
 }

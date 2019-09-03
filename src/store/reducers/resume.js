@@ -1,9 +1,8 @@
 import * as actionTypes from "../actions/actionTypes";
 import updateState from "../../helpers/updateState";
-// import resume from "../../assets/images/Resume.pdf";
 
 const initialState = {
-  resume: ""
+  resume: null
 };
 
 const setResume = (state, { payload }) => {

@@ -5,7 +5,7 @@ import * as actions from "../../../store/actions/index";
 import Label from "../../../components/inputs/Label/Label.jsx";
 import TextInput from "../../../components/inputs/TextInput/TextInput";
 import DownUpDeleteButtonsBlock from "../../../components/buttons/DownUpDeleteButtonsBlock/DownUpDeleteButtonsBlock";
-import Button from "../../../components/Button/Button.jsx";
+import Button from "../../../components/buttons/Button/Button.jsx";
 import FileInput from "../../../components/inputs/FileInput/FileInput";
 import Textarea from "../../../components/inputs/Textarea/Textarea";
 
@@ -21,33 +21,16 @@ const Projects = ({ projects, createProject, updateProject, updateProjectScreens
       {projects.map(project => (
         <div className={classes.projectWrapper} key={project._id}>
           <div className={classes.project}>
-            <TextInput
-              value={project.name}
-              label="Name"
-              changeHandler={value => updateProject(project._id, { name: value })}
-            />
+            <TextInput value={project.name} label="Name" changeHandler={value => updateProject(project._id, { name: value })} />
             <FileInput
               fileName={project.screenshot.split(/\\|\//).pop()}
               label="Screenshot"
-              changeHandler={(file) => updateProjectScreenshot(project._id, file)}
+              changeHandler={file => updateProjectScreenshot(project._id, file)}
               removeHandler={() => deleteProjectScreenshot(project._id)}
             />
-            <TextInput
-              value={project.websiteUrl}
-              label="Website URL"
-              changeHandler={value => updateProject(project._id, { websiteUrl: value })}
-            />
-            <TextInput
-              value={project.repositoryUrl}
-              label="Repository URL"
-              changeHandler={value => updateProject(project._id, { repositoryUrl: value })}
-            />
-            <Textarea
-              label="Summary"
-              value={project.summary}
-              changeHandler={value => updateProject(project._id, { summary: value })}
-            />
-
+            <TextInput value={project.websiteUrl} label="Website URL" changeHandler={value => updateProject(project._id, { websiteUrl: value })} />
+            <TextInput value={project.repositoryUrl} label="Repository URL" changeHandler={value => updateProject(project._id, { repositoryUrl: value })} />
+            <Textarea label="Summary" value={project.summary} changeHandler={value => updateProject(project._id, { summary: value })} />
             <div>
               <Label style={{ margin: "20px 0 -10px 20px" }} text="Tags:" />
               {project.tags.map((tag, i) => (
@@ -74,18 +57,6 @@ const Projects = ({ projects, createProject, updateProject, updateProjectScreens
                 />
               </div>
             </div>
-
-            {/* {project.tags.map((tag, k) => (
-              <div className={classes.tag} key={k}>
-                <TextInput value={tag} changeHandler={value => all(() => updateProjectTag(i, k, value), () => saveProjects())} />
-                <DownUpDeleteButtonsBlock
-                  clickDownButtonHandler={k !== project.tags.length - 1 ? () => all(() => moveProjectTag(i, k, "down"), () => saveProjects()) : null}
-                  clickUpButtonHandler={k !== 0 ? () => all(() => moveProjectTag(i, k, "up"), () => saveProjects()) : null}
-                  clickDeleteButtonHandler={() => all(() => deleteProjectTag(i, k), () => saveProjects())}
-                />
-              </div>
-            ))} */}
-            {/* <Button text="Add tag" additionalClassName="blue" style={{ width: "200px", height: "40px" }} onClick={() => addProjectTag(i)} /> */}
           </div>
           <DownUpDeleteButtonsBlock
             clickDownButtonHandler={project.priority > 1 ? () => moveProject(project._id, -1) : null}

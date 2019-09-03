@@ -6,8 +6,8 @@ import TextInput from "../../../components/inputs/TextInput/TextInput";
 import FileInput from "../../../components/inputs/FileInput/FileInput";
 
 const General = ({ general, updateGeneral, putUserFile }) => {
-  
-  const avatarFileName = general.avatar.split(/\\|\//).pop()
+  const avatarFileName = general.avatar.split(/\\|\//).pop();
+
   return (
     <div className="General">
       <TextInput label="Name" value={general.name} changeHandler={value => updateGeneral({ name: value })} />

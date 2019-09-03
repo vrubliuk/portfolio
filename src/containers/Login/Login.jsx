@@ -3,7 +3,7 @@ import classes from "./Login.module.scss";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import TextInput from "../../components/inputs/TextInput/TextInput.jsx";
-import Button from "../../components/Button/Button";
+import Button from "../../components/buttons/Button/Button.jsx";
 import * as actions from "../../store/actions/index";
 import withPromise from "../../helpers/withPromise";
 
@@ -29,7 +29,7 @@ const Login = ({ history, logIn }) => {
       }, 1500);
     }
   };
-    
+
   useEffect(() => {
     return () => {
       clearTimeout(Login.timeout);

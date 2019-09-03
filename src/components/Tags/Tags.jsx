@@ -9,12 +9,13 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
       tag in tags ? (tags[tag] = ++tags[tag]) : (tags[tag] = 1);
     });
   });
-
-  const uniqueTagsSorted = Object.keys(tags).filter(tag => tag !== "").sort((a, b) => {
-    if (tags[a] < tags[b]) return 1;
-    if (tags[a] > tags[b]) return -1;
-    return 0;
-  });
+  const uniqueTagsSorted = Object.keys(tags)
+    .filter(tag => tag !== "")
+    .sort((a, b) => {
+      if (tags[a] < tags[b]) return 1;
+      if (tags[a] > tags[b]) return -1;
+      return 0;
+    });
 
   return (
     <div className="Tags">
@@ -34,7 +35,11 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
 };
 
 Tags.propTypes = {
-  projects: PropTypes.array.isRequired
+  projects: PropTypes.array
+};
+
+Tags.defaultProps = {
+  projects: []
 };
 
 export default Tags;

@@ -1,13 +1,15 @@
+@import "../../assets/styles/variables.scss";
+
 .wrapper {
   display: flex;
   .circle {
     border-top-color: transparent !important;
     border-style: solid;
     border-radius: 50%;
+    border-color: $blue;
     animation: rotate 1s linear infinite;
   }
 }
-
 @keyframes rotate {
   to {
     transform: rotate(360deg);

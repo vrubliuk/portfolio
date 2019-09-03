@@ -10,8 +10,3 @@ export const putUserFile = (field, payload) => ({
   field,
   payload
 });
-
-export const deleteUserFile = field => ({
-  type: actionTypes.DELETE_USER_FILE,
-  field
-});
