@@ -6,10 +6,14 @@ import icons from "../../assets/icons/index";
 import Button from "../buttons/Button/Button.jsx";
 
 const Projects = ({ projects }) => {
+  const modifiedTags = tags => {
+    return tags.reduce((acc, tag) => acc + " " + tag.replace(/\W/gi, ""), "");
+  };
+
   return (
     <div className="Projects">
       {projects.map((project, i) => (
-        <div className={`isotope-project ${project.tags.join(" ")}`} key={i}>
+        <div className={`isotope-project ${modifiedTags(project.tags)}`} key={i}>
           <div>
             <img src={project.screenshot} alt="" />
             <div className="cover">

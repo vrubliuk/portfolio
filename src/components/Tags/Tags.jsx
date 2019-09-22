@@ -24,7 +24,7 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
           className={`tag ${tag === activeTag && "tag-active"}`}
           key={i}
           onClick={() => {
-            setActiveTag(tag);
+            setActiveTag(tag.replace(/\W/gi, ""));
           }}
         >
           {tag}
