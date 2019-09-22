@@ -1,10 +1,10 @@
 @import "../../assets/styles/variables.scss";
 
 .Tags {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 140px;
+  text-align: center;
   .tag {
+    display: inline-block;
     height: 80px;
     padding: 0 10px;
     font-size: 16px;

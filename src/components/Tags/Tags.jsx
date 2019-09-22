@@ -17,14 +17,16 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
       return 0;
     });
 
+  const modifiedTag = tag => tag.replace(/\W/gi, "");
+
   return (
     <div className="Tags">
       {["All", ...uniqueTagsSorted].map((tag, i) => (
         <button
-          className={`tag ${tag === activeTag && "tag-active"}`}
+          className={`tag ${modifiedTag(tag) === activeTag && "tag-active"}`}
           key={i}
           onClick={() => {
-            setActiveTag(tag.replace(/\W/gi, ""));
+            setActiveTag(modifiedTag(tag));
           }}
         >
           {tag}
