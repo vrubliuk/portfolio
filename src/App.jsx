@@ -10,6 +10,7 @@ import Home from "./containers/Home/Home.jsx";
 import Login from "./containers/Login/Login.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
 import Up from "./components/buttons/Up/Up.jsx";
+import * as API from "./API";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faMapMarkerAlt,
@@ -58,11 +59,16 @@ class App extends Component {
     isShown: false
   };
 
-  updateToken = () => {
+  updateToken = async () => {
     const token = sessionStorage.portfolioToken;
     if (token) {
-      this.props.setToken(token);
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      try {
+        await API.getSession(`Bearer ${token}`);
+        this.props.setToken(token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      } catch (err) {
+        sessionStorage.removeItem("portfolioToken");
+      }
     }
   };
 

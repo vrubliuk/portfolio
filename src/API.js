@@ -6,6 +6,14 @@ export const logIn = (login, password) => {
   return axios.post("auth/login", { login, password });
 };
 
+export const getSession = token => {
+  return axios.get("auth/session", {
+    headers: {
+      Authorization: token
+    }
+  });
+};
+
 // users
 export const getUser = () => {
   return axios.get(`users/${process.env.REACT_APP_USER_ID}`);
