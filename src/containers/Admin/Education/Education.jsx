@@ -18,8 +18,8 @@ const Education = ({ educations, createEducation, updateEducation, moveEducation
       {educations.map(e => (
         <div className="educationWrapper" key={e._id}>
           <div className="education">
-            <TextInput value={e.speciality} label="Position" changeHandler={value => updateEducation(e._id, { speciality: value })} />
-            <TextInput value={e.institution} label="Company" changeHandler={value => updateEducation(e._id, { institution: value })} />
+            <TextInput value={e.speciality} label="Speciality" changeHandler={value => updateEducation(e._id, { speciality: value })} />
+            <TextInput value={e.institution} label="Institution" changeHandler={value => updateEducation(e._id, { institution: value })} />
             <TextInput value={e.startDate} label="Start Date" changeHandler={value => updateEducation(e._id, { startDate: value })} />
             <TextInput value={e.endDate} label="End Date" changeHandler={value => updateEducation(e._id, { endDate: value })} />
           </div>

@@ -18,50 +18,60 @@ const Profile = ({ profile }) => {
         <div className="qualification">{general.qualification}</div>
       </div>
       <div className="contact section">
-        <div className="row">
-          <div className="icon">
-            <FontAwesomeIcon icon={icons.location} />
+        {contacts.location && (
+          <div className="row">
+            <div className="icon">
+              <FontAwesomeIcon icon={icons.location} />
+            </div>
+            <div className="text">
+              <span>{contacts.location}</span>
+            </div>
           </div>
-          <div className="text">
-            <span>{contacts.location}</span>
+        )}
+        {contacts.phone && (
+          <div className="row">
+            <div className="icon">
+              <FontAwesomeIcon icon={icons.phone} />
+            </div>
+            <div className="text">
+              <span>{contacts.phone}</span>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="icon">
-            <FontAwesomeIcon icon={icons.phone} />
+        )}
+        {contacts.email && (
+          <div className="row">
+            <div className="icon">
+              <FontAwesomeIcon icon={icons.email} />
+            </div>
+            <div className="text">
+              <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+            </div>
           </div>
-          <div className="text">
-            <span>{contacts.phone}</span>
+        )}
+        {contacts.github && (
+          <div className="row">
+            <div className="icon">
+              <FontAwesomeIcon icon={icons.github} />
+            </div>
+            <div className="text">
+              <a href={`https://${contacts.github}`} target="_blank" rel="noreferrer noopener">
+                {contacts.github}
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="icon">
-            <FontAwesomeIcon icon={icons.email} />
+        )}
+        {contacts.linkedIn && (
+          <div className="row">
+            <div className="icon">
+              <FontAwesomeIcon icon={icons.linkedIn} />
+            </div>
+            <div className="text">
+              <a href={`https://${contacts.linkedIn}`} target="_blank" rel="noreferrer noopener">
+                {contacts.linkedIn}
+              </a>
+            </div>
           </div>
-          <div className="text">
-            <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
-          </div>
-        </div>
-        <div className="row">
-          <div className="icon">
-            <FontAwesomeIcon icon={icons.github} />
-          </div>
-          <div className="text">
-            <a href={`https://${contacts.github}`} target="_blank" rel="noreferrer noopener">
-              {contacts.github}
-            </a>
-          </div>
-        </div>
-        <div className="row">
-          <div className="icon">
-            <FontAwesomeIcon icon={icons.linkedIn} />
-          </div>
-          <div className="text">
-            <a href={`https://${contacts.linkedIn}`} target="_blank" rel="noreferrer noopener">
-              {contacts.linkedIn}
-            </a>
-          </div>
-        </div>
+        )}
       </div>
       <div className="section">
         <div className="title">Skills</div>
@@ -81,9 +91,7 @@ const Profile = ({ profile }) => {
         {experiences.map((experience, i) => (
           <div className="subsection" key={i}>
             <div className="title">{experience.position}</div>
-            <div className="row">
-              <span>{experience.company}</span>, <span>{experience.city}</span>
-            </div>
+            <div className="row">{`${experience.company}${experience.city ? `, ${experience.city}` : ""}  `}</div>
             <div className="row">
               <span>{experience.startDate}</span> - <span>{experience.endDate}</span>
             </div>
