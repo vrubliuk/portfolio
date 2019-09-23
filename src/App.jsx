@@ -108,7 +108,6 @@ class App extends Component {
               <Route path="/admin" render={() => (token ? <Admin /> : <Redirect to="/login" />)} />
               <Redirect to="/" />
             </Switch>
-            <Up />
           </>
         ) : (
           <Spinner style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />

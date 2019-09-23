@@ -14,6 +14,7 @@ import Projects from "./Projects/Projects.jsx";
 import Resume from "./Resume/Resume";
 import Button from "../../components/buttons/Button/Button.jsx";
 import SavingIndicator from "../../components/SavingIndicator/SavingIndicator.jsx";
+import Up from "../../components/buttons/Up/Up.jsx";
 
 const Admin = ({ requestsQuantity, history, location }) => {
   const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects", "resume"];
@@ -50,6 +51,7 @@ const Admin = ({ requestsQuantity, history, location }) => {
         </Switch>
       </main>
       {requestsQuantity > 0 && <SavingIndicator style={{ position: "fixed", margin: "auto", left: 0, right: 0, bottom: 20 }} />}
+      <Up />
     </div>
   );
 };

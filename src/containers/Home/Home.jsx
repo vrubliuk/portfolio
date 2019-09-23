@@ -9,6 +9,7 @@ import Button from "../../components/buttons/Button/Button.jsx";
 import Tags from "../../components/Tags/Tags";
 import Projects from "../../components/Projects/Projects";
 import Footer from "../../HOCs/Footer/Footer.jsx";
+import Up from "../../components/buttons/Up/Up.jsx";
 import Isotope from "isotope-layout";
 
 class Home extends Component {
@@ -93,6 +94,7 @@ class Home extends Component {
               style={{ width: "200px", height: "40px" }}
               onClick={() => link.current.click()}
             />
+            <Up />
           </Footer>
         )}
       </div>
