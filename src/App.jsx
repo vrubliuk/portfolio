@@ -9,7 +9,6 @@ import Spinner from "./components/Spinner/Spinner.jsx";
 import Home from "./containers/Home/Home.jsx";
 import Login from "./containers/Login/Login.jsx";
 import Admin from "./containers/Admin/Admin.jsx";
-import Up from "./components/buttons/Up/Up.jsx";
 import * as API from "./API";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
