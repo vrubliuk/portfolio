@@ -1,6 +1,7 @@
 import React from "react";
 import "./Tags.scss";
 import PropTypes from "prop-types";
+import Dropdown from "../Dropdown/Dropdown.jsx";
 
 const Tags = ({ projects, activeTag, setActiveTag }) => {
   const tags = {};
@@ -18,7 +19,11 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
     });
 
   const modifiedTag = tag => tag.replace(/\W/gi, "");
-
+  
+  
+  return <Dropdown/>
+  
+  
   return (
     <div className="Tags">
       {["All", ...uniqueTagsSorted].map((tag, i) => (
