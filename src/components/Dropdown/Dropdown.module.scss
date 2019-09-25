@@ -1,0 +1,46 @@
+@import "../../assets/styles/variables.scss";
+
+.dropdown {
+  position: relative;
+  width: 200px;
+  height: 40px;
+
+  background-color: $blue;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: $blue-darker;
+
+  } 
+}
+.valueWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  color: white;
+}
+.options {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  
+}
+
+.option {
+  height: 40px;
+  padding: 0 20px;
+  line-height: 40px;
+  color: #a0a0a0;
+  
+  
+  &:hover, &Active {
+    color: $blue;
+  }
+  
+  
+}

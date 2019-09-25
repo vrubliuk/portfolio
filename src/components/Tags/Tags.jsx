@@ -19,11 +19,15 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
     });
 
   const modifiedTag = tag => tag.replace(/\W/gi, "");
-  
-  
-  return <Dropdown/>
-  
-  
+
+  const dropdownOptions = () => {
+    return ["All", ...uniqueTagsSorted].map(tag => ({ value: modifiedTag(tag), label: tag }));
+  };
+
+  return (
+    <Dropdown className="TagsDropdown" options={dropdownOptions()} value={activeTag} changeHandler={value => setActiveTag(value)} />
+  );
+
   return (
     <div className="Tags">
       {["All", ...uniqueTagsSorted].map((tag, i) => (
