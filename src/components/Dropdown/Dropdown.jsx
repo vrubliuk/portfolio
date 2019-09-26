@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classes from "./Dropdown.module.scss";
 import PropTypes from "prop-types";
+import icons from "../../assets/icons/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Dropdown = ({ className, style, options, value, changeHandler }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +11,10 @@ const Dropdown = ({ className, style, options, value, changeHandler }) => {
     <div className={`${classes.dropdown} ${className}`} style={style}>
       <div className={classes.valueWrapper} onClick={() => setIsOpen(!isOpen)}>
         <div className={classes.value}>{value} </div>
+        <div className={classes.iconWrapper}>
+          <FontAwesomeIcon icon={icons["caretDown" ] } />
+          
+        </div>
       </div>
       {isOpen && (
         <div className={classes.options}>
