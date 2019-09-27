@@ -1,6 +1,7 @@
 import React from "react";
 import "./Tags.scss";
 import PropTypes from "prop-types";
+import useWidth from "../../hooks/useWidth"
 import Dropdown from "../Dropdown/Dropdown.jsx";
 
 const Tags = ({ projects, activeTag, setActiveTag }) => {
@@ -23,6 +24,9 @@ const Tags = ({ projects, activeTag, setActiveTag }) => {
   const dropdownOptions = () => {
     return ["All", ...uniqueTagsSorted].map(tag => ({ value: modifiedTag(tag), label: tag }));
   };
+  
+ 
+  const isSmall = useWidth();
 
   return (
     <Dropdown className="TagsDropdown" options={dropdownOptions()} value={activeTag} changeHandler={value => setActiveTag(value)} />
