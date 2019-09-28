@@ -25,8 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:prod": "cross-env REACT_APP_API_URL=https://val-portfolio-api.herokuapp.com/api react-scripts start",
-    "build": "react-scripts build",
+    "start:prod": "cross-env REACT_APP_API_URL=https://val-portfolio-api.herokuapp.com/api REACT_APP_USER_ID=5d595220f01b7517f0b6c069 react-scripts start",
+    "build": "cross-env REACT_APP_API_URL=https://val-portfolio-api.herokuapp.com/api REACT_APP_USER_ID=5d595220f01b7517f0b6c069 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
