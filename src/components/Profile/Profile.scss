@@ -59,6 +59,11 @@
         font-size: 12px;
         width: 25px;
       }
+      .text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
