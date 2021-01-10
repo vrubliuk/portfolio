@@ -19,12 +19,16 @@ const Projects = ({ projects }) => {
             <div className="cover">
               <div className="summary">{project.summary}</div>
               <div className="buttons">
-                <a href={project.websiteUrl} target="_blank" rel="noreferrer noopener">
-                  <Button icon="open" text="Open Website" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
-                </a>
-                <a href={project.repositoryUrl} target="_blank" rel="noreferrer noopener">
-                  <Button icon="github" text="Explore Repo" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
-                </a>
+                {project.websiteUrl && (
+                  <a href={project.websiteUrl} target="_blank" rel="noreferrer noopener">
+                    <Button icon="open" text="Open Website" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
+                  </a>
+                )}
+                {project.repositoryUrl && (
+                  <a href={project.repositoryUrl} target="_blank" rel="noreferrer noopener">
+                    <Button icon="github" text="Explore Repo" additionalClassName="transparent" style={{ width: "152px", height: "40px" }} />
+                  </a>
+                )}
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "./Admin.scss";
 import { connect } from "react-redux";
 import { withRouter, Switch, Route, Redirect, NavLink } from "react-router-dom";
-import Sidebar from "../../HOCs/Sidebar/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import General from "./General/General.jsx";
 import Contacts from "./Contacts/Contacts.jsx";

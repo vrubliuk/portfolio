@@ -3,12 +3,12 @@ import "./Home.scss";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import * as actions from "../../store/actions/index";
-import Sidebar from "../../HOCs/Sidebar/Sidebar.jsx";
+import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 import Profile from "../../components/Profile/Profile";
 import Button from "../../components/buttons/Button/Button.jsx";
 import Tags from "../../components/Tags/Tags";
 import Projects from "../../components/Projects/Projects";
-import Footer from "../../HOCs/Footer/Footer.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 import Up from "../../components/buttons/Up/Up.jsx";
 import Isotope from "isotope-layout";
 
