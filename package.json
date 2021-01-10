@@ -16,6 +16,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-onclickoutside": "^6.9.0",
+    "react-preload-image": "^1.0.7",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",

@@ -3,14 +3,15 @@ import "./Profile.scss";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
+import PreloadImage from "react-preload-image";
 
 const Profile = ({ profile }) => {
   const { general, contacts, skills, experiences, educations, languages } = profile;
 
   return (
     <div className="Profile">
-      <div className="general section">
-        <img className="avatar" src={general.avatar} alt="" />
+      <div className="general section">    
+        <PreloadImage className="avatar" src={general.avatar} />
         <div className="name">
           <span>{general.name}</span>
           <span>{general.surname}</span>

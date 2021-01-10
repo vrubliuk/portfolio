@@ -30,12 +30,14 @@
     background: rgb(65, 72, 82);
     color: white;
     .avatar {
+      position: relative;
       width: 150px;
       height: 150px;
+      background-color: white;
       object-fit: cover;
       border: 3px solid white;
       border-radius: 50%;
-      transition: 0.2s;
+      overflow: hidden;
     }
     .name {
       font-size: 32px;

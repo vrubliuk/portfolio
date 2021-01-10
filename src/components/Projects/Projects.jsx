@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/icons/index";
 import Button from "../buttons/Button/Button.jsx";
+import PreloadImage from "react-preload-image";
 
 const Projects = ({ projects }) => {
   const modifiedTags = tags => {
@@ -15,7 +16,7 @@ const Projects = ({ projects }) => {
       {projects.map((project, i) => (
         <div className={`isotope-project ${modifiedTags(project.tags)}`} key={i}>
           <div>
-            <img src={project.screenshot} alt="" />
+            <PreloadImage className="img" src={project.screenshot} lazy />
             <div className="cover">
               <div className="summary">{project.summary}</div>
               <div className="buttons">
