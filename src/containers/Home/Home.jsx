@@ -89,7 +89,7 @@ class Home extends Component {
             </a>
             <Button
               icon="download"
-              text="Download Resume"
+              text="Download resume"
               additionalClassName="blue"
               style={{ width: "200px", height: "40px" }}
               onClick={() => link.current.click()}
