@@ -17,7 +17,7 @@ import SavingIndicator from "../../components/SavingIndicator/SavingIndicator.js
 import Up from "../../components/buttons/Up/Up.jsx";
 
 const Admin = ({ requestsQuantity, history, location }) => {
-  const links = ["general", "contacts", "skills", "experiences", "education", "languages", "projects", "resume"];
+  const links = ["general", "contacts", "skills", "experiences", "languages", "education", "projects", "resume"];
 
   return (
     <div className="Admin">
@@ -44,8 +44,8 @@ const Admin = ({ requestsQuantity, history, location }) => {
           <Route exact path="/admin/contacts" component={Contacts} />
           <Route exact path="/admin/skills" component={Skills} />
           <Route exact path="/admin/experiences" component={Experiences} />
-          <Route exact path="/admin/education" component={Education} />
           <Route exact path="/admin/languages" component={Languages} />
+          <Route exact path="/admin/education" component={Education} />
           <Route exact path="/admin/projects" component={Projects} />
           <Route exact path="/admin/resume" component={Resume} />
         </Switch>

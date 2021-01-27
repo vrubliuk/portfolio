@@ -100,6 +100,16 @@ const Profile = ({ profile }) => {
         ))}
       </div>
       <div className="section">
+        <div className="title">Languages</div>
+        <div>
+          {languages.map((language, i) => (
+            <div className="subsection" key={i}>
+              <span className="title">{language.name}</span> <span className="row">({language.level})</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="section">
         <div className="title">Education</div>
         {educations.map((education, i) => (
           <div className="subsection" key={i}>
@@ -110,16 +120,6 @@ const Profile = ({ profile }) => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="section">
-        <div className="title">Languages</div>
-        <div>
-          {languages.map((language, i) => (
-            <div className="subsection" key={i}>
-              <span className="title">{language.name}</span> <span className="row">({language.level})</span>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
